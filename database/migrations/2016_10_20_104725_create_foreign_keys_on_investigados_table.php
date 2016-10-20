@@ -40,7 +40,11 @@ class CreateForeignKeysOnInvestigadosTable extends Migration
     public function down()
     {
         Schema::table('investigados', function (Blueprint $table) {
-            //
+            $table->dropForeign('investigados_empleado_id_foreign');
+			$table->dropForeign('investigados_expediente_id_foreign');
+			$table->dropForeign('investigados_complicidade_id_foreign');
+			$table->dropForeign('investigados_resultado_id_foreign');
+			$table->dropForeign('investigados_decisorio_id_foreign');
         });
     }
 }

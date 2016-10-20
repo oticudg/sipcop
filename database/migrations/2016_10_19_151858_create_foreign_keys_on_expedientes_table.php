@@ -28,7 +28,9 @@ class CreateForeignKeysOnExpedientesTable extends Migration
     public function down()
     {
         Schema::table('expedientes', function (Blueprint $table) {
-            //
+            $table->dropForeign('expedientes_user_id_foreign');
+			$table->dropForeign('expedientes_tipologia_id_foreign');
+			$table->dropForeign('expedientes_estatu_id_foreign');
         });
     }
 }
