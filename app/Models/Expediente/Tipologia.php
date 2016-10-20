@@ -4,7 +4,7 @@ namespace App\Models\Expediente;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Tipologias extends Model
+class Tipologia extends Model
 {
     //
 }
