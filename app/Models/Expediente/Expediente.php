@@ -15,4 +15,28 @@ class Expediente extends Model
 	 * @var array
 	 */
 	protected $dates = ['deleted_at'];
+	
+	/**
+	 * Obtiene el usuario al que pertenece el Expediente
+     */ 
+	public function user()
+	{
+		return $this->belongsTo('App\User');
+	}
+	
+	/**
+	 * Obtiene la tipologia del expediente.
+	 */
+	public function tipologia()
+	{
+		return $this->belongsTo('App\Models\Expediente\Tipologia');
+	}
+	
+	/**
+	 * Obtiene el estatu del expediente.
+	 */
+	public function estatu()
+	{
+		return $this->belongsTo('App\Models\Expediente\Estatu');
+	}
 }

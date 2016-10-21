@@ -15,4 +15,12 @@ class Tipologia extends Model
      * @var array
      */
 	protected $dates = ['deleted_at'];
+	
+	/**
+	 * Obtiene los expedientes de la tipologia 
+	 */
+	public function expedientes()
+	{
+		return $this->hasMany('App\Models\Expediente\Expediente');
+	}
 }

@@ -37,4 +37,13 @@ class User extends Authenticatable
 	 * @var array
 	 */
 	protected $dates = ['deleted_at'];
+	
+	/**
+	 * Obtiene los expedientes que pertenecen a un usuario
+	 */
+	public function expedientes()
+	{
+		return $this->hasMany('App\Models\Expediente\Expediente');
+	}
+		
 }

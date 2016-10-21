@@ -15,4 +15,12 @@ class Estatu extends Model
      * @var array
      */
 	protected $dates = ['deleted_at'];
+	
+	/**
+	 * Obtiene los expedientes del estatu.
+	 */
+	public function expedientes()
+	{
+		return $this->hasMany('App\Models\Expediente\Expediente');
+	}	
 }
