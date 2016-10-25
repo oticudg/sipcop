@@ -26,6 +26,10 @@ Route::get('/', function(){
 Route::get('/', function(){
 	return view('layouts.start');
 });
+
+Route::get('/', function(){
+	return view('users');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');

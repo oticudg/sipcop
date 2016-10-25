@@ -38,9 +38,10 @@ body, html{
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-color: aliceblue;
+	
 }
 .position{
-	margin-left: 71%;
+	margin-left: 73.5%;
 	margin-top: 5%;
 }
 
@@ -49,6 +50,7 @@ body, html{
     padding: 0;
     width: 100%;
 }
+
 .center-box{
     margin:0 auto;
 }
@@ -65,9 +67,11 @@ th:nth-child(2) {
 	table-layout: auto;
 	border-collapse: collapse;
 }
+
 .topsito{
 	top: 0;
 }
+
 .modalback{
 	background-color: aliceblue;
 	
@@ -178,6 +182,7 @@ th:nth-child(2) {
 	right:-9999em;
 	z-index:1;
 }
+
 .nav2 ul > li:hover ul {
 	right:110;
 }
@@ -194,6 +199,7 @@ th:nth-child(2) {
 	-moz-transition:350ms;
 	-o-transition:350ms;
 	transition:350ms;
+	
 }
 .nav2 ul > li:hover ul {
 	max-height:1000px;
@@ -210,7 +216,7 @@ th:nth-child(2) {
 
 .marginser{
 
-	margin-left: -193%;
+	margin-left: -220%;
 	width: 80%;
 
 }
