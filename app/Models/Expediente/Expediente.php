@@ -39,4 +39,11 @@ class Expediente extends Model
 	{
 		return $this->belongsTo('App\Models\Expediente\Estatu');
 	}
+	
+	/**
+	 * Obtiene los investigado del expediente
+	 */
+	public function investigados(){
+		return $this->hasMany('App\Models\Expediente\Investigado');
+	} 
 }

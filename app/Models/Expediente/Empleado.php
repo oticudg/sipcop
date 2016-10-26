@@ -15,4 +15,12 @@ class Empleado extends Model
      * @var array
 	 */
 	protected $dates = ['deleted_at']; 
+	
+	/**
+	 * Obtiene las investigaciones de un empleado
+     */
+	public function investigaciones()
+	{
+		return $this->hasMany('App\Models\Expediente\Investigado');
+	} 
 }
