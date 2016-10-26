@@ -11,7 +11,6 @@
 
 </section>
 
-
 @include('forms.login_form')
 
 <div class="section no-pad-bot" id="index-banner">
