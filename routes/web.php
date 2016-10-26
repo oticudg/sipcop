@@ -11,25 +11,20 @@
 |
 */
 
-/* Login route default 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-*/
 
 Route::get('/', function(){
 	return view('index');
 });
 
 
-Route::get('/', function(){
-	return view('layouts.start');
+Route::get('dashboard', function(){
+	return view('dashboard');
 });
 
-Route::get('/', function(){
-	return view('users');
-});
+
+Route::resource('expedientes', 'ExpedienteController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
