@@ -17,6 +17,13 @@ class Investigado extends Model
 	protected $dates = ['deleted_at'];
 	
 	/**
+	 * The attributes that aren't mass assignable
+	 *
+	 * @var array
+	 */
+	protected $guarded = ['id']; 
+	
+	/**
 	 * Obtiene el expediente al cual pertenece.
 	 */
 	public function expediente()

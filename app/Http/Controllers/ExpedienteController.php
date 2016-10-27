@@ -6,10 +6,18 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Models\Expediente\Expediente;
-use DB;
+use App\Repositories\InvestigadoRepository;
+use Carbon\Carbon;
 
 class ExpedienteController extends Controller
 {
+	protected $investigacion;
+
+	public function __construct()
+	{
+		$this->investigacion = new InvestigadoRepository;
+	}
+		
     /**
      * Despliega la lista de expedientes.
      *
@@ -53,14 +61,31 @@ class ExpedienteController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Registra un nuevo expediente
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {	
+		$expediente = new Expediente;
+		
+		$date = isset($request->fecha) ?
+				new Carbon($request->fecha):
+				Carbon::now();
+			
+		$expediente->codigo = $request->codigo;
+		$expediente->tipologia_id = $request->tipologia;
+		$expediente->estatu_id = $request->estatus;
+		$expediente->fecha_registro = $date;
+		$expediente->user()->associate($request->user());
+		$expediente->save();
+			
+    	$investigados = $this->investigacion->createInvestigaciones(
+							$request->investigados);	
+		$expediente->investigados()->saveMany($investigados);	
+		
+		return $expediente;
     }
 
     /**
