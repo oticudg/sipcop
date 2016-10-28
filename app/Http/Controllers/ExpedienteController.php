@@ -89,14 +89,39 @@ class ExpedienteController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Muestra un expediente
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        //
+    {	
+		/**
+		 * COlumnas a seleccionar
+		 */
+		$columns = [
+			'expedientes.id',
+			'expedientes.codigo',
+			'expedientes.fecha_registro',
+			'expedientes.fecha_cierre',
+			'tipologias.nombre as tipologia',
+			'estatus.nombre as estatus',
+		];
+	
+
+        $expediente = Expediente::where('expedientes.id', $id)
+					  ->join('tipologias',
+							'tipologias.id', '=', 'expedientes.tipologia_id')
+					  ->join('estatus',
+							'estatus.id', '=', 'expedientes.estatu_id')
+					  ->select($columns)
+					  ->with('investigados')
+					  ->with('investigados.complicidade')
+					  ->with('investigados.resultado')
+					  ->with('investigados.decisorio') 
+					  ->firstOrFail();
+
+		return $expediente;
     }
 
     /**
@@ -125,11 +150,11 @@ class ExpedienteController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  App\Models\Expediente\Expediente $expediente
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Expediente $expediente)
     {
-        //
+    	$expediente->delete();	
     }
 }

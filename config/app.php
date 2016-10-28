@@ -177,7 +177,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        Caffeinated\Shinobi\ShinobiServiceProvider::class
+        Caffeinated\Shinobi\ShinobiServiceProvider::class,
+		App\Providers\ObserverServiceProvider::class
 
     ],
 
