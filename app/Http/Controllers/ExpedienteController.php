@@ -97,7 +97,7 @@ class ExpedienteController extends Controller
     public function show($id)
     {	
 		/**
-		 * COlumnas a seleccionar
+		 * Columnas a seleccionar
 		 */
 		$columns = [
 			'expedientes.id',
@@ -139,12 +139,39 @@ class ExpedienteController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  App\Models\Expediente\Expediente $Expediente
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(Request $request, Expediente $expediente)
+    {	
+		if($request->has('tipologia')){	
+			$expediente->tipologia_id = $request->tipologia; 
+		}
+		
+		if($request->has('estatus')){	
+			$expediente->estatu_id = $request->estatus;
+		}
+		
+		if($request->has('fecha')){
+			$expediente->fecha_registro = new Carbon($request->fecha);
+		}
+		
+		$expediente->save();
+		
+		if($request->has('add_investigados')){
+			
+			$investigados = $this->investigacion
+							->createInvestigaciones($request->add_investigados);
+		
+			$expediente->investigados()->saveMany($investigados);
+		}
+		
+		if($request->has('edit_investigados')){
+			$this->investigacion
+			->updateInvestigaciones($request->edit_investigados);
+		}
+		
+		return $expediente;	
     }
 
     /**

@@ -18,7 +18,7 @@ class InvestigadoRepository
      * Crea un arreglo de instancias de Investigado,
 	 * no persiste las instancias
 	 *
-	 * @param array
+	 * @param  array $investigados $investigados
 	 * @return array
 	 */ 
 	public function createInvestigaciones($investigados){
@@ -50,6 +50,32 @@ class InvestigadoRepository
 		}
 		
 		return $investigaciones;
+	}
+	
+	public function updateInvestigaciones($investigados)
+	{
+		foreach($investigados as $investigado){
+		
+			$investigacion = Investigado::find($investigado['investigacion']);	
+			
+			if( isset($investigado['fecha']) ){
+				$investigacion->fecha = new Carbon($investigado['fecha']);
+			}
+
+			if( isset($investigado['complicidad']) ){
+				$investigacion->complicidade_id = $investigado['complicidad'];
+			}
+
+			if( isset($investigado['resultado']) ){
+				$investigacion->resultado_id = $investigado['resultado'];
+			}
+			
+			if( isset($investigado['decisorio']) ){
+				$investigacion->decisorio_id = $investigado['decisorio'];
+			}
+			
+			$investigacion->save();
+		}
 	}
 			
 }
