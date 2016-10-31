@@ -66,16 +66,16 @@ return [
             'engine' => null,
         ],
 
-        'pgsql' => [
+        'eadmon' => [
             'driver' => 'pgsql',
-            'host' => env('DB_HOST', 'localhost'),
-            'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host' => env('DB_EHOST', 'localhost'),
+            'port' => env('DB_EPORT', '5432'),
+            'database' => env('DB_EDATABASE', 'forge'),
+            'username' => env('DB_EUSERNAME', 'forge'),
+            'password' => env('DB_EPASSWORD', ''),
             'charset' => 'utf8',
             'prefix' => '',
-            'schema' => 'public',
+            'schema' => env('DB_SCHEMA','public'),
             'sslmode' => 'prefer',
         ],
 
