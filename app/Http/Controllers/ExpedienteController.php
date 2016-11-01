@@ -7,15 +7,18 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Models\Expediente\Expediente;
 use App\Repositories\InvestigadoRepository;
+use App\Repositories\ExpedienteRepository;
 use Carbon\Carbon;
 
 class ExpedienteController extends Controller
 {
 	protected $investigacion;
+	protected $expediente;
 
 	public function __construct()
 	{
 		$this->investigacion = new InvestigadoRepository;
+		$this->expediente = new ExpedienteRepository;
 	}
 		
     /**
@@ -144,21 +147,7 @@ class ExpedienteController extends Controller
      */
     public function update(Request $request, Expediente $expediente)
     {	
-		if($request->has('tipologia')){	
-			$expediente->tipologia_id = $request->tipologia; 
-		}
-		
-		if($request->has('estatus')){	
-			$expediente->estatu_id = $request->estatus;
-		}
-		
-		if($request->has('fecha')){
-			$expediente->fecha_registro = new Carbon($request->fecha);
-		}
-		
-		$expediente->save();
-		
-		if($request->has('add_investigados')){
+    	if($request->has('add_investigados')){
 			
 			$investigados = $this->investigacion
 							->createInvestigaciones($request->add_investigados);
@@ -170,6 +159,22 @@ class ExpedienteController extends Controller
 			$this->investigacion
 			->updateInvestigaciones($request->edit_investigados);
 		}
+
+		if($request->has('tipologia')){	
+			$expediente->tipologia_id = $request->tipologia; 
+		}
+			
+		if($request->has('fecha')){	
+			$expediente->fecha_registro = new Carbon($request->fecha);
+		}		
+		
+		if(!$this->expediente->closeExpediente($expediente) and 
+			$request->has('estatus')){	
+
+			$expediente->estatu_id = $request->estatus;
+		}
+		
+		$expediente->save();
 		
 		return $expediente;	
     }

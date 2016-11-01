@@ -51,7 +51,13 @@ class InvestigadoRepository
 		
 		return $investigaciones;
 	}
-	
+
+	/**
+	 * Edita los investigados que se pasen
+     *
+     * @param array $investigados
+     * @return void
+     */	
 	public function updateInvestigaciones($investigados)
 	{
 		foreach($investigados as $investigado){
@@ -77,5 +83,4 @@ class InvestigadoRepository
 			$investigacion->save();
 		}
 	}
-			
 }
