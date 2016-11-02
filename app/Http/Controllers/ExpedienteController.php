@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Models\Expediente\Expediente;
 use App\Repositories\InvestigadoRepository;
-use App\Repositories\ExpedienteRepository;
 use Carbon\Carbon;
 
 class ExpedienteController extends Controller
@@ -18,7 +17,6 @@ class ExpedienteController extends Controller
 	public function __construct()
 	{
 		$this->investigacion = new InvestigadoRepository;
-		$this->expediente = new ExpedienteRepository;
 	}
 		
     /**
@@ -70,7 +68,8 @@ class ExpedienteController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {	
+    {
+		\Auth::loginUsingId(1);	
 		$expediente = new Expediente;
 		
 		$date = isset($request->fecha) ?
@@ -118,6 +117,8 @@ class ExpedienteController extends Controller
 					  ->join('estatus',
 							'estatus.id', '=', 'expedientes.estatu_id')
 					  ->select($columns)
+					  ->withCount('investigados')
+					  ->with('investigados.empleado')
 					  ->with('investigados')
 					  ->with('investigados.complicidade')
 					  ->with('investigados.resultado')
@@ -168,9 +169,7 @@ class ExpedienteController extends Controller
 			$expediente->fecha_registro = new Carbon($request->fecha);
 		}		
 		
-		if(!$this->expediente->closeExpediente($expediente) and 
-			$request->has('estatus')){	
-
+		if($request->has('estatus')){	
 			$expediente->estatu_id = $request->estatus;
 		}
 		
