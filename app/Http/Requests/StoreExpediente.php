@@ -3,7 +3,6 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Carbon\Carbon;
 
 class StoreExpediente extends FormRequest
 {
@@ -26,18 +25,19 @@ class StoreExpediente extends FormRequest
     {
 
         return [
-        	'fecha' => 'date|before:'.Carbon::tomorrow(),
-		    'tipologia' => 'required|integer|exists:tipologias,id',
-			'estatus' => 'required|integer|exists:estatus,id',
-			'investigados' => 'required|array',
-			'investigados.*.cedula' => 'required|integer|distinct|empleado',
-			'investigados.*.complicidad' => 'required|integer|
+        	'fecha' => 'bail|date|before:tomorrow',
+		    'tipologia' => 'bail|required|integer|exists:tipologias,id',
+			'estatus' => 'bail|required|integer|exists:estatus,id',
+			'investigados' => 'bail|required|array',
+			'investigados.*.cedula' => 'bail|required|integer|distinct|
+				empleado',
+			'investigados.*.complicidad' => 'bail|required|integer|
 					exists:complicidades,id',	
-			'investigados.*.resultado' => 'required|integer|
+			'investigados.*.resultado' => 'bail|required|integer|
 					exists:resultados,id',
-			'investigados.*.decisorio' => 'required|integer|
+			'investigados.*.decisorio' => 'bail|required|integer|
 					exists:decisorios,id',
-			'investigados.*.fecha' => 'date|before:'.Carbon::tomorrow()
+			'investigados.*.fecha' => 'bail|date|before:tomorrow'
         ];
     }
 
