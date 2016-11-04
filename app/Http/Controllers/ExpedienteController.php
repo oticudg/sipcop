@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Requests\StoreExpediente;
 use App\Models\Expediente\Expediente;
 use App\Repositories\InvestigadoRepository;
 use Carbon\Carbon;
@@ -67,7 +68,7 @@ class ExpedienteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreExpediente $request)
     {
 		\Auth::loginUsingId(1);	
 		$expediente = new Expediente;
@@ -84,7 +85,7 @@ class ExpedienteController extends Controller
 		$expediente->save();
 			
     	$investigados = $this->investigacion->createInvestigaciones(
-							$request->investigados);	
+							$request->investigados, !$request->has('fecha'));	
 		$expediente->investigados()->saveMany($investigados);	
 		
 		return $expediente;

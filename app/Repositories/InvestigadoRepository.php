@@ -19,9 +19,10 @@ class InvestigadoRepository
 	 * no persiste las instancias
 	 *
 	 * @param  array $investigados $investigados
+	 * @param  bool $today
 	 * @return array
 	 */ 
-	public function createInvestigaciones($investigados){
+	public function createInvestigaciones($investigados, $today = false){
 		
 		$investigaciones = [];
 		
@@ -31,10 +32,10 @@ class InvestigadoRepository
 			$empleado  = $this->empleado
 						  ->createWithEadmonOrRetrieve($investigado['cedula']);
 			
-			//Fecha de la investigacion	
-			$date = isset($investigado['fecha']) ? 
-					new Carbon($investigado['fecha']):
-					Carbon::now();	
+			//Fecha de la investigacion, si $today es true o no hay fecha
+			//se asigna la fecha de actual.	
+			$date = ($today || !isset($investigado['fecha']) ) 
+					? Carbon::now() : new Carbon($investigado['fecha']);
 			
 			$investigacion = new Investigado;
 			$investigacion->fecha = $date;

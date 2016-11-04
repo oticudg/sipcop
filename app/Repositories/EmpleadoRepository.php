@@ -56,8 +56,6 @@ class EmpleadoRepository
 		$empleado =  DB::connection('eadmon')->table('nomh01')
 		                ->join('noma14', 
 							'noma14.tip_nom', '=', 'nomh01.tip_nom')
-						->join('noma09', 
-							'noma09.cod_empleado', '=', 'nomh01.cod_empleado')
 						->where('nomh01.cod_empleado', $cedula)
 						->select($columns)
 						->orderBy('nomh01.ano_eje', 'dec')
