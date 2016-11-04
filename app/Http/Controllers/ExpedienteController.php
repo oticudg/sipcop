@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Requests\StoreExpediente;
+use App\Http\Requests\UpdateExpediente;
 use App\Models\Expediente\Expediente;
 use App\Repositories\InvestigadoRepository;
 use Carbon\Carbon;
@@ -147,7 +148,7 @@ class ExpedienteController extends Controller
      * @param  App\Models\Expediente\Expediente $Expediente
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Expediente $expediente)
+    public function update(UpdateExpediente $request, Expediente $expediente)
     {	
     	if($request->has('add_investigados')){
 			
