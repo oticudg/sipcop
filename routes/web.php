@@ -10,17 +10,11 @@
 |
 */
 	/* ruta index*/
-	Route::get('/', function(){
-	return view('index');
-	});
-	/* ruta al dashboard*/
-	Route::get('dashboard', function(){
-		return view('dashboard');
-	});
+	Route::get('/', 'HomeController@index');
 
+	Route::get('dashboard', 'HomeController@dashboard');
 	
 	Route::resource('expedientes', 'ExpedienteController');
 	Auth::routes();
-	Route::get('/home', 'HomeController@index');
 	
 	

@@ -10,10 +10,10 @@
 							<i class="zmdi zmdi-file-text animated animatedicon pulse"></i>
 						</div>
 						<div class="tile-caption">
-							<span class="center-align orange-text">77</span>
+							<span class="center-align orange-text">{{$expedientes}}</span>
 							<p class="center-align black-text">Expedientes</p>   
 						</div>
-						<a href="#" class="tile-link waves-effect cyan waves-light">Ver detalles &nbsp; 
+						<a href="{{route('expedientes.index')}}" class="tile-link waves-effect cyan waves-light">Ver detalles &nbsp; 
 							<i class="zmdi zmdi-eye"></i>
 						</a>
 					</div>
@@ -22,7 +22,7 @@
 							<i class="zmdi zmdi-accounts animated animatedicon pulse"></i>
 						</div>
 						<div class="tile-caption">
-							<span class="center-align orange-text">99</span>
+							<span class="center-align orange-text">{{$investigados}}</span>
 							<p class="center-align black-text">Investigados</p>   
 						</div>
 						<a href="#" class="tile-link waves-effect cyan waves-light">Ver detalles &nbsp; 
