@@ -19,6 +19,10 @@ class CustomValidationServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+		/**
+		 * Valida que al registrar un expediente la fecha del expediente 
+		 * sea menor o igual a las fechas de los investigados
+	     */
     	Validator::extend('date_after_expediente', 
 			function($attribute, $value, $parameters, $validator){
 				
@@ -29,7 +33,11 @@ class CustomValidationServiceProvider extends ServiceProvider
 
 				return $expediente->lte($investigado);
 		});
-
+		
+		/**
+         * Valida que la cedula pasada sea la de un empleado activo del
+		 * sahum 
+         */
 		Validator::extend('empleado', function($attribute, $value){
 			
 			$empleado = DB::connection('eadmon')
@@ -41,7 +49,11 @@ class CustomValidationServiceProvider extends ServiceProvider
 			return (bool) $empleado;
 							
 		});
-	
+		
+		/**
+         * Valida que el investigado a editar este en el expediente en el 
+		 * que se realiza la edicion
+		 */	
 		Validator::extend('in_expediente', function($attribute, $value){
 			
 			$expediente = Request::route('expediente.id');	
@@ -50,19 +62,51 @@ class CustomValidationServiceProvider extends ServiceProvider
 									   ->where('expediente_id', $expediente)
 									   ->value('id');	
 		});
-
+		
+		/**
+         * Valida que el empleado no tenga investigacion en el expediente
+		 * en el que se realiza la edicion
+         */
 		Validator::extend('empleado_not_expediente', 
 			function($attribute, $value){
 				
 				$expediente = Request::route('expediente.id');	
 				
-				$investigado = Empleado::where('cedula', $value)
+				return !(bool) $investigado = Empleado::where('cedula', $value)
 							   ->first()
 							   ->investigaciones()
 							   ->where('expediente_id', $expediente)
 							   ->value('id');	
+		});
+		
+		/**
+         * Valida que la fechas de los investigados sean mayor o
+		 * igual al expediente en el que se realiza la edicion
+         */	
+		Validator::extend('date_after_expediente_update', 
+			function($attribute, $value){
+				
+				$fecha = Request::route('expediente.fecha_registro');
+				
+				$expediente  = new Carbon($fecha);	
+			    $investigado = new Carbon($value);	
+				
+				return $expediente->lte($investigado);
+		});
+		
+		/**
+		 * Valida que la fecha del expediente a editar sea menor 
+		 * o igual a la fecha de los investigados que estan en el expediente 
+         */
+		Validator::extend('date_before_investigados_update',
+			function($attribute, $value){
+	
+				$expediente = Request::route('expediente.id');	
+				
+				return !(bool) Investigado::where('expediente_id', $expediente)
+							->whereDate('fecha', '<', $value)
+							->value('id');
 
-				return ! (bool) $investigado;
 		});
     }
 
