@@ -19,7 +19,6 @@
 						<input type="password" value="asdasd"placeholder="Usuario" value="Alvin" id="first_name" type="text" class="validate">
 						<label for="first_name">Repetir Contraseña</label>
 					</div>
-
 					<div class="input-field col s6">
 						<select>
 							<option value="" disabled selected>1er Rol</option>
@@ -29,12 +28,8 @@
 						</select>
 						<label>Seleccione un Rol</label>
 					</div>
-
 				</div>
-
-
 				<div class="row">
-
 					<div class="input-field col s6">
 						<select>
 							<option value="" disabled selected>1er Permiso</option>
@@ -44,24 +39,15 @@
 						</select>
 						<label>Seleccione los Permisos</label>
 					</div>
-
 					<div class="input-field col s6">
 						<input id="email" type="email" class="validate">
 						<label for="email">Email</label>
 					</div>
-
 				</div>
-
 			</form>
 		</div>
-
-
 	</div>
 	<div class="modal-footer">
-
 		<a class="waves-effect waves-light btn-flat"><i class="zmdi zmdi-mail-send right"></i> Guardar</a>
 		<a href="#!" class="modal-action modal-close btn-flat waves-effect waves-green"><i class="zmdi zmdi-close right"></i> Cerrar</a>
-
 	</div>
-
-</div>	

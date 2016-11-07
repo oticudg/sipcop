@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,21 +9,18 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-
-
-
-Route::get('/', function(){
+	/* ruta index*/
+	Route::get('/', function(){
 	return view('index');
-});
+	});
+	/* ruta al dashboard*/
+	Route::get('dashboard', function(){
+		return view('dashboard');
+	});
 
-
-Route::get('dashboard', function(){
-	return view('dashboard');
-});
-
-
-Route::resource('expedientes', 'ExpedienteController');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
+	
+	Route::resource('expedientes', 'ExpedienteController');
+	Auth::routes();
+	Route::get('/home', 'HomeController@index');
+	
+	

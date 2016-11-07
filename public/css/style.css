@@ -12,23 +12,23 @@
 
 #main {
 	flex: 1 0 auto;
-	
+
 }
 
 .main{
-	
+
 }
 
 /*///////////////////////// Estilos generales emanuel /////////////////////////*/
 body, html{
-	
+
 	margin: 0;
 	padding: 0;
 	font-size: 16px;
-    background-color: #fff;
-    width: 100%;
-    height: 100%;
-    color: #333;
+	background-color: #fff;
+	width: 100%;
+	height: 100%;
+	color: #333;
 	flex: 1 0 auto;
 	display: flex;
 	min-height: 100vh;
@@ -38,21 +38,19 @@ body, html{
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-color: aliceblue;
-	
 }
 .position{
-	margin-left: 73.5%;
+	margin-left: 71%;
 	margin-top: 5%;
 }
 
 .full-width{
-    margin: 0;
-    padding: 0;
-    width: 100%;
+	margin: 0;
+	padding: 0;
+	width: 100%;
 }
-
 .center-box{
-    margin:0 auto;
+	margin:0 auto;
 }
 
 th:nth-child(1) {
@@ -67,14 +65,12 @@ th:nth-child(2) {
 	table-layout: auto;
 	border-collapse: collapse;
 }
-
 .topsito{
 	top: 0;
 }
-
 .modalback{
 	background-color: aliceblue;
-	
+
 }
 
 .ventana{
@@ -84,7 +80,7 @@ th:nth-child(2) {
 	padding-right: 5px;
 	padding-top: 5px;
 
-	
+
 	@media only screen and (max-width : 992px) {
 		header, main, footer {
 			padding-left: 0;
@@ -97,7 +93,7 @@ th:nth-child(2) {
 }
 
 .limarg{
-	
+
 	margin-top: 0;
 	top: 0;
 	padding-top: 0;
@@ -106,7 +102,7 @@ th:nth-child(2) {
 .imgnav{
 	top: 0;
 	position:absolute;
-	
+
 }
 .marginbtnmenu{
 	margin-left: -1%;
@@ -169,8 +165,17 @@ th:nth-child(2) {
 	background:#273754;
 }
 .nav2 li ul li {
-	width:180px;
+	width:160px;
+	color: white;
+
 }
+
+.nav2 li ul li a {
+
+	font-size: 13px;
+
+}
+
 .nav2 li ul a {
 	border:none;
 }
@@ -182,7 +187,6 @@ th:nth-child(2) {
 	right:-9999em;
 	z-index:1;
 }
-
 .nav2 ul > li:hover ul {
 	right:110;
 }
@@ -199,7 +203,6 @@ th:nth-child(2) {
 	-moz-transition:350ms;
 	-o-transition:350ms;
 	transition:350ms;
-	
 }
 .nav2 ul > li:hover ul {
 	max-height:1000px;
@@ -209,14 +212,17 @@ th:nth-child(2) {
 /* estilos barra search de auditoria*/ 
 
 .collapsible-header:hover {
-	background-color:#26a69a;
+
+	background-color:beige;
+
 }
+
 
 /*estilos barra search usuarios*/
 
 .marginser{
 
-	margin-left: -220%;
+	margin-left: -193%;
 	width: 80%;
 
 }
@@ -225,65 +231,67 @@ th:nth-child(2) {
 
 /*====== Backgrouns color*/
 .bg-primary {
-    background-color: #2e6da4 !important;
+	background-color: #2e6da4 !important;
 }
+
 .bg-success {
-    background-color: #3f903f !important;
+	background-color: #3f903f !important;
 }
+
 .bg-danger {
-    background-color: #d9534f !important;
+	background-color: #d9534f !important;
 }
+
 .bg-info {
-    background-color: #5bc0de !important;
+	background-color: #5bc0de !important;
 }
 
 
 /*====== Navegación lateral*/
 
-
 .NavLateralDivider{
-    height: 0 !important;
-    width: 95% !important;
-    background-color: transparent;
-    border: none; 
-    border-top: 1px solid rgba(0,0,0,0.9);
-    border-bottom:1px solid rgba(255,255,255,0.08);
-    margin: 0 auto !important;  
+	height: 0 !important;
+	width: 95% !important;
+	background-color: transparent;
+	border: none; 
+	border-top: 1px solid rgba(0,0,0,0.9);
+	border-bottom:1px solid rgba(255,255,255,0.08);
+	margin: 0 auto !important;  
 }
 
 
 .NavLateral-Nav ul li a{
-    height: 45px;
-    line-height: 45px;
-    width: 100%;
-    font-size: 14px;
-    padding-left: 9px;
-    display: block;
-    color: white;
-  
+	height: 45px;
+	line-height: 45px;
+	width: 100%;
+	font-size: 14px;
+	padding-left: 9px;
+	display: block;
+	color: white;
+
 }
 .NavLateral-Nav ul li a i{
-    font-size: 18px;
+	font-size: 18px;
 }
 .NavLateral-Nav ul li a:hover{
-    color: #FFF;  
-    background-color: rgb(45,45,45); 
+	color: #FFF;  
+	background-color: rgb(45,45,45); 
 }
 .NavLateral-CaretDown{
-    float: right;
-    line-height: 45px;
-    margin-right: 9px;
-    font-size: 20px !important;  
+	float: right;
+	line-height: 45px;
+	margin-right: 9px;
+	font-size: 20px !important;  
 }
 .NavLateral-CaretDownRotate{
-    transform: rotate(-180deg);   
+	transform: rotate(-180deg);   
 }
 .NavLateral-Nav > ul > li > ul{
-    background-color: RGB(45,30,30);
-    display: none;
+	background-color: RGB(45,30,30);
+	display: none;
 }
 .NavLateral-Nav > ul > li > ul > li > a{
-    padding-left: 19px;
+	padding-left: 19px;
 }
 
 /*///////////////////////// Estilos home.html /////////////////////////*/
@@ -292,70 +300,70 @@ th:nth-child(2) {
 .tile-icon,
 .tile-caption,
 .tile-link{
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 .tile-icon,
 .tile-caption{
-    height: 110px;
-    position: absolute;
-    top: 0;
-    color: #7683CA;
+	height: 110px;
+	position: absolute;
+	top: 0;
+	color: #7683CA;
 }
 .tile{
-    margin: 5px;
-    display: inline-block;
-    width: 300px;
-    height: 150px;
-    background-color: #fff;
-    border: 1px solid rgba(63,81,181,.3);
-    position: relative;
+	margin: 5px;
+	display: inline-block;
+	width: 300px;
+	height: 150px;
+	background-color: #fff;
+	border: 1px solid rgba(63,81,181,.3);
+	position: relative;
 }
 .tile-icon{
-    left: 0;
-    width: 100px;   
+	left: 0;
+	width: 100px;   
 }
 .tile-icon i{
-    height: 100%;
-    width: 110px;
-    line-height: 110px;
-    font-size: 50px;
+	height: 100%;
+	width: 110px;
+	line-height: 110px;
+	font-size: 50px;
 }
 .tile-caption{
-    right: 0;
-    width: 200px;
+	right: 0;
+	width: 200px;
 }
 .tile-caption span{
-    height: 60px;
-    width: 100%;
-    display: block;
-    line-height: 60px;
-    font-size: 35px;
+	height: 60px;
+	width: 100%;
+	display: block;
+	line-height: 60px;
+	font-size: 35px;
 }
 .tile-caption p{
-    height: 50px;
-    margin: 0;
-    padding: 0;
+	height: 50px;
+	margin: 0;
+	padding: 0;
 }
 .tile-link{
-    color: #fff;
-    background-color: #3F51B5;
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    height: 40px;
-    line-height: 40px;
-    width: 100%;
-    transition: all .3s ease-in-out;
+	color: #fff;
+	background-color: #3F51B5;
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	height: 40px;
+	line-height: 40px;
+	width: 100%;
+	transition: all .3s ease-in-out;
 }
 .tile-link:active,
 .tile-link:focus{
-    outline: none;
+	outline: none;
 }
 
 /*///////////////////////// Estilos login.html /////////////////////////*/
 /*#login{
-	background-image: url(../assets/img/MaterialFontLogin.jpg);
+background-image: url(../assets/img/MaterialFontLogin.jpg);
 }*/
 .container-login{
 	margin: 0;
@@ -371,8 +379,8 @@ th:nth-child(2) {
 .container-login label{
 	color: #333;
 }
-  
-  
+
+
 
 /*---------------------------------------------------------------------------------*/
 
@@ -426,12 +434,12 @@ th:nth-child(2) {
 
 /* css list de auditoria*/
 #myInput {
-	
+
 	width: 13%; 
 	font-size: 12px; 
 	margin-bottom: 5%; 
 
-	
+
 }
 
 #myUL {
@@ -459,7 +467,7 @@ nav ul a:hover{
 	margin-top: 58px;
 	left:80%;
 	height: 100%;
-	
+
 }
 
 .search-wrapper .input-holder {
@@ -473,7 +481,7 @@ nav ul a:hover{
 	transition: all 0.3s ease-in-out;
 }
 .search-wrapper.active .input-holder {
-	
+
 	border-radius: 50px;
 	width:286px;
 	background: rgba(0,0,0,0.5);
@@ -609,6 +617,88 @@ nav ul a:hover{
 	.search-wrapper.active .input-holder {width:200px;}
 }
 
+/* expedientes*/
+.spanmar{
+	margin-left: 74%;
+}
+
+.divchip{
+
+	display: inline-block;
+	margin-left: 10%;
+
+}
+
+.divchip2{
+	width: 140px;
+	height: 65px;
+
+	display: inline-block;
+	margin: 0 auto;
 
 
+}
 
+.mrr{
+	margin-left: 30%;
+}
+
+.marb{
+	margin-left: 89%;
+	margin-bottom: 3%;
+	margin-top: 3%;
+}
+
+.martext{
+
+	margin-left: 50%;
+}
+.divexp{
+	height: 100%;
+
+
+}
+
+.positionbad{
+	margin-right: 2%;
+	position: relative;
+
+}
+.wis{
+	width: 13%;
+	margin-left: 15%;
+	margin-top: -3.6%;
+	margin-bottom: 0%;
+}
+.wis2{
+	width: 23%;
+	margin-left: -18%;
+	margin-top: -3.6%;
+	margin-bottom: 0%;
+}
+
+.edimar{
+	position: relative;
+	left: 44%;
+	z-index: 0;
+}
+
+.edimar2{
+	position: relative;
+	left: 112%;
+	margin-top: 2%;
+	z-index: 0;
+}
+
+.spanmar2{
+
+	margin-left: 80%;
+	color:black;
+	position:rel;
+
+}
+
+.btnplus{
+	margin-left:112%;
+	margin-bottom: -52px;
+}
