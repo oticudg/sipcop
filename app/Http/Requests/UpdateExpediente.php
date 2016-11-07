@@ -26,6 +26,8 @@ class UpdateExpediente extends FormRequest
         return [
         	'tipologia' => 'bail|integer|exists:tipologias,id',
 			'estatus'  => 'bail|integer|exists:estatus,id',
+			'fecha' => 'bail|date|before:tomorrow|
+				date_before_investigados_update',
 			
 			// add_investigados
 			'add_investigados' => 'array',
@@ -37,7 +39,8 @@ class UpdateExpediente extends FormRequest
 				exists:resultados,id',
 			'add_investigados.*.decisorio' => 'bail|required|integer|
 				exists:decisorios,id',
-			'add_investigados.*.fecha' => 'bail|date|before:tomorrow',
+			'add_investigados.*.fecha' => 'bail|date|before:tomorrow|
+			date_after_expediente_update',
 			
 			// edit_investigados	
 			'edit_investigados' => 'array',
@@ -50,5 +53,27 @@ class UpdateExpediente extends FormRequest
 			'edit_investigados.*.resultado' => 'bail|required|integer|
 				exists:resultados,id'	
         ];
+    }
+
+    /**
+     * Get the validator instance for the request.
+     *
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
+    protected function getValidatorInstance()
+    {
+        $validator = parent::getValidatorInstance();
+
+        $validator->sometimes('add_investigados.*.fecha', 
+							  'date_after_expediente:fecha', 
+			function($input){
+            
+            if(isset($input->fecha))
+				return true;
+
+			return false;
+		});
+
+        return $validator;
     }
 }
