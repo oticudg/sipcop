@@ -50,7 +50,7 @@ class ExpedienteController extends Controller
 						->withCount('investigados')
 						->paginate(10);
 
-    	return $expedientes;
+    	return view('files.registered_file')->with(compact('expedientes'));
     }
 
     /**

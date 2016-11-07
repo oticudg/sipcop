@@ -14,114 +14,48 @@
 				<input type="text" name="search" placeholder="Filtrar Busqueda">
 			</div>
 		</div>
+	
+	@foreach($expedientes as $expediente)	
 	 <li class="white">
 				<div class="collapsible-header">
 					<i class="zmdi zmdi-folder-person zmdi-hc-fw"></i> 
-						<span>Expediente #4555</span> 
-							<span class="spanmar">status</span>
+						<span>Expediente #{{$expediente->codigo}}</span> 
+							<span class="spanmar">{{$expediente->estatus}}</span>
 				</div> 
 	  	<div class="collapsible-body">  
 				<div class="divchip">
-s					<h6 class="orange-text">Tipologia</h6>
+					<h6 class="orange-text">Tipologia</h6>
 						<div class="black-text center">
-							Delictivo
+							{{$expediente->tipologia}}
 						</div>
 				</div>
 				<div class="divchip">
 					<h6 class="orange-text">Fecha de Creacion</h6>
 						<div class="black-text center">
-							13/12/2016
+							{{$expediente->fecha_registro}}
 						</div>
 				</div>
+			@if($expediente->fecha_cierre)
 			<div class="divchip">
 					<h6 class="orange-text">Fecha de cierre</h6>
 						<div class=" black-text center">
-							31/12/2016
+							{{$expediente->fecha_cierre}}		
 						</div>
 			</div>
+			@endif
 			<div class="divchip">
 					<h6 class="orange-text">Involucrados</h6>
 						<div class="black-text center">
-							10
+							{{$expediente->investigados_count}}
 						</div>
 			</div>
 			<div class="modal-footer marb">
-				<a class="waves-effect waves-light default btn ">Ver</a>
+				<a href="{{route('expedientes.show',['expediente' => $expediente->id])}}" class="waves-effect waves-light default btn ">Ver</a>
 			</div>
 		</div>
 	</li>
-		<li class="white">
-			<div class="collapsible-header">
-				<i class="zmdi zmdi-folder-person zmdi-hc-fw"></i> Expediente #5445
-			</div>
-			<div class="collapsible-body">
-				<p>Lorem ipsum dolor sit amet.</p>
-			</div>
-		</li>
-		<li class="white">
-			<div class="collapsible-header">
-				<i class="zmdi zmdi-folder-person zmdi-hc-fw"></i> Expediente #6879
-			</div>
-			<div class="collapsible-body">
-				<p>Lorem ipsum dolor sit amet.</p>
-			</div>
-		</li>
-		<li class="white">
-			<div class="collapsible-header">
-				<i class="zmdi zmdi-folder-person zmdi-hc-fw"></i> Expediente #7845
-			</div>
-			<div class="collapsible-body">
-				<p>Lorem ipsum dolor sit amet.</p>
-			</div>
-		</li>
-		<li class="white">
-			<div class="collapsible-header">
-				<i class="zmdi zmdi-folder-person zmdi-hc-fw"></i> Expediente #2536
-			</div>
-			<div class="collapsible-body">
-				<p>Lorem ipsum dolor sit amet.</p>
-			</div>
-		</li>
-		<li class="white">
-			<div class="collapsible-header">
-				<i class="zmdi zmdi-folder-person zmdi-hc-fw"></i> Expediente #4712
-			</div>
-			<div class="collapsible-body">
-				<p>Lorem ipsum dolor sit amet.</p>
-			</div>
-		</li>
-		<li class="white">
-			<div class="collapsible-header">
-				<i class="zmdi zmdi-folder-person zmdi-hc-fw"></i> Expediente #1125
-			</div>
-			<div class="collapsible-body">
-				<p>Lorem ipsum dolor sit amet.</p>
-			</div>
-		</li>
-		<li class="white">
-			<div class="collapsible-header">
-				<i class="zmdi zmdi-folder-person zmdi-hc-fw"></i> Expediente #9966
-			</div>
-			<div class="collapsible-body">
-				<p>Lorem ipsum dolor sit amet.</p>
-			</div>
-		</li>
-		<li class="white">
-			<div class="collapsible-header">
-				<i class="zmdi zmdi-folder-person zmdi-hc-fw"></i> Expediente #3325
-			</div>
-			<div class="collapsible-body">
-				<p>Lorem ipsum dolor sit amet.</p>
-			</div>
-		</li>
-		<li class="white">
-			<div class="collapsible-header">
-				<i class="zmdi zmdi-folder-person zmdi-hc-fw"></i> Expediente #8816
-			</div>
-			<div class="collapsible-body">
-				<p>Lorem ipsum dolor sit amet.</p>
-			</div>
-		</li>
- </ul>
+	@endforeach	
+</ul>	
+	{{$expedientes->links()}}
 </div>
 @endsection
