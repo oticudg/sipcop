@@ -127,7 +127,7 @@ class ExpedienteController extends Controller
 					  ->with('investigados.decisorio') 
 					  ->firstOrFail();
 
-		return $expediente;
+		return view('files.open_file')->with(compact('expediente'));
     }
 
     /**
