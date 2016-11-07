@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Validator;
 use Request;
 use Carbon\Carbon;
 use DB;
+use App\Models\Expediente\Investigado;
+use App\Models\Expediente\Empleado;
 
 class CustomValidationServiceProvider extends ServiceProvider
 {
@@ -36,8 +38,31 @@ class CustomValidationServiceProvider extends ServiceProvider
 				->where('edo_emp','A')
 				->value('cod_empleado');
 			
-			return $empleado;
+			return (bool) $empleado;
 							
+		});
+	
+		Validator::extend('in_expediente', function($attribute, $value){
+			
+			$expediente = Request::route('expediente.id');	
+			
+			return (bool) Investigado::where('id', $value)
+									   ->where('expediente_id', $expediente)
+									   ->value('id');	
+		});
+
+		Validator::extend('empleado_not_expediente', 
+			function($attribute, $value){
+				
+				$expediente = Request::route('expediente.id');	
+				
+				$investigado = Empleado::where('cedula', $value)
+							   ->first()
+							   ->investigaciones()
+							   ->where('expediente_id', $expediente)
+							   ->value('id');	
+
+				return ! (bool) $investigado;
 		});
     }
 
