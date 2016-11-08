@@ -1,5 +1,4 @@
 @extends('layouts.app')
-@include('navs.side')
 @section('content')
 <div class="container">
  <ul id="myUL" class="collapsible popout" data-collapsible="accordion">

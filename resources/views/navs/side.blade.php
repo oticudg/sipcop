@@ -2,7 +2,7 @@
 	<div class="col s12 m4 l3"> 
 		<div id="mySidenav" class="sidenav blue-grey darken-3">
 				<div class=" s12 m4 l3">
-					<img class="imgnav" src="images/img/sipcopdef.png" alt="">
+					<img class="imgnav" src="/images/img/sipcopdef.png" alt="">
 				</div>
 					<div class="NavLateral-Nav">
 						<ul class="full-width">

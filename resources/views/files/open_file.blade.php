@@ -1,5 +1,4 @@
 @extends('layouts.app')
-@include('navs.side')
 @section('content')
 <div id="main">
 <div>

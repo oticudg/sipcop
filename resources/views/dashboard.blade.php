@@ -1,5 +1,4 @@
 @extends('layouts.app')
-@include('navs.side')
 @section('content')
 	<!-- contenedor global-->
 		<div class="row">	
