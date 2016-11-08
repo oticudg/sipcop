@@ -12,7 +12,9 @@
 								<a href="#" class="center"><i class="zmdi zmdi-settings center light-blue-text"></i>Cambiar Contraseña</a>
 							</li>
 							<li>
-								<a href="#" class="center"><i class="zmdi zmdi-power center light-blue-text"></i>Cerrar Sesion</a>
+								<a href="{{ url('/logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();" class="center"><i class="zmdi zmdi-power center light-blue-text"></i>Cerrar Sesion</a>
 							</li>
 						</ul>
 					</li>
@@ -27,4 +29,8 @@
 			</li>
 		</ul>
 	</div>
+	
+	<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+	 {{ csrf_field() }}
+	 </form>
 </nav>
