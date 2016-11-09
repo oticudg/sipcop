@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Expediente extends Model
 {
     use SoftDeletes;
-
+	
 	/**
 	 * The attributes that should be mutated to dates
 	 *
@@ -41,9 +41,16 @@ class Expediente extends Model
 	}
 	
 	/**
-	 * Obtiene los investigado del expediente
+	 * Obtiene los investigados del expediente
 	 */
 	public function investigados(){
 		return $this->hasMany('App\Models\Expediente\Investigado');
+	} 
+	
+	/**
+     * Accesor que genera el codigo del expediente
+     */
+	public function getCodigoAttribute(){
+		return "DSH-PCP/{$this->fecha_registro}-{$this->id}";
 	} 
 }

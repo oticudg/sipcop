@@ -33,7 +33,6 @@ class ExpedienteController extends Controller
 		 */	
 		$columns = [
 			'expedientes.id',
-			'expedientes.codigo',
 			'expedientes.fecha_registro',
 			'expedientes.fecha_cierre',
 			'tipologias.nombre as tipologia',
@@ -78,7 +77,6 @@ class ExpedienteController extends Controller
 				new Carbon($request->fecha):
 				Carbon::now();
 			
-		$expediente->codigo = $request->codigo;
 		$expediente->tipologia_id = $request->tipologia;
 		$expediente->estatu_id = $request->estatus;
 		$expediente->fecha_registro = $date;
@@ -105,7 +103,6 @@ class ExpedienteController extends Controller
 		 */
 		$columns = [
 			'expedientes.id',
-			'expedientes.codigo',
 			'expedientes.fecha_registro',
 			'expedientes.fecha_cierre',
 			'tipologias.nombre as tipologia',
