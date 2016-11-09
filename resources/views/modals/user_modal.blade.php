@@ -1,4 +1,5 @@
 <!-- Modales que se abren, las dejo de ultimo y fuera del main por que pueden originar problemas con el script que hace zindex en la sidenav -->
+
 <div id="modal1" class="modal">
 	<div class="modal-content">
 		<h5 class="center">Modificar Usuario</h5>

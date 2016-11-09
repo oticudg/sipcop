@@ -19,14 +19,14 @@
 				<div class="collapsible-header">
 					<i class="zmdi zmdi-folder-person zmdi-hc-fw"></i> 
 						<span>Expediente #{{$expediente->codigo}}</span> 
-							<span class="spanmar">{{$expediente->estatus}}</span>
+							<span class="spanmar right">{{$expediente->estatus}}</span>
 				</div> 
-	  	<div class="collapsible-body">  
+	  	<div class="collapsible-body center">  
 				<div class="divchip">
 					<h6 class="orange-text">Tipologia</h6>
 						<div class="black-text center">
 							{{$expediente->tipologia}}
-						</div>
+						</div>	
 				</div>
 				<div class="divchip">
 					<h6 class="orange-text">Fecha de Creacion</h6>

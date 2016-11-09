@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 	<!-- contenedor global-->
-		<div class="row">	
+<div class="row">	
 			<article class="col s12">
 				<div class="full-width center-align" style="margin: 40px 0;">
 					<div class="tile hoverable">
@@ -40,5 +40,5 @@
 					</div>				
 			 	</div>  
 			</article>
-		</div>
+</div>
 @endsection

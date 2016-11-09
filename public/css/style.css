@@ -619,14 +619,14 @@ nav ul a:hover{
 
 /* expedientes*/
 .spanmar{
-	margin-left: 74%;
+	font-size: 12px;
 }
 
 .divchip{
-
+	
 	display: inline-block;
-	margin-left: 10%;
-
+	padding: 10px 60px 10px 10px;
+	margin-top: 5%;
 }
 
 .divchip2{
@@ -654,16 +654,12 @@ nav ul a:hover{
 	margin-left: 50%;
 }
 .divexp{
-	height: 100%;
+	height: 690px;
 
 
 }
 
-.positionbad{
-	margin-right: 2%;
-	position: relative;
 
-}
 .wis{
 	width: 13%;
 	margin-left: 15%;
@@ -679,7 +675,7 @@ nav ul a:hover{
 
 .edimar{
 	position: relative;
-	left: 44%;
+	left: 41%;
 	z-index: 0;
 }
 

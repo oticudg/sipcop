@@ -32,7 +32,21 @@
 	 @if(Auth::check())
 			@include("navs.side")
 	 @endif
-	 @yield('content')
+	 
+	 @if(Auth::check())
+	 		
+  			<div id="main">
+				@yield('content')			
+  				
+  			</div> 
+  	 @else
+  	 
+  	 @yield('content') 
+  	  
+  	 @endif
+  
+  	
+  			 
    			 <!-- Scripts -->
 						<script src="/js/sweetalert.min.js"></script>
 						<script src="/js/jquery-2.2.0.min.js"></script>

@@ -1,14 +1,15 @@
 @extends('layouts.app')
 @section('content')
 <div id="main">
-<div>
+
 	<div class="white divexp z-depth-2">
+		
 		<div class="card-panel teal white-text center">Expediente #{{$expediente->codigo}}
 			<a class="btn-floating btn teal lighten-1 edimar tooltipped" data-tooltip="Editar Expediente">
 				<i class="zmdi zmdi-edit"></i>
 			</a>
 		</div>
-		<span class="new badge positionbad">{{$expediente->estatus}}</span>					
+					
 		<div class="mrr">
 			<div class="divchip2 white-text teal center z-depth-1">
 				<h6>Tipologia</h6>
@@ -38,6 +39,13 @@
 				</div>
 			</div>
 			
+			<div class="divchip2 white-text teal center z-depth-1">
+				<h6>Estado</h6>
+				<div class="chip center teal white-text">
+					{{$expediente->estatus}}
+				</div>
+			</div>
+			
 		</div>
 		<div class="input-field col s3 wis">
 			<input type="text" name="search" placeholder="Filtrar Busqueda">
@@ -56,6 +64,7 @@
 									<div class="input-field col s6">
 										<input disabled id="first_name" type="text" value="{{$investigado->empleado->cedula}}" class="validate">
 										<label for="first_name">Cedula</label>
+										
 									</div>
 									<div class="input-field col s6">
 										<input disabled id="last_name" type="text" value="{{$investigado->empleado->apellidos}}" class="validate">
@@ -68,44 +77,38 @@
 										<label for="first_name">Nombres</label>
 									</div>
 									<div class="input-field col s6">
-										<input id="last_name" type="text" value="{{$investigado->empleado->cargo_actual}}" class="validate">
-										<label for="last_name">Cargo</label>
+										<input disabled id="last_name" type="text" value="{{$investigado->empleado->cargo_actual}}" class="validate">
+										<label for="last_name">Cargo en la Investigacion</label>
 									</div>
 								</div>
 								<div class="row">
 									<div class="input-field col s6">
-										<input id="first_name" type="text" value="{{$investigado->empleado->ubicacion_actual}}" class="validate">
+										<input disabled id="first_name" type="text" value="{{$investigado->empleado->ubicacion_actual}}" class="validate">
 										<label for="first_name">Ubicacion</label>
 									</div>
 									<div class="input-field col s6">
-										<input id="last_name" type="text" value="{{$investigado->empleado->relacion_actual}}" class="validate">
+										<input disabled id="last_name" type="text" value="{{$investigado->empleado->relacion_actual}}" class="validate">
 										<label for="last_name">Relacion</label>
 									</div>
 								</div>
 								<div class="row">
 									<div class="input-field col s6">
-										<input id="first_name" type="text" value="{{$investigado->complicidade->nombre}}" class="validate">
+										<input disabled id="first_name" type="text" value="{{$investigado->complicidade->nombre}}" class="validate">
 										<label for="first_name">Complicidad</label>
 									</div>
 									<div class="input-field col s6">
-										<input id="last_name" type="text" value="{{$investigado->resultado->nombre}}" class="validate">
+										<input disabled id="last_name" type="text" value="{{$investigado->resultado->nombre}}" class="validate">
 										<label for="last_name">Resultado</label>
 									</div>
 								</div>
 								<div class="row">
 									<div class="input-field col s6">
-										<input id="first_name" type="text" value="{{$investigado->decisorio->nombre}}" class="validate">
+										<input disabled id="first_name" type="text" value="{{$investigado->decisorio->nombre}}" class="validate">
 										<label for="first_name">Decisorio</label>
 									</div>
 									<div class="input-field col s6">
-										<input id="last_name" type="text" value="{{$investigado->fecha}}" class="validate">
+										<input disabled id="last_name" type="text" value="{{$investigado->fecha}}" class="validate">
 										<label for="last_name">Fecha de adicion</label>
-									</div>
-								</div>
-								<div class="row">
-									<div class="input-field col s6">
-										<input id="status" type="text" value="Bajo investigacion" class="validate">
-										<label for="status">Estado</label>
 									</div>
 								</div>
 							</form>
@@ -116,6 +119,5 @@
 			</ul>
 		</div>
 	</div>
-</div>
 </div>
 @endsection
