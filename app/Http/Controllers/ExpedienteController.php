@@ -35,6 +35,7 @@ class ExpedienteController extends Controller
 			'expedientes.id',
 			'expedientes.fecha_registro',
 			'expedientes.fecha_cierre',
+			'expedientes.resumen',
 			'tipologias.nombre as tipologia',
 			'estatus.nombre as estatus'
 		];
@@ -80,6 +81,11 @@ class ExpedienteController extends Controller
 		$expediente->tipologia_id = $request->tipologia;
 		$expediente->estatu_id = $request->estatus;
 		$expediente->fecha_registro = $date;
+		
+		if($request->has('resumen')){
+			$expediente->resumen = $request->resumen;
+		}
+
 		$expediente->user()->associate($request->user());
 		$expediente->save();
 			
@@ -105,6 +111,7 @@ class ExpedienteController extends Controller
 			'expedientes.id',
 			'expedientes.fecha_registro',
 			'expedientes.fecha_cierre',
+			'expedientes.resumen',
 			'tipologias.nombre as tipologia',
 			'estatus.nombre as estatus',
 		];
@@ -170,6 +177,10 @@ class ExpedienteController extends Controller
 		
 		if($request->has('estatus')){	
 			$expediente->estatu_id = $request->estatus;
+		}
+		
+		if($request->has('resumen')){
+			$expediente->resumen = $request->resumen;
 		}
 		
 		$expediente->save();
