@@ -29,7 +29,6 @@ class EmpleadoRepository
 			$empleado->cargo_actual = $empleado_eadmon->cargo;
 			$empleado->ubicacion_actual = $empleado_eadmon->ubicacion;
 			$empleado->relacion_actual = $empleado_eadmon->relacion;
-			$empleado->telefono = "0261-78888";
 			$empleado->save();
 		}
 
