@@ -75,18 +75,18 @@
 										<label for="first_name">Nombres</label>
 									</div>
 									<div class="input-field col s6">
-										<input disabled id="last_name" type="text" value="{{$investigado->empleado->cargo_actual}}" class="validate">
-										<label for="last_name">Cargo en la Investigacion</label>
+										<input id="last_name" type="text" value="{{$investigado->cargo}}" class="validate">
+										<label for="last_name">Cargo en la investigacion</label>
 									</div>
 								</div>
 								<div class="row">
 									<div class="input-field col s6">
-										<input disabled id="first_name" type="text" value="{{$investigado->empleado->ubicacion_actual}}" class="validate">
-										<label for="first_name">Ubicacion</label>
+										<input id="first_name" type="text" value="{{$investigado->ubicacion}}" class="validate">
+										<label for="first_name">Ubicacion en la investigacion</label>
 									</div>
 									<div class="input-field col s6">
-										<input disabled id="last_name" type="text" value="{{$investigado->empleado->relacion_actual}}" class="validate">
-										<label for="last_name">Relacion</label>
+										<input id="last_name" type="text" value="{{$investigado->relacion}}" class="validate">
+										<label for="last_name">Relacion en la investigacion</label>
 									</div>
 								</div>
 								<div class="row">
