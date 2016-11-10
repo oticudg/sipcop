@@ -14,6 +14,8 @@
 
 	Route::get('dashboard', 'HomeController@dashboard');
 	
+	Route::get('empleado/search', 'EmpleadoController@searchEmpleado');
+	
 	Route::resource('expedientes', 'ExpedienteController');
 	Auth::routes();
 	
