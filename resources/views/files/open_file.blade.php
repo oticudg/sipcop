@@ -1,7 +1,5 @@
 @extends('layouts.app')
 @section('content')
-<div id="main">
-
 	<div class="white divexp z-depth-2">
 		
 		<div class="card-panel teal white-text center">Expediente #{{$expediente->codigo}}
@@ -119,5 +117,4 @@
 			</ul>
 		</div>
 	</div>
-</div>
 @endsection

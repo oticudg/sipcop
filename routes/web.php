@@ -17,4 +17,8 @@
 	Route::resource('expedientes', 'ExpedienteController');
 	Auth::routes();
 	
+	Route::get('files', function () {
+		return view('files.create_file');
+	});
+	
 	
