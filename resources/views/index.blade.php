@@ -5,11 +5,11 @@
 		<div class="container">
 				<h3 class="header center orange-text">Bienvenido a SIPCOP</h3>
 					<div class="row center">
-						<h5 class="header orange-text col s12 light">Una aplicacion desarrollada para la seguridad.</h5>
+						<h5 class="header orange-text col s12 light">Sistema de prevencion y control de perdidas.</h5>
 					</div>
 					<br>
 					<div class="row center">
-						<a href="#modal1" type="submit" class="btn-large z-depth-1 waves-effect waves-teal cyan modal-trigger tooltipped" data-activates="slide-out" data-tooltip="Introduzca sus Datos">
+						<a href="#modal1" type="submit" class="btn-large waves-effect waves-light cyan darken-1 modal-trigger 		tooltipped" data-activates="slide-out" data-tooltip="Introduzca sus Datos">
 							<span>Iniciar Sesion</span> 
 							<span class="zmdi zmdi-assignment-account"></span>
 						</a>
@@ -18,7 +18,6 @@
 		</div>
 	</div>
 	<div class="container">
-	 <div class="section">
 		<!--   Icon Section   -->
 		<div class="row">
 			<div class="col s12 m4">
@@ -61,7 +60,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
 </div>
 @endsection
 
