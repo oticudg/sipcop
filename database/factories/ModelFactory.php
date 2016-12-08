@@ -42,7 +42,6 @@ $factory->define(App\Models\Expediente\Expediente::class,
 	function(Faker\Generator $faker){
 		
 		return [
-			'codigo' => $faker->unique()->name,
 			'user_id' => function(){
 				return factory(App\User::class)->create()->id;
 			},
@@ -54,7 +53,8 @@ $factory->define(App\Models\Expediente\Expediente::class,
 				return factory(App\Models\Expediente\Estatu::class)
 						->create()->id;
 			},
-			'fecha_registro' => Carbon\Carbon::now()
+			'fecha_registro' => Carbon\Carbon::now(),
+			'resumen' => $faker->text
 		];
 });
 
