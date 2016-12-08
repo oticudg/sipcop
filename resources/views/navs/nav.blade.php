@@ -9,8 +9,9 @@
 						<a href="#">Usuario</a>
 						<ul>
 							<li>	
-								<a href="#" class="center"><i class="zmdi zmdi-settings center light-blue-text"></i>Cambiar Contraseña</a>
+								<a href="#modal3" class="center modal-trigger"><i class="zmdi zmdi-settings center light-blue-text"></i>Cambiar Contraseña</a>
 							</li>
+							<li class="divider black"></li>
 							<li>
 								<a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();
@@ -29,8 +30,9 @@
 			</li>
 		</ul>
 	</div>
-	
 	<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
 	 {{ csrf_field() }}
 	 </form>
 </nav>
+
+

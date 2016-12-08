@@ -1,54 +1,48 @@
-<!-- Modales que se abren, las dejo de ultimo y fuera del main por que pueden originar problemas con el script que hace zindex en la sidenav -->
-
-<div id="modal1" class="modal">
+{{-- Modal estructura --}} 
+<div id="modal3" class="modal modal-fixed-footer modalback">
 	<div class="modal-content">
-		<h5 class="center">Modificar Usuario</h5>
-		<div class="row">
-			<form class="col s12">
-				<div class="row">
-					<div class="input-field col s6">
-						<input placeholder="Usuario" value="Alvin" id="first_name" type="text" class="validate">
-						<label for="first_name">Usuario</label>
-					</div>
-					<div class="input-field col s6">
-						<input type="password" value="asdasd"placeholder="Usuario" value="Alvin" id="first_name" type="text" class="validate">
-						<label for="first_name">Contraseña</label>
-					</div>
+		<div class="container-login center-align">
+			<div style="">
+				<h1 class="light-blue-text"> 
+					<i class="zmdi zmdi-settings animated animatedicon pulse"></i> 
+				</h1>
+				<h5 class="orange-text">Cambio de Contraseña</h5>   
+			</div>
+			<form action="" method="post">
+			<div class="row">
+				<div class="input-field col s6">
+					<input id="email" type="email" class="validate" name="email" value="" required autofocus>
+					<label for="email">
+						<i class="zmdi zmdi-account"></i>&nbsp; Email
+					</label>
 				</div>
-				<div class="row">
-					<div class="input-field col s6">
-						<input type="password" value="asdasd"placeholder="Usuario" value="Alvin" id="first_name" type="text" class="validate">
-						<label for="first_name">Repetir Contraseña</label>
-					</div>
-					<div class="input-field col s6">
-						<select>
-							<option value="" disabled selected>1er Rol</option>
-							<option value="1">1er Rol</option>
-							<option value="2">2do Rol</option>
-							<option value="3">3er Rol</option>
-						</select>
-						<label>Seleccione un Rol</label>
-					</div>
+				@if ($errors->has('email'))
+				<span class="help-block">
+					<strong>{{ $errors->first('email') }}</strong>
+				</span>
+				@endif
+				<div class="input-field col s6">
+					<input id="password" name="password" type="password" class="validate">
+					<label for="password"><i class="zmdi zmdi-lock"></i>&nbsp; Contraseña Actual</label>
 				</div>
-				<div class="row">
-					<div class="input-field col s6">
-						<select>
-							<option value="" disabled selected>1er Permiso</option>
-							<option value="1">1er Permiso</option>
-							<option value="2">2do Permiso</option>
-							<option value="3">3er Permiso</option>
-						</select>
-						<label>Seleccione los Permisos</label>
-					</div>
-					<div class="input-field col s6">
-						<input id="email" type="email" class="validate">
-						<label for="email">Email</label>
-					</div>
+				<div class="input-field col s6">
+					<input id="password2" name="password" type="password" class="validate">
+					<label for="password2"><i class="zmdi zmdi-lock"></i>&nbsp; Nueva Contraseña</label>
 				</div>
+				<div class="input-field col s6">
+					<input id="password3" name="password" type="password" class="validate">
+					<label for="password3"><i class="zmdi zmdi-lock"></i>&nbsp; Confirme Contraseña</label>
+				</div>
+				@if ($errors->has('password'))
+				<span class="help-block">
+					<strong>{{ $errors->first('password') }}</strong>
+				</span>
+				@endif	
+			</div>
+				<button id="btnsac" class="waves-effect waves-teal cyan btn z-depth-1 tooltipped" data-tooltip="Guardar Cambios">Guardar &nbsp; 
+					<i class="zmdi zmdi-mail-send"></i>
+				</button>
 			</form>
 		</div>
 	</div>
-	<div class="modal-footer">
-		<a class="waves-effect waves-light btn-flat"><i class="zmdi zmdi-mail-send right"></i> Guardar</a>
-		<a href="#!" class="modal-action modal-close btn-flat waves-effect waves-green"><i class="zmdi zmdi-close right"></i> Cerrar</a>
-	</div>
+</div>

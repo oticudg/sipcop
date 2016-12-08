@@ -13,18 +13,16 @@
 			</div>
 			<form action="{{ url('/login') }}" method="post">
 				{{ csrf_field() }}
-				<div class="input-field {{ $errors->has('email') ? ' has-error' : '' }}">
-					<input id="email" type="email" class="form-control validate" name="email" value="{{ old('email') }}" required autofocus>
+			<div class="row">
+				<div class="input-field col s6 push-s3 {{ $errors->has('email') ? ' has-error' : '' }}">
+					<input id="email" type="email" class="validate" name="email" value="{{ old('email') }}" required autofocus>
 					<label for="email">
 						<i class="zmdi zmdi-account"></i>&nbsp; Email
 					</label>
 				</div>
-				@if ($errors->has('email'))
-				<span class="help-block">
-					<strong>{{ $errors->first('email') }}</strong>
-				</span>
-				@endif
-				<div class="input-field {{ $errors->has('password') ? ' has-error' : '' }}">
+			</div>	
+			<div class="row">	
+				<div class="input-field col s6 push-s3 {{ $errors->has('password') ? ' has-error' : '' }}">
 					<input id="password" name="password" type="password" class="validate">
 					<label for="password"><i class="zmdi zmdi-lock"></i>&nbsp; Contraseña</label>
 				</div>
@@ -33,6 +31,14 @@
 					<strong>{{ $errors->first('password') }}</strong>
 				</span>
 				@endif
+			</div>
+			<div class="row">
+				@if ($errors->has('email'))
+				<span class="help-block">
+					<strong>{{ $errors->first('email') }}</strong>
+				</span>
+				@endif	
+			</div>		
 				<button class="waves-effect waves-teal cyan btn z-depth-1 tooltipped" data-tooltip="Presione para ingresar">Ingresar &nbsp; 
 					<i class="zmdi zmdi-mail-send"></i>
 				</button>

@@ -1,6 +1,5 @@
+/* funcion de las caret o flechitas en la sidenav*/
 $(document).ready(function(){
-
-
 	$('.NavLateral-DropDown').on('click', function(e){
 		e.preventDefault();
 		var DropMenu=$(this).next('ul');
@@ -11,40 +10,83 @@ $(document).ready(function(){
 		}else{
 			CaretDown.addClass('NavLateral-CaretDownRotate');    
 		}
-
-	});
-
-	$('.tooltipped').tooltip({delay: 50});
-	$('.ShowHideMenu').on('click', function(){
-		var MobileMenu=$('.NavLateral');
-		if(MobileMenu.css('opacity')==="0"){
-			MobileMenu.addClass('Show-menu');   
-		}else{
-			MobileMenu.removeClass('Show-menu'); 
-		}   
-	}); 
-	$('.btn-ExitSystem').on('click', function(e){
-		e.preventDefault();
-		swal({ 
-			title: "Desea salir de la Aplicacion?",   
-			text: "La sesion sera cerrada",   
-			type: "warning",   
-			showCancelButton: true,   
-			confirmButtonColor: "#DD6B55",   
-			confirmButtonText: "Si",
-			animation: "slide-from-top",   
-			closeOnConfirm: false,
-			cancelButtonText: "Cancelar"
-		}, function(){   
-			window.location='index.html'; 
-		});
-	});     
+	});   
 });
-
-
 /* sweet alert script */
-function sweetalertEvent(){
-
+/*alerta de salir del sistema*/
+function sweetalertEventLogOut(){
+	swal({   
+		title: "Esta seguro?",   
+		text: "Usted esta a punto de salir del sistema!",   
+		type: "warning",  
+		showCancelButton: true,   
+		confirmButtonColor: "#DD6B55",   
+		confirmButtonText: "Si, salir!",   
+		cancelButtonText: "No, cancelar!",   
+		closeOnConfirm: false,   
+		closeOnCancel: false }, 
+		 function(isConfirm){   
+		if (isConfirm) {     
+			swal("Eliminado!", "Usted decidio salir.", "success");   } 
+		else {    
+			swal("Cancelado", "La accion ha sido cancelada", "error");   } });
+}
+/*alerta de crear un expediente*/
+function sweetalertEventCreateFile(){
+	swal({   
+		title: "Esta seguro?",   
+		text: "Usted esta a punto de crear un expediente!",   
+		type: "warning",  
+		showCancelButton: true,   
+		confirmButtonColor: "#DD6B55",   
+		confirmButtonText: "Si, crearlo!",   
+		cancelButtonText: "No, cancelar!",   
+		closeOnConfirm: false,   
+		closeOnCancel: false }, 
+		 function(isConfirm){   
+		if (isConfirm) {     
+			swal("Eliminado!", "El usuario ha sido creado.", "success");   } 
+		else {    
+			swal("Cancelado", "La accion ha sido cancelada", "error");   } });
+}
+/*alerta de crear un usuario*/
+function sweetalertEventCreateUser(){
+	swal({   
+		title: "Esta seguro?",   
+		text: "Usted esta a punto de Crear un usuario!",   
+		type: "warning",  
+		showCancelButton: true,   
+		confirmButtonColor: "#DD6B55",   
+		confirmButtonText: "Si, crearlo!",   
+		cancelButtonText: "No, cancelar!",   
+		closeOnConfirm: false,   
+		closeOnCancel: false }, 
+		 function(isConfirm){   
+		if (isConfirm) {     
+			swal("Eliminado!", "El usuario ha sido creado.", "success");   } 
+		else {    
+			swal("Cancelado", "La accion ha sido cancelada", "error");   } });
+}
+/*guardar cambios en modificacion de usuario propio barra de navegacion top*/
+function sweetalertEventSaveUserChanges(){
+	swal({   
+		title: "Esta seguro?",   
+		text: "Usted esta seguro de guardar cambios?!",   
+		type: "warning",  
+		showCancelButton: true,   
+		confirmButtonColor: "#DD6B55",   
+		confirmButtonText: "Si, guardar!",   
+		cancelButtonText: "No, cancelar!",   
+		closeOnConfirm: false,   
+		closeOnCancel: false }, 
+		 function(isConfirm){   
+		if (isConfirm) {     
+			swal("Eliminado!", "Sus cambios fueron guardados.", "success");   } 
+		else {    
+			swal("Cancelado", "La accion ha sido cancelada", "error");   } });
+}
+/*alert de eliminar usuario*/
+function sweetalertEventUserDel(){
 	swal({   
 		title: "Esta seguro?",   
 		text: "Usted esta a punto de eliminar un usuario!",   
@@ -60,38 +102,52 @@ function sweetalertEvent(){
 			swal("Eliminado!", "El usuario ha sido eliminado.", "success");   } 
 		else {    
 			swal("Cancelado", "La accion ha sido cancelada", "error");   } });
-
 }
-
+/*alert de bloquear usuario*/
+function sweetalertEventUserBlock(){
+	swal({   
+		title: "Esta seguro?",   
+		text: "Usted esta a punto de bloquear un usuario!",   
+		type: "warning",  
+		showCancelButton: true,   
+		confirmButtonColor: "#DD6B55",   
+		confirmButtonText: "Si, bloquearlo!",   
+		cancelButtonText: "No, cancelar!",   
+		closeOnConfirm: false,   
+		closeOnCancel: false }, 
+		 function(isConfirm){   
+		if (isConfirm) {     
+			swal("Eliminado!", "El usuario ha sido bloqueado.", "success");   } 
+		else {    
+			swal("Cancelado", "La accion ha sido cancelada", "error");   } });
+}
 /* funciones de abrir y cerrar sidenav */
 function openNav(x) {
 	x.classList.toggle("change");
-	document.getElementById("mySidenav").style.width = "250px";
-
-	document.getElementById("main").style.marginLeft = "250px";
+	document.getElementById("mySidenav").style.width = "200px";
+	document.getElementById("main").style.marginLeft = "200px";
 	document.getElementById("main").style.zIndex = "-1";
 	document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-
-
-
 }
-
 function closeNav() {
 	document.getElementById("mySidenav").style.width = "0";
 	document.getElementById("main").style.marginLeft = "0";
-	document.body.style.backgroundColor = "aliceblue";
+	document.body.style.backgroundColor = "white";
 	document.getElementById("main").style.zIndex = "0";
 }
+/* funcion abre modal */
 $(document).ready(function(){
 	// the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
 	$('.modal-trigger').leanModal();
-
+	
 });
-
+/*funcion para desplegar un select en materialize*/
 $(document).ready(function() {
-
 	$('select').material_select();
+
 });
+
+
 
 
 
