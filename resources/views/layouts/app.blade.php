@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="sipcop">
 	<head>
    	  <meta charset="utf-8">
   	  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,7 +44,8 @@
    			 <!-- Scripts -->   
 	 				    <script src="/js/jquery-2.2.0.min.js"></script>
 						<script src="/js/materialize.min.js"></script>
-						<script>window.jQuery || document.write('<script src="js/jquery-2.2.0.min.js"><\/script>')</script>
+						<script type="text/javascript" src="/js/angular.min.js"></script>
+						<script type="text/javascript" src="/js/controllers/expediente/register.js"></script>
 						<script src="/js/main.js"></script>
 					    <script src="/js/sweetalert.min.js"></script>
 	  @yield('script')

@@ -121,6 +121,25 @@ function sweetalertEventUserBlock(){
 		else {    
 			swal("Cancelado", "La accion ha sido cancelada", "error");   } });
 }
+
+/*alert de bloquear usuario*/
+function customSweetalertValidate(title, text, type, config, callback){
+	swal(
+		{   
+			title: title || "Esta seguro?",   
+			text: text || "Usted esta a punto de bloquear un usuario!",   
+			type: type || "warning",  
+			showCancelButton: true,   
+			confirmButtonColor: "#00ACC1",   
+			confirmButtonText: config.button.success || false,   
+			cancelButtonText: config.button.cancel || false,   
+			closeOnConfirm: false,   
+			closeOnCancel: false 
+		}, 
+		callback	
+	);
+}
+
 /* funciones de abrir y cerrar sidenav */
 function openNav(x) {
 	x.classList.toggle("change");
@@ -147,8 +166,7 @@ $(document).ready(function() {
 
 });
 
-
-
+var app = angular.module('sipcop', ['expediente']);
 
 
 

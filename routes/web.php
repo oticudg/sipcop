@@ -12,7 +12,7 @@
 	/* ruta index*/
 	Route::get('/', 'HomeController@index');
 	Route::get('dashboard', 'HomeController@dashboard');
-	Route::get('empleado/search', 'EmpleadoController@searchEmpleado');
+	Route::post('empleado/search', 'EmpleadoController@searchEmpleado');
 	Route::resource('expedientes', 'ExpedienteController');
 	Auth::routes();	
 	Route::get('files', function () {
