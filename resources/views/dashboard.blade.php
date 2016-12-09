@@ -42,7 +42,7 @@
 							<i class="zmdi zmdi-account-circle animated animatedicon pulse"></i>
 						</div>
 						<div class="tile-caption">
-							<span class="center-align orange-text">6</span>
+							<span class="center-align orange-text">{{$usuarios}}</span>
 							<p class="center-align black-text">Usuarios</p>   
 						</div>
 						<a href="#" class="tile-link waves-effect waves-light cyan darken-1">Ver detalles &nbsp; 

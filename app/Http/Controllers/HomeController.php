@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Expediente\Expediente;
 use App\Models\Expediente\Investigado;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -36,7 +37,8 @@ class HomeController extends Controller
     {
 		$expedientes = Expediente::count();
 		$investigados = Investigado::count();
+        $usuarios = User::count();
 
-        return view('dashboard')->with(compact('expedientes', 'investigados'));
+        return view('dashboard')->with(compact('expedientes', 'investigados', 'usuarios'));
     }
 }

@@ -26,7 +26,7 @@ class DeleteColumnCodigoOnExpedientes extends Migration
     public function down()
     {
         Schema::table('expedientes', function (Blueprint $table) {
-           	$table->stirng('codigo')->unique();
+           	$table->string('codigo')->unique()->nullable();
         });
     }
 }

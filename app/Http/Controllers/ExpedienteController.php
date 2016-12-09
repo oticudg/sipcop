@@ -10,6 +10,11 @@ use App\Http\Requests\UpdateExpediente;
 use App\Models\Expediente\Expediente;
 use App\Repositories\InvestigadoRepository;
 use Carbon\Carbon;
+use App\Models\Expediente\Tipologia;
+use App\Models\Expediente\Estatu;
+use App\Models\Expediente\Decisorio;
+Use App\Models\Expediente\Complicidade;
+use App\Models\Expediente\Resultado;
 
 class ExpedienteController extends Controller
 {
@@ -60,7 +65,15 @@ class ExpedienteController extends Controller
      */
     public function create()
     {
-        //
+    	$tipologias = Tipologia::get();
+    	$estatus = Estatu::get();
+    	$complicidades = Complicidade::get();
+    	$decisorios = Decisorio::get();
+    	$resultados = Resultado::get();
+
+    	//dd($tipologias);
+
+        return view('files.create_file')->with(compact('tipologias', 'estatus', 'complicidades', 'decisorios', 'resultados'));
     }
 
     /**
