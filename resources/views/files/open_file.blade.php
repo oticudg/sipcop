@@ -72,17 +72,17 @@
 										<label for="innom">Nombres</label>
 									</div>
 									<div class="input-field col s6">
-										<input id="ininv" type="text" value="{{$investigado->cargo}}" class="validate">
+										<input disabled id="ininv" type="text" value="{{$investigado->cargo}}" class="validate">
 										<label for="ininv">Cargo en la investigacion</label>
 									</div>
 								</div>
 								<div class="row">
 									<div class="input-field col s6">
-										<input id="inubi" type="text" value="{{$investigado->ubicacion}}" class="validate">
+										<input disabled id="inubi" type="text" value="{{$investigado->ubicacion}}" class="validate">
 										<label for="inubi">Ubicacion en la investigacion</label>
 									</div>
 									<div class="input-field col s6">
-										<input id="ininv" type="text" value="{{$investigado->relacion}}" class="validate">
+										<input disabled id="ininv" type="text" value="{{$investigado->relacion}}" class="validate">
 										<label for="ininv">Relacion en la investigacion</label>
 									</div>
 								</div>
@@ -102,7 +102,7 @@
 										<label for="indec">Decisorio</label>
 									</div>
 									<div class="input-field col s6">
-										<input id="infec" type="text" placeholder="asda" value="{{$investigado->fecha}}" class="validate">
+										<input disabled id="infec" type="text" placeholder="asda" value="{{$investigado->fecha}}" class="validate">
 										<label for="infe">Fecha de adicion</label>
 									</div>
 								</div>
@@ -121,5 +121,16 @@
 				<li class="waves-effect"><a href="#!">5</a></li>
 				<li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
 			</ul>
+			<div class="row">
+				<form class="">
+					<div class="">
+						<div class="input-field push-s2 col s8">
+							<i class="material-icons prefix">info_outline</i>
+							<textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+							<label for="icon_prefix2">Resumen</label>
+						</div>
+					</div>
+				</form>
+			</div>
 		</div>
 @endsection
