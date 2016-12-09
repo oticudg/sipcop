@@ -2,9 +2,10 @@
 @section('content')
 <div class="card-panel cyan darken-1 white-text marexp center z-depth-1">Creacion de Expediente <i class="zmdi zmdi-file-plus"></i></div>
 	<div class="white" ng-controller="registerCtr">
-		<div class="">
-			<div class="left mitad1">
-				<div class="card-panel col s6 cyan white-text center">Datos de Expediente <i class="zmdi zmdi-search-in-file"></i></div>
+		<div>
+		  <div class="left mitad1">
+				<div class="card-panel z-depth-1 col s6 cyan white-text center">Datos de Expediente <i class="zmdi zmdi-search-in-file"></i></div>
+			  <div class="card-content white contentcard z-depth-1">
 					<div class="row">
 						<div class="input-field col s3">
 							<select ng-model="data.tipologia">
@@ -35,42 +36,45 @@
 						</div>
 					</form>
 				</div>
-			</div>
+			  </div>
+	   	  </div>	
 
 			<div class="right mitad2" ng-cloak>
-				<div class="card-panel col s6 cyan white-text center">Inclusion de Involucrados <i class="zmdi zmdi-account-add"></i></div>
+				<div class="card-panel z-depth-1 col s6 cyan white-text center">Inclusion de Involucrados <i class="zmdi zmdi-account-add"></i></div>
+				<div class="card-content white contentcard z-depth-1">
 				<div class="row">
 					<form ng-submit="empleadoSearch()">
-						<div class="input-field col s3">
-							<input type="text" name="search" autocomplete="off" ng-model="cedula" placeholder="Cedula Involucrado">
+						<div class="input-field col s4">
+							<i class="material-icons prefix">search</i>
+							<input type="text" name="search" autocomplete="off" ng-model="cedula" class="validate" placeholder="Cedula Involucrado">
 						</div>
 					</form>
 					<div ng-show="status">
-						<div class="input-field col s3">
-							<input  id="first_name2" type="text" class="validate" ng-model="empleado.nombres">
-							<label class="active" for="first_name2">Nombres</label>
+						<div class="input-field col s4">
+							<input disabled id="firstn" type="text" placeholder="Nombres" class="validate" ng-model="empleado.nombres">
+							<label class="active" for="firstn">Nombres</label>
 						</div>
-						<div class="input-field col s3">
-							<input id="first_name2" type="text" class="validate" ng-model="empleado.apellidos">
-							<label class="active" for="first_name2">Apellidos</label>
+						<div class="input-field col s4">
+							<input disabled id="secondn" type="text" placeholder="Apellidos" class="validate" ng-model="empleado.apellidos">
+							<label class="active" for="secondn">Apellidos</label>
 						</div>
-						<div class="input-field col s3">
-							<input id="first_name2" type="text" class="validate" ng-model="empleado.cargo">
-							<label class="active" for="first_name2">Cargo</label>
+						<div class="input-field col s4">
+							<input disabled id="position" type="text" placeholder="Cargo" class="validate" ng-model="empleado.cargo">
+							<label class="active" for="position">Cargo</label>
 						</div>
-						<div class="input-field col s3">
-							<input id="first_name2" type="text" class="validate" ng-model="empleado.ubicacion">
-							<label class="active" for="first_name2">Ubicacion</label>
+						<div class="input-field col s4">
+							<input disabled id="location" type="text" placeholder="Unicacion" class="validate" ng-model="empleado.ubicacion">
+							<label class="active" for="location">Ubicacion</label>
 						</div>
-						<div class="input-field col s3">
-							<input id="first_name2" type="text" class="validate" ng-model="empleado.relacion">
-							<label class="active" for="first_name2">Relacion Laboral</label>
+						<div class="input-field col s4">
+							<input disabled id="relationship" type="text" placeholder="Relacion" class="validate" ng-model="empleado.relacion">
+							<label class="active" for="relationship">Relacion Laboral</label>
 						</div>
-						<div class="input-field col s3">
-							<input value="Alvin" id="first_name2" type="text" class="validate">
-							<label class="active" for="first_name2">Telefono</label>
+						<div class="input-field col s4">
+							<input value="" id="phone" type="text" placeholder="Introduzca un telefono" class="validate">
+							<label class="active" for="phone">Telefono</label>
 						</div>
-						<div class="input-field col s3">
+						<div class="input-field col s4">
 							<select ng-model="empleado.complicidad">
 								<option value="" disabled selected>Complicidad</option>
 								@foreach($complicidades as $complicidad)
@@ -79,7 +83,7 @@
 							</select>
 							<label>Complicidad</label>
 						</div>
-						<div class="input-field col s3">
+						<div class="input-field col s4">
 							<select ng-model="empleado.resultado">
 								<option value="" disabled selected>Resultado</option>
 								@foreach($resultados as $resultado)
@@ -88,7 +92,7 @@
 							</select>
 							<label>Resultado</label>
 						</div>
-						<div class="input-field col s3">
+						<div class="input-field col s4">
 							<select ng-model="empleado.decisorio">
 								<option value="" disabled selected>Decisorio</option>
 								@foreach($decisorios as $decisorio)
@@ -97,8 +101,8 @@
 							</select>
 							<label>Decisorio</label>
 						</div>
-						<div class="input-field col s3">
-							<a class="waves-effect waves-light cyan darken-1 btn btnaddex" ng-click="agregar()">Agregar</a>
+						<div class="input-field col s4">
+							<a class="waves-effect waves-light cyan darken-1 btn" ng-click="agregar()">Agregar</a>
 						</div>
 					</div>
 
@@ -124,10 +128,14 @@
 						</div>	
 					</div>
 				</div>
-				<div class="posag">
+			</div>
+				<!--<div class="posag">
 					<a class="waves-effect waves-light cyan darken-1 btn" ng-click="guardar()">Guardar</a>
-				</div>		
+				</div>-->		
 		</div>	
+			<div class="posag">
+				<a class="waves-effect waves-light cyan darken-1 btn" ng-click="guardar()">Guardar</a>
+			</div>
 	</div>	
 </div>
 @endsection
