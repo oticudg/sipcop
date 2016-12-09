@@ -45,6 +45,7 @@
 	 				    <script src="/js/jquery-2.2.0.min.js"></script>
 						<script src="/js/materialize.min.js"></script>
 						<script type="text/javascript" src="/js/angular.min.js"></script>
+						<script type="text/javascript" src="/js/dirPagination.js"></script>
 						<script type="text/javascript" src="/js/controllers/expediente/register.js"></script>
 						<script src="/js/main.js"></script>
 					    <script src="/js/sweetalert.min.js"></script>

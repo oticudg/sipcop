@@ -166,7 +166,7 @@ $(document).ready(function() {
 
 });
 
-var app = angular.module('sipcop', ['expediente']);
+var app = angular.module('sipcop', ['expediente', 'angularUtils.directives.dirPagination']);
 
 
 

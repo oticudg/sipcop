@@ -14,6 +14,9 @@ angular.module('expediente', [])
 			.success(function(response){
 				$scope.empleado = response;
 				$scope.status = true
+			})
+			.error(function(response){
+				swal('Error', response.cedula, 'error');
 			});
 	}
 

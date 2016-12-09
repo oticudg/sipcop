@@ -107,7 +107,7 @@
 					</div>
 
 					<div class="row col s12 center">	
-						<div class="col s4 marchip" ng-repeat="investigado in investigados">	
+						<div class="col s4 marchip" dir-paginate="investigado in investigados | itemsPerPage:9">	
 							<div class="chip cyan white-text hoverable">
 								<span class="tooltipped" data-position="left" data-tooltip="@{{investigado.nombre}}">CI: @{{investigado.cedula}}</span>
 								<i class="material-icons" ng-click="deleteInvestigado($index)">close</i>
@@ -116,26 +116,17 @@
 					</div>
 					<div class="row col s12">
 						<div class="col s12 center">
-							<ul class="pagination">
-								<li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-								<li class="active"><a href="#!">1</a></li>
-								<li class="waves-effect"><a href="#!">2</a></li>
-								<li class="waves-effect"><a href="#!">3</a></li>
-								<li class="waves-effect"><a href="#!">4</a></li>
-								<li class="waves-effect"><a href="#!">5</a></li>
-								<li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-							</ul>
+							<dir-pagination-controls template-url="/templates/dirPagination.tpl.html"></dir-pagination-controls>
+
 						</div>	
 					</div>
 				</div>
 			</div>
-				<!--<div class="posag">
-					<a class="waves-effect waves-light cyan darken-1 btn" ng-click="guardar()">Guardar</a>
-				</div>-->		
+				
 		</div>	
-			<div class="posag">
-				<a class="waves-effect waves-light cyan darken-1 btn" ng-click="guardar()">Guardar</a>
-			</div>
+		<div class="posag">
+			<a class="waves-effect waves-light cyan darken-1 btn" ng-click="guardar()">Guardar</a>
+		</div>
 	</div>	
 </div>
 @endsection

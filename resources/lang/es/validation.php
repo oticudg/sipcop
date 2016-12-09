@@ -83,6 +83,21 @@ return [
     'unique'               => 'El elemento :attribute ya está en uso.',
     'url'                  => 'El formato de :attribute no corresponde con el de una URL válida.',
 
+
+    /*
+    |--------------------------------------------------------------------------
+    | Custom Validation lines
+    |--------------------------------------------------------------------------
+    |
+    | Here you may specify custom validation messages for attributes using the
+    | convention "attribute.rule" to name the lines. This makes it quick to
+    | specify a specific custom language line for a given attribute rule.
+    |
+    */
+
+    'empleado' => 'EL empleado no puede ser encontrado.',
+
+
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines
