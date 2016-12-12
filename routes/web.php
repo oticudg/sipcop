@@ -15,9 +15,6 @@
 	Route::post('empleado/search', 'EmpleadoController@searchEmpleado');
 	Route::resource('expedientes', 'ExpedienteController');
 	Auth::routes();	
-	Route::get('files', function () {
-		return view('files.create_file');
-	});
 	Route::get('users', function () {
 		return view('users.user_log');
 	});

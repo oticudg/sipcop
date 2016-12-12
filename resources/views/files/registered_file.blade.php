@@ -5,7 +5,7 @@
  <ul id="myUL" class="collapsible popout" data-collapsible="accordion">
 		<div class="container">
 			<div class="btnplus">
-				<a class="btn-floating btn-small waves-effect waves-light cyan darken-1 tooltipped" data-tooltip="Agregar Expediente" data-position="top" href="/files">
+				<a class="btn-floating btn-small waves-effect waves-light cyan darken-1 tooltipped" data-tooltip="Agregar Expediente" data-position="top" href="/expedientes/create">
 					<i class="material-icons">add</i>
 				</a>
 			</div>

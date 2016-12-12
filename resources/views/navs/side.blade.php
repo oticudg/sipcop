@@ -12,7 +12,7 @@
 									</div>
 							<li class="NavLateralDivider"></li>
 									<li>
-										<a href="#" class="waves-effect waves-light"><i class="zmdi zmdi-home zmdi-hc-fw"></i> Inicio</a>
+										<a href="/dashboard" class="waves-effect waves-light"><i class="zmdi zmdi-home zmdi-hc-fw"></i> Inicio</a>
 									</li>
 									<li class="NavLateralDivider"></li>
 						<li>
@@ -23,7 +23,7 @@
 								<ul class="full-width">
 									<li class="NavLateralDivider"></li>
 									<li>
-										<a href="#" class="waves-effect waves-light tooltipped" data-tooltip="Administrar Usuarios" data-position="right">
+										<a href="/users" class="waves-effect waves-light tooltipped" data-tooltip="Administrar Usuarios" data-position="right">
 											<i class="zmdi zmdi-accounts-alt zmdi-hc-fw"></i> Usuarios
 										</a>
 									</li>
@@ -44,7 +44,7 @@
 								<ul class="full-width">
 									<li class="NavLateralDivider"></li>
 									<li>
-										<a href="#" class="waves-effect waves-light tooltipped" data-tooltip="Administrar Expedientes" data-position="right">
+										<a href="/expedientes" class="waves-effect waves-light tooltipped" data-tooltip="Administrar Expedientes" data-position="right">
 											<i class="zmdi zmdi-format-list-bulleted zmdi-hc-fw"></i> Listar Expedientes
 										</a>
 									</li>
