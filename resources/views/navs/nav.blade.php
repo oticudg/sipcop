@@ -5,7 +5,7 @@
 		<ul class="right">
 			<li class="nav2">
 				<ul>
-					<li>
+					<li class="bornav">
 						<a href="#">Usuario</a>
 						<ul>
 							<li>	
@@ -25,7 +25,7 @@
 		<ul class="left">
 			<li>
 				<a href="#" class="tooltipped waves-effect waves-light" data-position="bottom" data-delay="50" data-tooltip="Desplegar Menu" onclick="openNav(this)" data-activates="slide-out">
-					<i class="zmdi zmdi-menu"></i>
+					<i class="zmdi zmdi-menu zmdi-hc-lg"></i>
 				</a>
 			</li>
 		</ul>

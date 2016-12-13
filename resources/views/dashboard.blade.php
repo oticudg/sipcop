@@ -3,20 +3,13 @@
 <!-- contenedor global-->
 
 <div class="card-panel cyan darken-1 white-text marexp center z-depth-1">Dashboard <i class="zmdi zmdi-view-dashboard"></i></div>
-<div class="row">
-<div class="">
-
-	
-	
-</div>
-</div>
 <div class="row">	
 			<article class="col s12">
-				<div class="full-width center-align" style="margin: 40px 0;">
+				<div class="full-width center-align">
 					<div class="tile hoverable">
 						<div class="tile-icon light-blue-text">
 							<i class="zmdi zmdi-file-text animated animatedicon pulse"></i>
-						</div>
+					</div>
 						<div class="tile-caption">
 							<span class="center-align orange-text">{{$expedientes}}</span>
 							<p class="center-align black-text">Expedientes</p>   

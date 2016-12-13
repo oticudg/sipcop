@@ -22,7 +22,7 @@
 </div>
 <br>
 <div class="container">	
-	<table class="highlight centered order-table table bordered" id="myTable" data-mcs-theme="dark">
+	<table class="highlight centered order-table table bordered other" id="myTable">
 		<thead class="cyan">
 			<tr class="white-text">
 				<th data-field="id">

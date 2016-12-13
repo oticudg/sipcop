@@ -28,6 +28,14 @@ body, html{
 	background-color: white;
 	font-size: 13px;
 }
+.bornav{
+	
+	border-left-style: solid;
+	border-right-style: solid;
+	border-color: black;
+	border-left-width: 1px;
+	border-right-width: 1px;
+}
 .position{
 	margin-left: 74%;
 	margin-top: 5%;
