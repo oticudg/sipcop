@@ -53,11 +53,8 @@ body, html{
 .center-box{
 	margin:0 auto;
 }
-th:nth-child(1) {
-	width: 5%;
-}
-th:nth-child(2) {
-	width: 31.6%;
+.customtableuser th:nth-child(1){
+	width: 5%;		
 }
 #myTable{
 	table-layout: auto;
@@ -469,6 +466,50 @@ nav ul a:hover{
 	height: 100%;
     
 }
+
+/*datepicker*/
+.picker { outline: none; font-size: 13px; } /* Optional feature */
+/* cabezera */
+.picker__weekday-display { background-color: #0097A7; font-weight: 600;}
+/* Body */
+.picker__date-display { background-color: #00BCD4; }
+/* Botones y acciones */
+.picker__nav--prev:hover { background-color: #fff3e0; }
+.picker__nav--next:hover { background-color: #fff3e0; }
+.picker__nav--prev:before {
+	border-left: 0;
+	border-right: 0.75em solid #00BCD4;
+}
+.picker__nav--next:before {
+	border-right: 0;
+	border-left: 0.75em solid #00BCD4;
+}
+.picker__today { color:  #00BCD4; }
+.picker__clear { color:  #00BCD4;}
+.picker__close { color:  #00BCD4; }
+.btn-flat.picker__today:active { background-color: #fff3e0; }
+.btn-flat.picker__close:active { background-color: #fff3e0; }
+.btn-flat.picker__clear:active { background-color: #fff3e0; }
+/* Selector de mes  */
+.picker__select--month.browser-default {
+	display: inline;
+	background-color: #FFFFFF;
+	border: none;
+	outline: none;
+}
+/* cada mes de año exepto hoy */
+.picker__day { /* si lo quieres customizar */ }
+.picker__day:hover { /* tambn si lo quieres customizar */ }
+.picker__day--infocus:hover { color: #f57c00; }
+.picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected { 
+	color: #F5F4F3;  font-weight: 700;
+}
+.picker__day.picker__day--infocus.picker__day--selected.picker__day--highlighted { background-color:  #00BCD4;}
+/* Today */
+.picker__day.picker__day--infocus.picker__day--today.picker__day--selected.picker__day--highlighted { background-color:  #00BCD4; }
+.picker__day.picker__day--today 
+{ color: #0097A7;  font-weight: 700;}
+
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;

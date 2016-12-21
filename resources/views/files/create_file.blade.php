@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="card-panel cyan darken-1 white-text marexp center z-depth-1">Creacion de Expediente <i class="zmdi zmdi-file-plus"></i></div>
+<div class="card-panel cyan darken-2 white-text marexp center z-depth-1">Creacion de Expediente <i class="zmdi zmdi-file-plus"></i></div>
 	<div class="white" ng-controller="registerCtr">
 		<div>
 		  <div class="left mitad1">
@@ -24,6 +24,9 @@
 								@endforeach
 							</select>
 							<label>Estatus</label>
+						</div>
+						<div class="input-field col s3">
+								<input type="date" class="datepicker" placeholder="Fecha de Apertura" ng-model="data.fecha">
 						</div>
 					</div>
 				<div class="row">
@@ -101,6 +104,10 @@
 							</select>
 							<label>Decisorio</label>
 						</div>
+						
+						<div class="input-field col s4">
+							<input type="date" class="datepicker" placeholder="Fecha de Apertura" ng-model="empleado.fecha">
+						</div>
 						<div class="input-field col s4">
 							<a class="waves-effect waves-light cyan darken-1 btn" ng-click="agregar()">Agregar</a>
 						</div>
@@ -122,7 +129,6 @@
 					</div>
 				</div>
 			</div>
-				
 		</div>	
 		<div class="posag">
 			<a class="waves-effect waves-light cyan darken-1 btn" ng-click="guardar()">Guardar</a>

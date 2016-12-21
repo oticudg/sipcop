@@ -41,6 +41,7 @@ angular.module('expediente', [])
 			'complicidad':$scope.empleado.complicidad,
 			'resultado':$scope.empleado.resultado,
 			'decisorio':$scope.empleado.decisorio,
+			'fecha':$scope.empleado.fecha,
 		});
 
 		cleanSearch();
