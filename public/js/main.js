@@ -169,8 +169,8 @@ $(document).ready(function() {
 $('.datepicker').pickadate({
 	selectMonths: true,
 	selectYears: 15, 
-	labelMonthNext: 'Proximo',
-	labelMonthPrev: 'Anterior',
+	labelMonthNext: 'Proximo mes',
+	labelMonthPrev: 'Anterior mes',
 	labelMonthSelect: 'Elija un mes',
 	labelYearSelect: 'Elija un año',
 	monthsFull: [ 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre' ],

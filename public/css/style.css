@@ -452,7 +452,8 @@ nav ul a:hover{
 }
 .contentcard{
 	margin-top: -12.5px;
-	height: 362px;
+	height: 400px;
+	max-height: 420px;
 }
 .marchip{
 	margin-top: 1%;
@@ -465,6 +466,10 @@ nav ul a:hover{
 .divexp{
 	height: 100%;
     
+}
+
+.btnag{
+	margin-top: 0;
 }
 
 /*datepicker*/
