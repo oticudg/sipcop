@@ -51,7 +51,9 @@ class UpdateExpediente extends FormRequest
 			'edit_investigados.*.decisorio' => 'bail|required|integer|
 				exists:decisorios,id',
 			'edit_investigados.*.resultado' => 'bail|required|integer|
-				exists:resultados,id'	
+				exists:resultados,id',
+			'edit_investigados.*.fecha' => 'bail|date|before:tomorrow|
+			date_after_expediente_update',	
         ];
     }
 

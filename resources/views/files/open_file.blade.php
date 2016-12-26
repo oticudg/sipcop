@@ -23,7 +23,7 @@
 			<div class="divchip2 orange-text center">
 				<div>
 					<div class="input-field col s3">
-						<input type="date" class="datepicker" placeholder="Fecha de Apertura" ng-model="data.fecha" ng-disabled="!state">
+						<input type="text" class="datepicker" placeholder="Fecha de Apertura" ng-model="data.fecha" ng-disabled="!state">
 					</div>	
 				</div>
 			</div>
@@ -124,7 +124,7 @@
 										<label class="active">Decisorio</label>
 									</div>	
 									<div class="input-field col s6">
-										<input type="date" class="datepicker" placeholder="Fecha de Apertura" ng-model="investigado.fecha">
+										<input type="text" class="datepicker" placeholder="Fecha de Apertura" ng-model="investigado.fecha" ng-disabled="!state">
 									</div>
 								</div>
 							</form>

@@ -27,7 +27,7 @@ $(document).ready(function(){
 		today: 'Hoy',
 		clear: 'Limpiar',
 		close: 'Cerrar',
-		format: 'dd/mm/yyyy'
+		format: 'dd-mm-yyyy'
 	});
 });
 /* sweet alert script */

@@ -73,7 +73,11 @@ angular.module('expediente')
 						.success(function(response){
 							sweetAlert("Cambios aplicados con exito.", "", 'success')
 							$scope.state = false;
-						});	
+						})	
+						.error(function(response){
+							var message = response.tipologia || response.estatus || response.investigados || response.fecha;
+							sweetAlert("Ocurrio un error", message, 'error');
+						});
 				} 
 				else {    
 					swal.close();  
