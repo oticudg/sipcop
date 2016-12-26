@@ -425,7 +425,7 @@ nav ul a:hover{
 }
 .edimar{
 	position: relative;
-	left: 38%;
+	left: 37%;
 	z-index: 0;
 }
 .edimar2{
@@ -433,6 +433,12 @@ nav ul a:hover{
 	left: 112%;
 	margin-top: 2%;
 	z-index: 0;
+}
+.edimar3{
+	position: relative;
+	left: 110%;
+	z-index: 0;
+	margin-top: 2%;
 }
 .spanmar2{
 	margin-left: 80%;

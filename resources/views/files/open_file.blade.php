@@ -1,7 +1,15 @@
 @extends('layouts.app')
 @section('content')
+@include('modals.addinvo_modal')
 <div ng-controller="editCtr" ng-cloak>
 		<div class="card-panel cyan darken-1 z-depth-1 white-text marexp center">Expediente #{{$expediente->codigo}} <i class="zmdi zmdi-file-text"></i>
+			
+			<a href="#modal4" class="btn-floating btn waves-effect waves-light cyan darken-2 edimar modal-trigger tooltipped" data-tooltip="Agregar Involucrados">
+				<i class="zmdi zmdi-accounts-add"></i>
+			</a>
+			<a ng-show="state" ng-click="save()" class="btn-floating btn waves-effect waves-light cyan darken-2 edimar tooltipped" data-tooltip="Guardar Cambios">
+				<i class="zmdi zmdi-save"></i>
+			</a>
 			<a class="btn-floating btn waves-effect waves-light cyan darken-2 edimar tooltipped" data-tooltip="Editar Expediente">
 				<i class="zmdi zmdi-edit" ng-click="edit()"></i>
 			</a>
@@ -63,7 +71,7 @@
 						<span class="">@{{investigado.empleado.nombres}} @{{investigado.empleado.apellidos}}</span>
 					</div>
 					<div class="collapsible-body container">
-						<button ng-click="addEditInvestigado(investigado)" ng-show="state">Añadir a Edición</button>
+						<button class="btn-floating btn waves-effect waves-light cyan darken-2 edimar3 tooltipped" ng-click="addEditInvestigado(investigado)" ng-show="state"><i class="zmdi zmdi-collection-plus"></i></button>
 						<div class="row">
 							<form class="col s12">
 								<div class="row">
@@ -146,9 +154,6 @@
 					</div>
 				</form>
 			</div>
-		</div>
-		<div ng-show="state">	
-			<button ng-click="save()">guardar</button>
 		</div>
 </div>
 
