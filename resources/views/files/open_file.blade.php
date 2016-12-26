@@ -1,8 +1,9 @@
 @extends('layouts.app')
 @section('content')
+<div ng-controller="editCtr" ng-cloak>
 		<div class="card-panel cyan darken-1 z-depth-1 white-text marexp center">Expediente #{{$expediente->codigo}} <i class="zmdi zmdi-file-text"></i>
 			<a class="btn-floating btn waves-effect waves-light cyan darken-2 edimar tooltipped" data-tooltip="Editar Expediente">
-				<i class="zmdi zmdi-edit"></i>
+				<i class="zmdi zmdi-edit" ng-click="edit()"></i>
 			</a>
 			<a class="btn-floating btn waves-effect waves-light cyan darken-2 edimar tooltipped" data-tooltip="Eliminar Expediente">
 				<i class="zmdi zmdi-delete"></i>
@@ -10,15 +11,20 @@
 		</div>				
 		<div class="mrr">
 			<div class="divchip2 orange-text center">
-				<h6>Tipologia</h6>
-				<div class="chip center cyan white-text">
-					{{$expediente->tipologia}}
+				<div class="input-field col s3">
+					<select ng-model="data.tipologia" class="browser-default" ng-disabled="!state">
+						@foreach($tipologias as $tipologia)
+							<option value="{{$tipologia->id}}">{{$tipologia->nombre}}</option>
+						@endforeach
+					</select>
+					<label class="active" for="icon_prefix2">Tipologia</label>
 				</div>
 			</div>
 			<div class="divchip2 orange-text center">
-				<h6>Fecha de Creacion</h6>
-				<div class="chip center cyan white-text">
-					{{$expediente->fecha_registro}}
+				<div>
+					<div class="input-field col s3">
+						<input type="date" class="datepicker" placeholder="Fecha de Apertura" ng-model="data.fecha" ng-disabled="!state">
+					</div>	
 				</div>
 			</div>
 			@if($expediente->fecha_cierre)
@@ -36,101 +42,118 @@
 				</div>
 			</div>
 			<div class="divchip2 orange-text center">
-				<h6>Estado</h6>
-				<div class="chip center cyan white-text">
-					{{$expediente->estatus}}
+				<div class="input-field col s3">
+					<select ng-model="data.estatus" class="browser-default" ng-disabled="!state">
+						@foreach($estatus as $estatu)
+							<option value="{{$estatu->id}}">{{$estatu->nombre}}</option>
+						@endforeach
+					</select>
+					<label class="active" for="icon_prefix2">Estatus</label>
 				</div>
 			</div>
 		</div>
 		<div class="input-field col s3 wis">
-			<input type="text" name="search" placeholder="Filtrar Busqueda">
+			<input type="text" name="search" placeholder="Filtrar Busqueda" ng-model="search">
 		</div>
 		<div class="container">
 			<ul class="collapsible" data-collapsible="accordion">
-			  @foreach( $expediente->investigados as $investigado)
-				<li>
+				<li dir-paginate="investigado in investigados |filter:search| itemsPerPage:5">
 					<div class="collapsible-header cyan-text">
 						<i class="zmdi zmdi-account"></i>
-						<span class="">Investigado 1</span>
+						<span class="">@{{investigado.empleado.nombres}} @{{investigado.empleado.apellidos}}</span>
 					</div>
 					<div class="collapsible-body container">
+						<button ng-click="addEditInvestigado(investigado)" ng-show="state">Añadir a Edición</button>
 						<div class="row">
 							<form class="col s12">
 								<div class="row">
 									<div class="input-field col s6">
-										<input disabled id="inid" type="text" value="{{$investigado->empleado->cedula}}" class="validate">
-										<label for="inid">Cedula</label>		
+										<input disabled id="inid" type="text"  ng-model="investigado.empleado.cedula" class="validate">
+										<label class="active" for="inid">Cedula</label>		
 									</div>
 									<div class="input-field col s6">
-										<input disabled id="inape" type="text" value="{{$investigado->empleado->apellidos}}" class="validate">
-										<label for="inape">Apellidos</label>
-									</div>
-								</div>
-								<div class="row">
-									<div class="input-field col s6">
-										<input disabled id="innom" type="text" value="{{$investigado->empleado->nombres}}" class="validate">
-										<label for="innom">Nombres</label>
-									</div>
-									<div class="input-field col s6">
-										<input disabled id="ininv" type="text" value="{{$investigado->cargo}}" class="validate">
-										<label for="ininv">Cargo en la investigacion</label>
+										<input disabled id="inape" type="text" ng-model="investigado.empleado.apellidos" class="validate">
+										<label class="active" for="inape">Apellidos</label>
 									</div>
 								</div>
 								<div class="row">
 									<div class="input-field col s6">
-										<input disabled id="inubi" type="text" value="{{$investigado->ubicacion}}" class="validate">
-										<label for="inubi">Ubicacion en la investigacion</label>
+										<input disabled id="innom" type="text" ng-model="investigado.empleado.nombres" class="validate">
+										<label class="active" for="innom">Nombres</label>
 									</div>
 									<div class="input-field col s6">
-										<input disabled id="ininv" type="text" value="{{$investigado->relacion}}" class="validate">
-										<label for="ininv">Relacion en la investigacion</label>
-									</div>
-								</div>
-								<div class="row">
-									<div class="input-field col s6">
-										<input disabled id="incom" type="text" value="{{$investigado->complicidade->nombre}}" class="validate">
-										<label for="incom">Complicidad</label>
-									</div>
-									<div class="input-field col s6">
-										<input disabled id="inres" type="text" value="{{$investigado->resultado->nombre}}" class="validate">
-										<label for="inres">Resultado</label>
+										<input disabled id="ininv" type="text" ng-model="investigado.cargo" class="validate">
+										<label class="active" for="ininv">Cargo en la investigacion</label>
 									</div>
 								</div>
 								<div class="row">
 									<div class="input-field col s6">
-										<input disabled id="indec" type="text" value="{{$investigado->decisorio->nombre}}" class="validate">
-										<label for="indec">Decisorio</label>
+										<input disabled id="inubi" type="text" ng-model="investigado.ubicacion" class="validate">
+										<label class="active" for="inubi">Ubicacion en la investigacion</label>
 									</div>
 									<div class="input-field col s6">
-										<input disabled id="infec" type="text" placeholder="asda" value="{{$investigado->fecha}}" class="validate">
-										<label for="infe">Fecha de adicion</label>
+										<input disabled id="ininv" type="text" ng-model="investigado.relacion" class="validate">
+										<label class="active" for="ininv">Relacion en la investigacion</label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="input-field col s6">
+										<select ng-model="investigado.complicidade.id" convert-to-number class="browser-default" ng-disabled="!state">
+											@foreach($complicidades as $complicidad)
+												<option value="{{$complicidad->id}}">{{$complicidad->nombre}}</option>
+											@endforeach
+										</select>
+										<label class="active">Complicidad</label>
+									</div>
+									<div class="input-field col s6">
+										<select ng-model="investigado.resultado.id" convert-to-number class="browser-default" ng-disabled="!state">
+											@foreach($resultados as $resultado)
+												<option value="{{$resultado->id}}">{{$resultado->nombre}}</option>
+											@endforeach
+										</select>
+										<label class="active">resultado</label>
+									</div>	
+								</div>
+								<div class="row">
+									<div class="input-field col s6">
+										<select ng-model="investigado.decisorio.id" convert-to-number class="browser-default" ng-disabled="!state">
+											@foreach($decisorios as $decisorio)
+												<option value="{{$decisorio->id}}">{{$decisorio->nombre}}</option>
+											@endforeach
+										</select>
+										<label class="active">Decisorio</label>
+									</div>	
+									<div class="input-field col s6">
+										<input type="date" class="datepicker" placeholder="Fecha de Apertura" ng-model="investigado.fecha">
 									</div>
 								</div>
 							</form>
 						</div>
 					</div>
 				</li>
-				@endforeach
 			</ul>
-			<ul class="pagination center">
-				<li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-				<li class="active"><a href="#!">1</a></li>
-				<li class="waves-effect"><a href="#!">2</a></li>
-				<li class="waves-effect"><a href="#!">3</a></li>
-				<li class="waves-effect"><a href="#!">4</a></li>
-				<li class="waves-effect"><a href="#!">5</a></li>
-				<li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-			</ul>
+			<div class="col s12 center">
+				<dir-pagination-controls template-url="/templates/dirPagination.tpl.html"></dir-pagination-controls>
+			</div>	
 			<div class="row">
 				<form class="">
 					<div class="">
 						<div class="input-field push-s2 col s8">
 							<i class="material-icons prefix">info_outline</i>
-							<textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-							<label for="icon_prefix2">Resumen</label>
+							<textarea id="icon_prefix2" class="materialize-textarea" ng-model="data.resumen" ng-disabled="!state"></textarea>
+							<label class="active" for="icon_prefix2">Resumen</label>
 						</div>
 					</div>
 				</form>
 			</div>
 		</div>
+		<div ng-show="state">	
+			<button ng-click="save()">guardar</button>
+		</div>
+</div>
+
+<script type="text/javascript">
+	var expediente = {!! $expediente !!};
+</script>
+
 @endsection

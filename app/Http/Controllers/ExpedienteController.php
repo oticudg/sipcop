@@ -53,6 +53,7 @@ class ExpedienteController extends Controller
 							'estatus.id', '=', 'expedientes.estatu_id')
 						->select($columns)
 						->withCount('investigados')
+						->orderBy('expedientes.id', 'decs')
 						->paginate(10);
 
     	return view('files.registered_file')->with(compact('expedientes'));
@@ -117,34 +118,32 @@ class ExpedienteController extends Controller
      */
     public function show($id)
     {	
-		/**
-		 * Columnas a seleccionar
-		 */
-		$columns = [
-			'expedientes.id',
-			'expedientes.fecha_registro',
-			'expedientes.fecha_cierre',
-			'expedientes.resumen',
-			'tipologias.nombre as tipologia',
-			'estatus.nombre as estatus',
-		];
-	
 
         $expediente = Expediente::where('expedientes.id', $id)
-					  ->join('tipologias',
-							'tipologias.id', '=', 'expedientes.tipologia_id')
-					  ->join('estatus',
-							'estatus.id', '=', 'expedientes.estatu_id')
-					  ->select($columns)
 					  ->withCount('investigados')
+					  ->with('estatu')
+					  ->with('tipologia')
 					  ->with('investigados.empleado')
-					  ->with('investigados')
 					  ->with('investigados.complicidade')
 					  ->with('investigados.resultado')
 					  ->with('investigados.decisorio') 
 					  ->firstOrFail();
 
-		return view('files.open_file')->with(compact('expediente'));
+		$tipologias = Tipologia::get();
+		$estatus = Estatu::get();
+		$complicidades = Complicidade::get();
+		$resultados = Resultado::get();
+		$decisorios = Decisorio::get();
+
+		return view('files.open_file')->with(
+			compact( 
+				'expediente',
+				'tipologias',
+				'estatus',
+				'complicidades',
+				'resultados',
+				'decisorios')
+			);
     }
 
     /**

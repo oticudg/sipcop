@@ -26,7 +26,7 @@
 							<label>Estatus</label>
 						</div>
 						<div class="input-field col s3">
-								<input type="date" class="datepicker" placeholder="Fecha de Apertura" ng-model="data.fecha">
+							<input type="date" class="datepicker" placeholder="Fecha de Apertura" ng-model="data.fecha">
 						</div>
 					</div>
 				<div class="row">
