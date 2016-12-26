@@ -27,7 +27,7 @@
 						</div>
 						<div class="input-field col s3">
 							<label for="fechaex"><i class="zmdi zmdi-calendar-alt zmdi-hc-lg"></i> Fecha de Apertura</label>
-								<input id="fechaex" type="date" class="datepicker" ng-model="data.fecha">
+							<input id="fechaex" type="date" class="datepicker" ng-model="data.fecha">
 						</div>
 					</div>
 				<div class="row">
