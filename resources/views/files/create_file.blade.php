@@ -9,31 +9,33 @@
 					<div class="row">
 						<div class="input-field col s3">
 							<select ng-model="data.tipologia">
-								<option value="" disabled selected>Tipologia</option>
+								<option value="" disabled selected>Seleccione Tipologia</option>
 								@foreach($tipologias as $tipologia)
 									<option value="{{$tipologia->id}}">{{$tipologia->nombre}}</option>
 								@endforeach
 							</select>
-							<label>Tipologia</label>
+							<label><i class="zmdi zmdi-assignment"></i> Tipologia</label>
 						</div>
 						<div class="input-field col s3">
 							<select ng-model="data.estatus">
-								<option value="" disabled selected>Estatus</option>
+								<option value="" disabled selected>Seleccione Estatus</option>
 								@foreach($estatus as $estatu)
 									<option value="{{$estatu->id}}">{{$estatu->nombre}}</option>
 								@endforeach
 							</select>
-							<label>Estatus</label>
+							<label><i class="zmdi zmdi-assignment-check"></i> Estatus</label>
 						</div>
 						<div class="input-field col s3">
 							<input type="date" class="datepicker" placeholder="Fecha de Apertura" ng-model="data.fecha">
+							<label for="fechaex"><i class="zmdi zmdi-calendar-alt"></i> Fecha de Apertura</label>
 						</div>
 					</div>
 				<div class="row">
 					<form class="col s12">
 						<div class="row">
-							<div class="input-field col s12">
-								<textarea id="textarea1" class="materialize-textarea" ng-model="data.resumen"></textarea>
+							<div class="input-field col s11">
+								<i class="material-icons prefix">edit</i>
+								<textarea id="textarea1" class="materialize-textarea" length="900" ng-model="data.resumen"></textarea>
 								<label for="textarea1">Resumen</label>
 							</div>
 						</div>
@@ -47,69 +49,70 @@
 				<div class="card-content white contentcard z-depth-1">
 				<div class="row">
 					<form ng-submit="empleadoSearch()">
-						<div class="input-field col s4">
-							<i class="material-icons prefix">search</i>
-							<input type="text" name="search" autocomplete="off" ng-model="cedula" class="validate" placeholder="Cedula Involucrado">
+						<div class="input-field col s3">
+							<label for="search"><i class="zmdi zmdi-search"></i> Buscar Cedula</label>
+							<input id="search" type="text" name="search" autocomplete="off" ng-model="cedula" class="validate">
 						</div>
 					</form>
 					<div ng-show="status">
-						<div class="input-field col s4">
-							<input disabled id="firstn" type="text" placeholder="Nombres" class="validate" ng-model="empleado.nombres">
-							<label class="active" for="firstn">Nombres</label>
+						<div class="input-field col s3">
+							<input readonly id="firstn" type="text" placeholder="Nombres" class="validate" ng-model="empleado.nombres">
+							<label for="firstn"><i class="zmdi zmdi-account"></i> Nombres</label>
 						</div>
-						<div class="input-field col s4">
-							<input disabled id="secondn" type="text" placeholder="Apellidos" class="validate" ng-model="empleado.apellidos">
-							<label class="active" for="secondn">Apellidos</label>
+						<div class="input-field col s3">
+							<input readonly id="secondn" type="text" placeholder="Apellidos" class="validate" ng-model="empleado.apellidos">
+							<label for="secondn"><i class="zmdi zmdi-account-o"></i> Apellidos</label>
 						</div>
-						<div class="input-field col s4">
-							<input disabled id="position" type="text" placeholder="Cargo" class="validate" ng-model="empleado.cargo">
-							<label class="active" for="position">Cargo</label>
+						<div class="input-field col s3">
+							<input readonly id="position" type="text" placeholder="Cargo" class="validate" ng-model="empleado.cargo">
+							<label for="position"><i class="zmdi zmdi-group-work"></i> Cargo</label>
 						</div>
-						<div class="input-field col s4">
-							<input disabled id="location" type="text" placeholder="Unicacion" class="validate" ng-model="empleado.ubicacion">
-							<label class="active" for="location">Ubicacion</label>
+						<div class="input-field col s3">
+							<input readonly id="location" type="text" placeholder="Unicacion" class="validate" ng-model="empleado.ubicacion">
+							<label for="location"><i class="zmdi zmdi-square-right"></i> Ubicacion</label>
 						</div>
-						<div class="input-field col s4">
-							<input disabled id="relationship" type="text" placeholder="Relacion" class="validate" ng-model="empleado.relacion">
-							<label class="active" for="relationship">Relacion Laboral</label>
+						<div class="input-field col s3">
+							<input readonly id="relationship" type="text" placeholder="Relacion Laboral" class="validate" ng-model="empleado.relacion">
+							<label for="relationship"><i class="zmdi zmdi-folder-outline"></i> Relacion Laboral</label>
 						</div>
-						<div class="input-field col s4">
-							<input value="" id="phone" type="text" placeholder="Introduzca un telefono" class="validate">
-							<label class="active" for="phone">Telefono</label>
+						<div class="input-field col s3">
+							<label for="phone"><i class="zmdi zmdi-phone"></i> Telefono</label>
+							<input value="" id="phone" type="text" class="validate">
 						</div>
-						<div class="input-field col s4">
+						<div class="input-field col s3">
 							<select ng-model="empleado.complicidad">
-								<option value="" disabled selected>Complicidad</option>
+								<option value="" disabled selected>Seleccione Complicidad</option>
 								@foreach($complicidades as $complicidad)
 									<option value="{{$complicidad->id}}">{{$complicidad->nombre}}</option>
 								@endforeach
 							</select>
-							<label>Complicidad</label>
+							<label><i class="zmdi zmdi-library"></i> Complicidad</label>
 						</div>
-						<div class="input-field col s4">
+						<div class="input-field col s3">
 							<select ng-model="empleado.resultado">
-								<option value="" disabled selected>Resultado</option>
+								<option value="" disabled selected>Seleccione Resultado</option>
 								@foreach($resultados as $resultado)
 									<option value="{{$resultado->id}}">{{$resultado->nombre}}</option>
 								@endforeach
 							</select>
-							<label>Resultado</label>
+							<label><i class="zmdi zmdi-check"></i> Resultado</label>
 						</div>
-						<div class="input-field col s4">
+						<div class="input-field col s3">
 							<select ng-model="empleado.decisorio">
-								<option value="" disabled selected>Decisorio</option>
+								<option value="" disabled selected>Seleccione Decisorio</option>
 								@foreach($decisorios as $decisorio)
 									<option value="{{$decisorio->id}}">{{$decisorio->nombre}}</option>
 								@endforeach
 							</select>
-							<label>Decisorio</label>
+							<label><i class="zmdi zmdi-check-all"></i> Decisorio</label>
 						</div>
 						
-						<div class="input-field col s4">
-							<input type="date" class="datepicker" placeholder="Fecha de Apertura" ng-model="empleado.fecha">
+						<div class="input-field col s3">
+							<label for="fechaem"><i class="zmdi zmdi-calendar-alt"></i> Fecha de Inclusion</label>
+							<input id ="fechaem" type="date" class="datepicker" ng-model="empleado.fecha">
 						</div>
-						<div class="input-field col s4">
-							<a class="waves-effect waves-light cyan darken-1 btn" ng-click="agregar()">Agregar</a>
+						<div class="input-field col s3 btnag">
+							<a class="waves-effect waves-light cyan darken-1 btn-large" ng-click="agregar()">Agregar</a>
 						</div>
 					</div>
 
