@@ -14,7 +14,7 @@
 									<option value="{{$tipologia->id}}">{{$tipologia->nombre}}</option>
 								@endforeach
 							</select>
-							<label><i class="zmdi zmdi-assignment"></i> Tipologia</label>
+							<label><i class="zmdi zmdi-assignment zmdi-hc-lg"></i> Tipologia</label>
 						</div>
 						<div class="input-field col s3">
 							<select ng-model="data.estatus">
@@ -23,10 +23,10 @@
 									<option value="{{$estatu->id}}">{{$estatu->nombre}}</option>
 								@endforeach
 							</select>
-							<label><i class="zmdi zmdi-assignment-check"></i> Estatus</label>
+							<label><i class="zmdi zmdi-assignment-check zmdi-hc-lg"></i> Estatus</label>
 						</div>
 						<div class="input-field col s3">
-								<label for="fechaex"><i class="zmdi zmdi-calendar-alt"></i> Fecha de Apertura</label>
+							<label for="fechaex"><i class="zmdi zmdi-calendar-alt zmdi-hc-lg"></i> Fecha de Apertura</label>
 								<input id="fechaex" type="date" class="datepicker" ng-model="data.fecha">
 						</div>
 					</div>
@@ -50,33 +50,33 @@
 				<div class="row">
 					<form ng-submit="empleadoSearch()">
 						<div class="input-field col s3">
-							<label for="search"><i class="zmdi zmdi-search"></i> Buscar Cedula</label>
+							<label for="search"><i class="zmdi zmdi-search zmdi-hc-lg"></i> Buscar Cedula</label>
 							<input id="search" type="text" name="search" autocomplete="off" ng-model="cedula" class="validate">
 						</div>
 					</form>
 					<div ng-show="status">
 						<div class="input-field col s3">
 							<input readonly id="firstn" type="text" placeholder="Nombres" class="validate" ng-model="empleado.nombres">
-							<label for="firstn"><i class="zmdi zmdi-account"></i> Nombres</label>
+							<label for="firstn"><i class="zmdi zmdi-account zmdi-hc-lg"></i> Nombres</label>
 						</div>
 						<div class="input-field col s3">
 							<input readonly id="secondn" type="text" placeholder="Apellidos" class="validate" ng-model="empleado.apellidos">
-							<label for="secondn"><i class="zmdi zmdi-account-o"></i> Apellidos</label>
+							<label for="secondn"><i class="zmdi zmdi-account-o zmdi-hc-lg"></i> Apellidos</label>
 						</div>
 						<div class="input-field col s3">
 							<input readonly id="position" type="text" placeholder="Cargo" class="validate" ng-model="empleado.cargo">
-							<label for="position"><i class="zmdi zmdi-group-work"></i> Cargo</label>
+							<label for="position"><i class="zmdi zmdi-group-work zmdi-hc-lg"></i> Cargo</label>
 						</div>
 						<div class="input-field col s3">
 							<input readonly id="location" type="text" placeholder="Unicacion" class="validate" ng-model="empleado.ubicacion">
-							<label for="location"><i class="zmdi zmdi-square-right"></i> Ubicacion</label>
+							<label for="location"><i class="zmdi zmdi-square-right zmdi-hc-lg"></i> Ubicacion</label>
 						</div>
 						<div class="input-field col s3">
 							<input readonly id="relationship" type="text" placeholder="Relacion Laboral" class="validate" ng-model="empleado.relacion">
-							<label for="relationship"><i class="zmdi zmdi-folder-outline"></i> Relacion Laboral</label>
+							<label for="relationship"><i class="zmdi zmdi-folder-outline zmdi-hc-lg"></i> Relacion Laboral</label>
 						</div>
 						<div class="input-field col s3">
-							<label for="phone"><i class="zmdi zmdi-phone"></i> Telefono</label>
+							<label for="phone"><i class="zmdi zmdi-phone zmdi-hc-lg"></i> Telefono</label>
 							<input value="" id="phone" type="text" class="validate">
 						</div>
 						<div class="input-field col s3">
@@ -86,7 +86,7 @@
 									<option value="{{$complicidad->id}}">{{$complicidad->nombre}}</option>
 								@endforeach
 							</select>
-							<label><i class="zmdi zmdi-library"></i> Complicidad</label>
+							<label><i class="zmdi zmdi-library zmdi-hc-lg"></i> Complicidad</label>
 						</div>
 						<div class="input-field col s3">
 							<select ng-model="empleado.resultado">
@@ -95,7 +95,7 @@
 									<option value="{{$resultado->id}}">{{$resultado->nombre}}</option>
 								@endforeach
 							</select>
-							<label><i class="zmdi zmdi-check"></i> Resultado</label>
+							<label><i class="zmdi zmdi-check zmdi-hc-lg"></i> Resultado</label>
 						</div>
 						<div class="input-field col s3">
 							<select ng-model="empleado.decisorio">
@@ -104,11 +104,11 @@
 									<option value="{{$decisorio->id}}">{{$decisorio->nombre}}</option>
 								@endforeach
 							</select>
-							<label><i class="zmdi zmdi-check-all"></i> Decisorio</label>
+							<label><i class="zmdi zmdi-check-all zmdi-hc-lg"></i> Decisorio</label>
 						</div>
 						
 						<div class="input-field col s3">
-							<label for="fechaem"><i class="zmdi zmdi-calendar-alt"></i> Fecha de Inclusion</label>
+							<label for="fechaem"><i class="zmdi zmdi-calendar-alt zmdi-hc-lg"></i> Fecha de Inclusion</label>
 							<input id ="fechaem" type="date" class="datepicker" ng-model="empleado.fecha">
 						</div>
 						<div class="input-field col s3 btnag">

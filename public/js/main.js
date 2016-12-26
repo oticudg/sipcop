@@ -184,6 +184,13 @@ $('.datepicker').pickadate({
 	format: 'dd-mm-yyyy'
 });
 
+$(document).ready(function(){
+	$('.carousel').carousel();
+
+
+});
+
+
 var app = angular.module('sipcop', ['expediente', 'angularUtils.directives.dirPagination']);
 
 

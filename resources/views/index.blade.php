@@ -17,6 +17,13 @@
 				<br>
 		</div>
 	</div>
+			<div class="carousel">
+				<a class="carousel-item" href="#one!"><img src="/images/img/1.png"></a>
+				<a class="carousel-item" href="#two!"><img src="/images/img/2.png"></a>
+				<a class="carousel-item" href="#three!"><img src="/images/img/3.png"></a>
+				<a class="carousel-item" href="#four!"><img src="/images/img/4.png"></a>
+				<a class="carousel-item" href="#five!"><img src="/images/img/5.png"></a>
+			</div>
 	<div class="container">
 		<!--   Icon Section   -->
 		<div class="row">
