@@ -8,7 +8,7 @@
 				</h1>
 				<h5 class="orange-text">Adicion de Involucrado</h5>   
 			</div>
-			<form action="" method="post" style="margin-left:110px;">
+			<div style="margin-left:110px;">
 					<div class="row">
 						<form ng-submit="empleadoSearch()">
 							<div class="input-field col s3">
@@ -79,7 +79,7 @@
 						</div>
 
 						<div class="row col s12 center">	
-							<div class="col s4 marchip" dir-paginate="investigado in investigados | itemsPerPage:9">	
+							<div class="col s4 marchip" dir-paginate="investigado in addInvestigados | itemsPerPage:9" pagination-id="add-pagination">	
 								<div class="chip cyan white-text hoverable">
 									<span class="tooltipped" data-position="left" data-tooltip="@{{investigado.nombre}}">CI: @{{investigado.cedula}}</span>
 									<i class="material-icons" ng-click="deleteInvestigado($index)">close</i>
@@ -88,13 +88,13 @@
 						</div>
 						<div class="row col s12">
 							<div class="col s12 center">
-								<dir-pagination-controls template-url="/templates/dirPagination.tpl.html"></dir-pagination-controls>
+								<dir-pagination-controls template-url="/templates/dirPagination.tpl.html" pagination-id="add-pagination"></dir-pagination-controls>
 
 							</div>	
 						</div>
 					</div>
-			</form>
-			<button id="btnsac" class="waves-effect waves-teal cyan btn z-depth-1 tooltipped" data-tooltip="Guardar Cambios">Guardar &nbsp; 
+			</div>
+			<button id="btnsac"  ng-click="saveInvestigados()" class="waves-effect waves-teal cyan btn z-depth-1 tooltipped" data-tooltip="Guardar Cambios">Guardar &nbsp; 
 				<i class="zmdi zmdi-save"></i>
 			</button>
 		</div>

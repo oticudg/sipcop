@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-@include('modals.addinvo_modal')
 <div ng-controller="editCtr" ng-cloak>
 		<div class="card-panel cyan darken-1 z-depth-1 white-text marexp center">Expediente #{{$expediente->codigo}} <i class="zmdi zmdi-file-text"></i>
 			
@@ -155,6 +154,8 @@
 				</form>
 			</div>
 		</div>
+
+		@include('modals.addinvo_modal')
 </div>
 
 <script type="text/javascript">

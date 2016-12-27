@@ -71,9 +71,14 @@ class CustomValidationServiceProvider extends ServiceProvider
 			function($attribute, $value){
 				
 				$expediente = Request::route('expediente.id');	
+
+				$investigado = Empleado::where('cedula', $value)
+							   ->first();
+
+				if(!$investigado)
+					return true;
 				
-				return !(bool) $investigado = Empleado::where('cedula', $value)
-							   ->first()
+				return !(bool) $investigado
 							   ->investigaciones()
 							   ->where('expediente_id', $expediente)
 							   ->value('id');	

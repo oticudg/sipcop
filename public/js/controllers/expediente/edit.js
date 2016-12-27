@@ -14,7 +14,50 @@ angular.module('expediente')
 		'resumen':exp.resumen,
 		'fecha':exp.fecha_registro
 	};
+
 	$scope.editInvestidados = [];
+	$scope.addInvestigados = [];
+	$scope.status = false;
+	$scope.empleado = {};
+
+	$scope.empleadoSearch = function(){
+
+		$http.post('/empleado/search', {cedula:$scope.cedula})
+			.success(function(response){
+				$scope.empleado = response;
+				$scope.status = true
+			})
+			.error(function(response){
+				swal('Error', response.cedula, 'error');
+			});
+	}
+
+	$scope.agregar = function(){
+
+		if(!$scope.empleado.complicidad){
+			sweetAlert("Valor no seleccionado", "Seleccione complicidad", "error");
+			return
+		}
+		else if(!$scope.empleado.resultado){
+			sweetAlert("Valor no seleccionado", "Seleccione resultado", "error");
+			return
+		}
+		else if(!$scope.empleado.decisorio){
+			sweetAlert("Valor no seleccionado", "Seleccione decisorio", "error");
+			return
+		}
+
+		$scope.addInvestigados.push({
+			'cedula':$scope.empleado.cedula, 
+			'nombre':$scope.empleado.nombres,
+			'complicidad':$scope.empleado.complicidad,
+			'resultado':$scope.empleado.resultado,
+			'decisorio':$scope.empleado.decisorio,
+			'fecha':$scope.empleado.fecha,
+		});
+
+		cleanSearch();
+	}
 
 	$scope.edit = function(){
 		$scope.state = !$scope.state;
@@ -85,4 +128,51 @@ angular.module('expediente')
 			}
 		);
 	}
+
+	$scope.saveInvestigados = function(){
+
+		customSweetalertValidate(false, "Desea guardar el expediente", false,{
+				"button":{
+					"success":"Guardar",
+					"cancel":"Cancelar"
+				}
+			},
+		 	function(isConfirm){   
+				if (isConfirm) {     
+
+					var data = {
+						'_method':'PUT',
+						'add_investigados':$scope.addInvestigados	
+					};
+
+					$http.post('/expedientes/' +  exp.id, data)
+						.success(function(response){
+							sweetAlert("Expediente guardado con exito.", "", 'success')
+							location.reload();
+
+						})
+						.error(function(response){
+
+							var message = response.tipologia || response.estatus || response.investigados;
+							sweetAlert("Ocurrio un error", message, 'error')
+					});
+				} 
+				else {    
+					swal.close();  
+			    } 
+			}
+		);
+	}
+
+	$scope.deleteInvestigado = function(index){
+		console.log(index)
+		$scope.addInvestigados.splice(index,1);
+	}
+
+	var cleanSearch = function(){
+		$scope.addInvestigado = {};
+		$scope.cedula = '';
+		$scope.status = false;
+	}
+
 }]);
