@@ -1,8 +1,8 @@
 {{-- Modal estructura --}} 
 <div id="modal1" class="modal modal-fixed-footer modalback">
 	<div class="modal-content">
-		<div class="card-action">
-			<a href="{{ url('/password/reset') }}">Olvido su contraseña?</a>
+		<div class="row padx">
+			<a href="#" class="modal-action modal-close"><i class="zmdi zmdi-close zmdi-hc-2x"></i></a>
 		</div>
 		<div class="container-login center-align">
 			<div style="">

@@ -16,52 +16,58 @@
 				<i class="zmdi zmdi-delete"></i>
 			</a>
 		</div>				
-		<div class="mrr">
-			<div class="divchip2 orange-text center">
-				<div class="input-field col s3">
+	<div class="container">
+		<div class="row">
+			<div class="center">
+				<div class="input-field col s2">
+					<label class="validate" for="search"><i class="zmdi zmdi-search zmdi-hc-lg"></i> Buscar Cedula</label>
+					<input id="search" type="text" name="search" ng-model="search" class="validate">
+				</div>
+			</div>
+			<div class="orange-text center">
+				<div class="input-field col s2">
 					<select ng-model="data.tipologia" class="browser-default" ng-disabled="!state">
 						@foreach($tipologias as $tipologia)
 							<option value="{{$tipologia->id}}">{{$tipologia->nombre}}</option>
 						@endforeach
 					</select>
-					<label class="active" for="icon_prefix2">Tipologia</label>
+					<label class="active labelmov"><i class="zmdi zmdi-assignment zmdi-hc-lg"></i> Tipologia</label>
 				</div>
 			</div>
-			<div class="divchip2 orange-text center">
+			<div class="orange-text center">
 				<div>
-					<div class="input-field col s3">
-						<input type="text" class="datepicker" placeholder="Fecha de Apertura" ng-model="data.fecha" ng-disabled="!state">
+					<div class="input-field col s2">
+						<label class="labelmov" for="fechadd"><i class="zmdi zmdi-calendar-alt zmdi-hc-lg"></i> Fecha de Apertura</label>
+						<input id="fechadd" type="text" class="datepicker" placeholder="Fecha de Apertura" ng-model="data.fecha" ng-disabled="!state">
 					</div>	
 				</div>
 			</div>
 			@if($expediente->fecha_cierre)
-			<div class="divchip2 orange-text cyan center">
+			<div class="orange-text cyan center col s2">
 				<h6>Fecha de cierre</h6>
 				<div class="chip center cyan white-text">
 					{{$expediente->fecha_cierre}}
 				</div>
 			</div>
 			@endif
-			<div class="divchip2 orange-text center">
-				<h6>Involucrados</h6>
-				<div class="chip center cyan white-text">
-					{{$expediente->investigados_count}}
-				</div>
-			</div>
-			<div class="divchip2 orange-text center">
-				<div class="input-field col s3">
+			<div class="orange-text center">
+				<div class="input-field col s2">
 					<select ng-model="data.estatus" class="browser-default" ng-disabled="!state">
 						@foreach($estatus as $estatu)
 							<option value="{{$estatu->id}}">{{$estatu->nombre}}</option>
 						@endforeach
 					</select>
-					<label class="active" for="icon_prefix2">Estatus</label>
+					<label class="active labelmov"><i class="zmdi zmdi-calendar-alt zmdi-hc-lg"></i> Estatus</label>
 				</div>
 			</div>
-		</div>
-		<div class="input-field col s3 wis">
-			<input type="text" name="search" placeholder="Filtrar Busqueda" ng-model="search">
-		</div>
+			<div class="orange-text center col s2">
+				<h6>Involucrados</h6>
+				<div class="chip center cyan white-text">
+					{{$expediente->investigados_count}}
+				</div>
+			</div>
+	</div>
+  </div>
 		<div class="container">
 			<ul class="collapsible" data-collapsible="accordion">
 				<li dir-paginate="investigado in investigados |filter:search| itemsPerPage:5">
@@ -75,32 +81,32 @@
 							<form class="col s12">
 								<div class="row">
 									<div class="input-field col s6">
-										<input disabled id="inid" type="text"  ng-model="investigado.empleado.cedula" class="validate">
-										<label class="active" for="inid">Cedula</label>		
+										<input readonly id="inid" type="text"  ng-model="investigado.empleado.cedula" class="validate">
+										<label class="active" for="inid"><i class="zmdi zmdi-view-web"></i> Cedula</label>		
 									</div>
 									<div class="input-field col s6">
-										<input disabled id="inape" type="text" ng-model="investigado.empleado.apellidos" class="validate">
-										<label class="active" for="inape">Apellidos</label>
-									</div>
-								</div>
-								<div class="row">
-									<div class="input-field col s6">
-										<input disabled id="innom" type="text" ng-model="investigado.empleado.nombres" class="validate">
-										<label class="active" for="innom">Nombres</label>
-									</div>
-									<div class="input-field col s6">
-										<input disabled id="ininv" type="text" ng-model="investigado.cargo" class="validate">
-										<label class="active" for="ininv">Cargo en la investigacion</label>
+										<input readonly id="innom" type="text" ng-model="investigado.empleado.nombres" class="validate">
+										<label class="active" for="innom"><i class="zmdi zmdi-account zmdi-hc-lg"></i> Nombres</label>
 									</div>
 								</div>
 								<div class="row">
 									<div class="input-field col s6">
-										<input disabled id="inubi" type="text" ng-model="investigado.ubicacion" class="validate">
-										<label class="active" for="inubi">Ubicacion en la investigacion</label>
+										<input readonly id="inape" type="text" ng-model="investigado.empleado.apellidos" class="validate">
+										<label class="active" for="inape"><i class="zmdi zmdi-account-o zmdi-hc-lg"></i> Apellidos</label>
 									</div>
 									<div class="input-field col s6">
-										<input disabled id="ininv" type="text" ng-model="investigado.relacion" class="validate">
-										<label class="active" for="ininv">Relacion en la investigacion</label>
+										<input readonly id="ininv" type="text" ng-model="investigado.cargo" class="validate">
+										<label class="active" for="ininv"><i class="zmdi zmdi-group-work zmdi-hc-lg"></i> Cargo en la investigacion</label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="input-field col s6">
+										<input readonly id="inubi" type="text" ng-model="investigado.ubicacion" class="validate">
+										<label class="active" for="inubi"><i class="zmdi zmdi-square-right zmdi-hc-lg"></i> Ubicacion en la investigacion</label>
+									</div>
+									<div class="input-field col s6">
+										<input readonly id="ininv" type="text" ng-model="investigado.relacion" class="validate">
+										<label class="active" for="ininv"><i class="zmdi zmdi-folder-outline zmdi-hc-lg"></i> Relacion en la investigacion</label>
 									</div>
 								</div>
 								<div class="row">
@@ -110,7 +116,7 @@
 												<option value="{{$complicidad->id}}">{{$complicidad->nombre}}</option>
 											@endforeach
 										</select>
-										<label class="active">Complicidad</label>
+										<label class="active labelmov"><i class="zmdi zmdi-library zmdi-hc-lg"></i> Complicidad</label>
 									</div>
 									<div class="input-field col s6">
 										<select ng-model="investigado.resultado.id" convert-to-number class="browser-default" ng-disabled="!state">
@@ -118,7 +124,7 @@
 												<option value="{{$resultado->id}}">{{$resultado->nombre}}</option>
 											@endforeach
 										</select>
-										<label class="active">resultado</label>
+										<label class="active labelmov"><i class="zmdi zmdi-check zmdi-hc-lg"></i> Resultado</label>
 									</div>	
 								</div>
 								<div class="row">
@@ -128,10 +134,11 @@
 												<option value="{{$decisorio->id}}">{{$decisorio->nombre}}</option>
 											@endforeach
 										</select>
-										<label class="active">Decisorio</label>
+										<label class="active labelmov"><i class="zmdi zmdi-check-all zmdi-hc-lg"></i> Decisorio</label>
 									</div>	
 									<div class="input-field col s6">
-										<input type="text" class="datepicker" placeholder="Fecha de Apertura" ng-model="investigado.fecha" ng-disabled="!state">
+										<label class="labelmov" for="fechape"><i class="zmdi zmdi-calendar-alt zmdi-hc-lg"></i> Fecha de Apertura</label>
+										<input id="fechape" type="text" class="datepicker" placeholder="Fecha de Apertura" ng-model="investigado.fecha" ng-disabled="!state">
 									</div>
 								</div>
 							</form>

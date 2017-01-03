@@ -29,6 +29,12 @@ $(document).ready(function(){
 		close: 'Cerrar',
 		format: 'dd-mm-yyyy'
 	});
+	
+	$(document).ready(function(){
+		// the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+		$('.modal-trigger').leanModal();
+
+	});
 });
 /* sweet alert script */
 /*alerta de salir del sistema*/
@@ -170,14 +176,8 @@ function closeNav() {
 	document.getElementById("mySidenav").style.width = "0";
 	document.getElementById("main").style.marginLeft = "0";
 	document.body.style.backgroundColor = "white";
-	document.getElementById("main").style.zIndex = "0";
+	document.getElementById("main").style.zIndex = "1";
 }
-/* funcion abre modal */
-$(document).ready(function(){
-	// the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-	$('.modal-trigger').leanModal();
-	
-});
 /*funcion para desplegar un select en materialize*/
 $(document).ready(function() {
 	$('select').material_select();

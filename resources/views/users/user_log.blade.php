@@ -1,22 +1,21 @@
 @extends('layouts.app')
 @section('content')
+@include('modals.adduser_modal')
+@include('modals.reedituser_modal')
+
 <div class="card-panel marexp cyan darken-1 z-depth-1 white-text center">Usuarios Registrados <i class="zmdi zmdi-accounts-list"></i></div>
+
 <div class="position">
 	<div class="left marginser">
-		<input type="text" name="search" placeholder="Filtrar Busqueda">
+		<input type="text" name="search" id="search">
+		<label class="validate" for="search"><i class="zmdi zmdi-search zmdi-hc-lg"></i> Buscar Cedula</label>
 	</div>
 	<div class="input-field col s12">
-			<a class="btn-floating waves-effect waves-light cyan darken-1 tooltipped" data-tooltip="Nuevo/Agregar" data-position="top" href="#modal1">
-				<i class="zmdi zmdi-plus"></i>
+			<a href="#modal5" class="btn-floating waves-effect waves-light cyan darken-1 tooltipped modal-trigger" data-tooltip="Nuevo/Agregar" data-position="top">
+			<i class="zmdi zmdi-plus"></i>
 			</a>
-			<a class="btn-floating waves-effect waves-light cyan darken-1 tooltipped" data-tooltip="Modificar" data-position="top" href="#modal1">
-				<i class="zmdi zmdi-edit"></i>
-			</a>
-			<a class="btn-floating waves-effect waves-light cyan darken-1 tooltipped" data-tooltip="Bloquear" data-position="top" onclick="sweetalertEventUserBlock()">
-				<i class="zmdi zmdi-block-alt"></i>
-			</a>
-			<a class="btn-floating waves-effect waves-light cyan darken-1 tooltipped" data-tooltip="Eliminar" data-position="top" onclick="sweetalertEventUserDel()">
-				<i class="zmdi zmdi-delete"></i>
+			<a href="#modal7" class="btn-floating waves-effect waves-light cyan darken-1 tooltipped modal-trigger" data-tooltip="Editar Usuario" data-position="top">
+			<i class="zmdi zmdi-edit"></i>
 			</a>
 	</div>
 </div>
@@ -26,8 +25,9 @@
 		<thead class="cyan">
 			<tr class="white-text">
 				<th data-field="id">
-					<input type="checkbox" class="filled-in" id="filled-in-box" />
-					<label for="filled-in-box"></label>
+					<div class="">
+						Seleccion
+					</div>
 				</th>
 				<th data-field="id">Usuario</th>
 				<th data-field="name">Rol</th>

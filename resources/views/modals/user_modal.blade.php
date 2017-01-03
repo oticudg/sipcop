@@ -1,6 +1,9 @@
 {{-- Modal estructura --}} 
 <div id="modal3" class="modal modal-fixed-footer modalback">
 	<div class="modal-content">
+		<div class="row padx">
+			<a href="#" class="modal-action modal-close"><i class="zmdi zmdi-close zmdi-hc-2x"></i></a>
+		</div>
 		<div class="container-login center-align">
 			<div style="">
 				<h1 class="light-blue-text"> 
