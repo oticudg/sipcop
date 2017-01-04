@@ -48,6 +48,7 @@
 						<script type="text/javascript" src="/js/dirPagination.js"></script>
 						<script type="text/javascript" src="/js/controllers/expediente/register.js"></script>
 						<script type="text/javascript" src="/js/controllers/expediente/edit.js"></script>
+						<script type="text/javascript" src="/js/controllers/usuarios/controller.js"></script>
 						<script src="/js/main.js"></script>
 					    <script src="/js/sweetalert.min.js"></script>
 	  @yield('script')

@@ -193,7 +193,7 @@ $(document).ready(function(){
 });
 
 
-var app = angular.module('sipcop', ['expediente', 'angularUtils.directives.dirPagination']);
+var app = angular.module('sipcop', ['expediente', 'usuarios', 'angularUtils.directives.dirPagination']);
 app.directive('convertToNumber', function() {
   return {
     require: 'ngModel',

@@ -6,7 +6,7 @@
 			<li class="nav2">
 				<ul>
 					<li class="bornav">
-						<a href="#">Usuario</a>
+						<a href="#">{{Auth::user()->name}}</a>
 						<ul>
 							<li>	
 								<a href="#modal3" class="center modal-trigger"><i class="zmdi zmdi-settings center light-blue-text"></i>Cambiar Contraseña</a>

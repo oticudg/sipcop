@@ -11,27 +11,25 @@
 				</h1>
 				<h5 class="orange-text">Registrar Usuario</h5>   
 			</div>
-		<form action="" method="post" style="margin-left:110px;">
+			<form ng-submit="save()" style="margin-left:110px;">
 				<div class="row">
 					
 					<div class="input-field col s4">
-						<input id="email1" type="email" class="validate" name="email" required autofocus>
+						<input id="email1" type="email" class="validate" ng-model="data.email" required autofocus>
 						<label for="email1">
 							<i class="zmdi zmdi-email"></i>&nbsp; Email
 						</label>
 					</div>
 					
 					<div class="input-field col s4">
-						<input id="usern" type="text" class="validate" name="email" required>
+						<input id="usern" type="text" class="validate" ng-model="data.name" required>
 						<label for="usern">
-							<i class="zmdi zmdi-account"></i> Usuario
+							<i class="zmdi zmdi-account"></i> Nombre
 						</label>
 					</div>
 					
-					
-					
 					<div class="input-field col s4">
-					 	<input id="pass1" type="password" class="validate" name="email" required>
+					 	<input id="pass1" type="password" class="validate" ng-model="data.password" required>
 						<label for="pass1">
 							<i class="zmdi zmdi-key"></i> Contraseña
 						</label>
@@ -41,14 +39,14 @@
 				
 				<div class="row">
 					<div class="input-field col s4">
-						<input id="pass2" type="password" class="validate" name="email" required>
+						<input id="pass2" type="password" class="validate" ng-model="data.password_confirmation" name="password_confirmation" required>
 						<label for="pass2">
 							<i class="zmdi zmdi-key"></i> Repetir Contraseña
 						</label>
 					</div>
 					
 					<div class="input-field col s4">
-						<select>
+						<select ng-model="data.role">
 							<option value="" disabled selected>Seleccione un Rol</option>
 							<option value="1">Rol 1</option>
 							<option value="2">Rol 2</option>
@@ -57,10 +55,13 @@
 						<label> <i class="zmdi zmdi-group-work"></i> Roles</label>
 					</div>		
 				</div>	
-		</form>
-			<button id="btnsac" class="waves-effect waves-teal cyan btn z-depth-1 tooltipped" data-tooltip="Guardar Cambios">Guardar &nbsp; 
+
+				<button id="btnsac" class="waves-effect waves-teal cyan btn z-depth-1 tooltipped" data-tooltip="Guardar Cambios">Guardar &nbsp; 
 				<i class="zmdi zmdi-mail-send"></i>
-			</button>
+				</button>
+			
+			</form>
+	
 		</div>
 	</div>
 </div>
