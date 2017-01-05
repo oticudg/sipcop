@@ -11,7 +11,7 @@
 				</h1>
 				<h5 class="orange-text">Editar Usuario</h5>   
 			</div>
-			<form action="" method="post" style="margin-left:110px;">
+			<form action="" method="post">
 
 				<div class="switch">
 					<label>
@@ -29,17 +29,13 @@
 				<div class="row">
 
 					<div class="input-field col s4">
-						<input id="email1" type="email" class="validate" ng-model="userSelect.email">
-						<label for="email1">
-							<i class="zmdi zmdi-email"></i>&nbsp; Email
-						</label>
+						<input id="email1" type="email" class="validate" placeholder="Email" ng-model="userSelect.email">
+						<label for="email1"><i class="zmdi zmdi-email"></i>&nbsp; Email</label>
 					</div>
 
 					<div class="input-field col s4">
-						<input id="usern" type="text" class="validate" ng-model="userSelect.name" required>
-						<label for="usern">
-							<i class="zmdi zmdi-account"></i> Usuario
-						</label>
+						<input id="usern" type="text" class="validate" placeholder="Usuario" ng-model="userSelect.name" required>
+						<label for="usern"><i class="zmdi zmdi-account"></i> Usuario</label>
 					</div>
 
 

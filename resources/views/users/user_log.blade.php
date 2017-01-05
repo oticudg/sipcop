@@ -7,20 +7,19 @@
 
 	<div class="card-panel marexp cyan darken-1 z-depth-1 white-text center">Usuarios Registrados <i class="zmdi zmdi-accounts-list"></i></div>
 
-	<div class="position">
-		<div class="left marginser">
-			<input type="text" name="search" id="search" ng-model="search">
-			<label class="validate" for="search"><i class="zmdi zmdi-search zmdi-hc-lg"></i> Buscar Cedula</label>
+	<div class="row">
+		
+		<div class="col s1 input-field push-s2" style="margin-left: -33px; margin-bottom: -30px; width:150px;">
+			<label for="search2"><i class="zmdi zmdi-search zmdi-hc-lg"></i> Buscar Usuario</label>
+			<input id="search2" type="text" class="validate" ng-model="search">
 		</div>
-		<div class="input-field col s12">
+		<div class="input-field col s4 push-s6" style="margin-left:290px;">
 				<a href="#modal5" class="btn-floating waves-effect waves-light cyan darken-1 tooltipped modal-trigger" data-tooltip="Nuevo/Agregar" data-position="top">
 				<i class="zmdi zmdi-plus"></i>
 				</a>
-
 				<a href="#modal7" class="btn-floating waves-effect waves-light cyan darken-1 disabled" ng-hide="userSelect">
 				<i class="zmdi zmdi-edit"></i>
 				</a>
-
 				<a href="#modal7" class="btn-floating waves-effect waves-light cyan darken-1 tooltipped modal-trigger" data-tooltip="Editar Usuario" data-position="top" ng-show="userSelect">
 				<i class="zmdi zmdi-edit"></i>
 				</a>

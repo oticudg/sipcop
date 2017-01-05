@@ -11,7 +11,7 @@
 				</h1>
 				<h5 class="orange-text">Registrar Usuario</h5>   
 			</div>
-			<form ng-submit="save()" style="margin-left:110px;">
+			<form ng-submit="save()">
 				<div class="row">
 					
 					<div class="input-field col s4">
@@ -55,10 +55,11 @@
 						<label> <i class="zmdi zmdi-group-work"></i> Roles</label>
 					</div>		
 				</div>	
-
-				<button id="btnsac" class="waves-effect waves-teal cyan btn z-depth-1 tooltipped" data-tooltip="Guardar Cambios">Guardar &nbsp; 
-				<i class="zmdi zmdi-mail-send"></i>
-				</button>
+				<div class="row">
+					<button id="btnsac" class="waves-effect waves-teal cyan btn z-depth-1 tooltipped" data-tooltip="Guardar Cambios">Guardar &nbsp; 
+					<i class="zmdi zmdi-mail-send"></i>
+					</button>
+				</div>
 			
 			</form>
 	
