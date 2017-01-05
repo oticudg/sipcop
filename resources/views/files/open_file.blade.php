@@ -3,18 +3,27 @@
 <div ng-controller="editCtr" ng-cloak>
 		<div class="card-panel cyan darken-1 z-depth-1 white-text marexp center">Expediente #{{$expediente->codigo}} <i class="zmdi zmdi-file-text"></i>
 			
-			<a href="#modal4" class="btn-floating btn waves-effect waves-light cyan darken-2 edimar modal-trigger tooltipped" data-tooltip="Agregar Involucrados">
-				<i class="zmdi zmdi-accounts-add"></i>
-			</a>
+			@can(['expediente.edit'])	
+				<a href="#modal4" class="btn-floating btn waves-effect waves-light cyan darken-2 edimar modal-trigger tooltipped" data-tooltip="Agregar Involucrados">
+					<i class="zmdi zmdi-accounts-add"></i>
+				</a>
+			@endcan
+			
 			<a ng-show="state" ng-click="save()" class="btn-floating btn waves-effect waves-light cyan darken-2 edimar tooltipped" data-tooltip="Guardar Cambios">
 				<i class="zmdi zmdi-save"></i>
 			</a>
-			<a class="btn-floating btn waves-effect waves-light cyan darken-2 edimar tooltipped" data-tooltip="Editar Expediente">
-				<i class="zmdi zmdi-edit" ng-click="edit()"></i>
-			</a>
-			<a class="btn-floating btn waves-effect waves-light cyan darken-2 edimar tooltipped" data-tooltip="Eliminar Expediente">
-				<i class="zmdi zmdi-delete"></i>
-			</a>
+
+			@can(['expediente.edit'])
+				<a class="btn-floating btn waves-effect waves-light cyan darken-2 edimar tooltipped" data-tooltip="Editar Expediente">
+					<i class="zmdi zmdi-edit" ng-click="edit()"></i>
+				</a>
+			@endcan
+
+			@can(['expediente.delete'])
+				<a class="btn-floating btn waves-effect waves-light cyan darken-2 edimar tooltipped" data-tooltip="Eliminar Expediente">
+					<i class="zmdi zmdi-delete"></i>
+				</a>
+			@endcan
 		</div>				
 	<div class="container">
 		<div class="row">

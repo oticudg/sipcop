@@ -43,17 +43,21 @@
 								</a>
 								<ul class="full-width">
 									<li class="NavLateralDivider"></li>
-									<li>
-										<a href="/expedientes/create" class="waves-effect waves-light tooltipped" data-tooltip="Administrar Expedientes" data-position="right">
-											<i class="zmdi zmdi-plus zmdi-hc-fw"></i> Crear Expediente
-										</a>
-									</li>
+									@can(['expediente.register'])
+										<li>
+											<a href="/expedientes/create" class="waves-effect waves-light tooltipped" data-tooltip="Administrar Expedientes" data-position="right">
+												<i class="zmdi zmdi-plus zmdi-hc-fw"></i> Crear Expediente
+											</a>
+										</li>
+									@endcan
 									<li class="NavLateralDivider"></li>
-									<li>
-										<a href="/expedientes" class="waves-effect waves-light tooltipped" data-tooltip="Administrar Expedientes" data-position="right">
-											<i class="zmdi zmdi-format-list-bulleted zmdi-hc-fw"></i> Listar Expedientes
-										</a>
-									</li>
+									@can(['expediente.show'])
+										<li>
+											<a href="/expedientes" class="waves-effect waves-light tooltipped" data-tooltip="Administrar Expedientes" data-position="right">
+												<i class="zmdi zmdi-format-list-bulleted zmdi-hc-fw"></i> Listar Expedientes
+											</a>
+										</li>
+									@endcan
 									<li class="NavLateralDivider"></li>
 									<li>
 										<a href="#" class="waves-effect waves-light tooltipped" data-tooltip="Involucrados Individualmente" data-position="right">

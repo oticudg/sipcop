@@ -4,11 +4,13 @@
 <div class="container">
  <ul id="myUL" class="collapsible popout" data-collapsible="accordion">
 		<div class="container">
-			<div class="btnplus">
-				<a class="btn-floating btn-small waves-effect waves-light cyan darken-1 tooltipped" data-tooltip="Agregar Expediente" data-position="top" href="/expedientes/create">
-					<i class="material-icons">add</i>
-				</a>
-			</div>
+			@can(['expediente.register'])
+				<div class="btnplus">
+					<a class="btn-floating btn-small waves-effect waves-light cyan darken-1 tooltipped" data-tooltip="Agregar Expediente" data-position="top" href="/expedientes/create">
+						<i class="material-icons">add</i>
+					</a>
+				</div>
+			@endcan()
 			<div class="input-field col s3 wis2">				
 				<input type="text" name="search" placeholder="Filtrar Busqueda">
 			</div>
