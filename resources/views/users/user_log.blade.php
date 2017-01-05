@@ -16,7 +16,12 @@
 				<a href="#modal5" class="btn-floating waves-effect waves-light cyan darken-1 tooltipped modal-trigger" data-tooltip="Nuevo/Agregar" data-position="top">
 				<i class="zmdi zmdi-plus"></i>
 				</a>
-				<a href="#modal7" class="btn-floating waves-effect waves-light cyan darken-1 tooltipped modal-trigger" data-tooltip="Editar Usuario" data-position="top">
+
+				<a href="#modal7" class="btn-floating waves-effect waves-light cyan darken-1 disabled" ng-hide="userSelect">
+				<i class="zmdi zmdi-edit"></i>
+				</a>
+
+				<a href="#modal7" class="btn-floating waves-effect waves-light cyan darken-1 tooltipped modal-trigger" data-tooltip="Editar Usuario" data-position="top" ng-show="userSelect">
 				<i class="zmdi zmdi-edit"></i>
 				</a>
 		</div>

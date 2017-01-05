@@ -5,7 +5,7 @@ angular.module('usuarios', [])
 
 	$scope.data = {};
 	$scope.users = users;
-	$scope.userSelect = {};
+	$scope.userSelect = false;
 
 	$scope.save = function(){
 
