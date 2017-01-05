@@ -15,6 +15,7 @@ use App\Models\Expediente\Estatu;
 use App\Models\Expediente\Decisorio;
 Use App\Models\Expediente\Complicidade;
 use App\Models\Expediente\Resultado;
+use Shinobi;
 
 class ExpedienteController extends Controller
 {
@@ -33,6 +34,9 @@ class ExpedienteController extends Controller
      */
     public function index()
     {	
+    	if(!Shinobi::can('expediente.show'))
+    		abort('404');
+
 		/**
 		 * Columnas a selecionar
 		 */	
@@ -66,6 +70,10 @@ class ExpedienteController extends Controller
      */
     public function create()
     {
+
+    	if(!Shinobi::can('expediente.register'))
+    		abort('404');
+
     	$tipologias = Tipologia::get();
     	$estatus = Estatu::get();
     	$complicidades = Complicidade::get();
@@ -85,6 +93,9 @@ class ExpedienteController extends Controller
      */
     public function store(StoreExpediente $request)
     {
+    	if(!Shinobi::can('expediente.register'))
+    		abort('404');
+
 		\Auth::loginUsingId(1);	
 		$expediente = new Expediente;
 		
@@ -118,6 +129,8 @@ class ExpedienteController extends Controller
      */
     public function show($id)
     {	
+    	if(!Shinobi::can('expediente.show'))
+    		abort('404');
 
         $expediente = Expediente::where('expedientes.id', $id)
 					  ->withCount('investigados')
@@ -166,6 +179,10 @@ class ExpedienteController extends Controller
      */
     public function update(UpdateExpediente $request, Expediente $expediente)
     {	
+
+    	if(!Shinobi::can('expediente.edit'))
+    		abort('404');
+
     	if($request->has('add_investigados')){
 			
 			$investigados = $this->investigacion
@@ -208,6 +225,10 @@ class ExpedienteController extends Controller
      */
     public function destroy(Expediente $expediente)
     {
+
+    	if(!Shinobi::can('expediente.delete'))
+    		abort('404');
+
     	$expediente->delete();	
     }
 }

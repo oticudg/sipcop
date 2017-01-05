@@ -22,4 +22,6 @@
 		return view('users.user_log');
 	});*/
 	
-	
+	route::get('prueba', function(){
+		Auth::user()->syncRoles([2]);
+	});	
