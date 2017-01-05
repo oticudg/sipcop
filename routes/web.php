@@ -15,8 +15,11 @@
 	Route::post('empleado/search', 'EmpleadoController@searchEmpleado');
 	Route::resource('expedientes', 'ExpedienteController');
 	Auth::routes();	
+
+	Route::resource('users', 'UsersController');
+	/*
 	Route::get('users', function () {
 		return view('users.user_log');
-	});
+	});*/
 	
 	

@@ -16,26 +16,27 @@
 				<div class="switch">
 					<label>
 						Off
-						<input type="checkbox">
+						<input type="checkbox" ng-checked="userSelect.active">
 						<span class="lever"></span>
 						On
 					</label>
-					<a class="btn-floating waves-effect waves-light cyan darken-1 tooltipped" data-tooltip="Eliminar Usuario" data-position="top" onclick="sweetalertEventUserDel()">
-						<i class="zmdi zmdi-delete"></i>
-					</a>
 				</div>
+
+				<a class="btn-floating waves-effect waves-light cyan darken-1 tooltipped" data-tooltip="Eliminar Usuario" data-position="top" ng-click="delete()">
+					<i class="zmdi zmdi-delete"></i>
+				</a>
 				
 				<div class="row">
 
 					<div class="input-field col s4">
-						<input id="email1" type="email" class="validate" name="email" required autofocus>
+						<input id="email1" type="email" class="validate" ng-model="userSelect.email">
 						<label for="email1">
 							<i class="zmdi zmdi-email"></i>&nbsp; Email
 						</label>
 					</div>
 
 					<div class="input-field col s4">
-						<input id="usern" type="text" class="validate" name="email" required>
+						<input id="usern" type="text" class="validate" ng-model="userSelect.name" required>
 						<label for="usern">
 							<i class="zmdi zmdi-account"></i> Usuario
 						</label>
@@ -44,7 +45,7 @@
 
 
 					<div class="input-field col s4">
-						<input id="pass1" type="password" class="validate" name="email" required>
+						<input id="pass1" type="password" class="validate" ng-model="userSelect.password" required>
 						<label for="pass1">
 							<i class="zmdi zmdi-key"></i> Contraseña
 						</label>
@@ -54,14 +55,14 @@
 
 				<div class="row">
 					<div class="input-field col s4">
-						<input id="pass2" type="password" class="validate" name="email" required>
+						<input id="pass2" type="password" class="validate" ng-model="userSelect.password_confirmation" required>
 						<label for="pass2">
 							<i class="zmdi zmdi-key"></i> Repetir Contraseña
 						</label>
 					</div>
 
 					<div class="input-field col s4">
-						<select>
+						<select ng-model="userSelect.role">
 							<option value="" disabled selected>Seleccione un Rol</option>
 							<option value="1">Rol 1</option>
 							<option value="2">Rol 2</option>
@@ -71,7 +72,7 @@
 					</div>		
 				</div>	
 			</form>
-			<button id="btnsac" class="waves-effect waves-teal cyan btn z-depth-1 tooltipped" data-tooltip="Guardar Cambios">Guardar &nbsp; 
+			<button id="btnsac" class="waves-effect waves-teal cyan btn z-depth-1 tooltipped" data-tooltip="Guardar Cambios" ng-click="edit()">Guardar &nbsp; 
 				<i class="zmdi zmdi-mail-send"></i>
 			</button>
 		</div>

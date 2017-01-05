@@ -9,7 +9,7 @@
 
 	<div class="position">
 		<div class="left marginser">
-			<input type="text" name="search" id="search">
+			<input type="text" name="search" id="search" ng-model="search">
 			<label class="validate" for="search"><i class="zmdi zmdi-search zmdi-hc-lg"></i> Buscar Cedula</label>
 		</div>
 		<div class="input-field col s12">
@@ -33,31 +33,28 @@
 					</th>
 					<th data-field="id">Usuario</th>
 					<th data-field="name">Rol</th>
-					<th data-field="price">Contraseña</th>
+					<th data-field="price">Nombre</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
+				<tr dir-paginate="user in users |filter:search| itemsPerPage:10">
 					<td>
-						<input type="checkbox" class="checkbox" id="check1" />
-							<label for="check1"></label>
+						<input type="radio" name="select" class="checkbox" id="@{{user.id}}" ng-click="select(user)"/>
+						<label for="@{{user.id}}"></label>
 					</td>
-							<td>Peter</td>
-							<td>Griffin</td>
-							<td>****</td>
+					<td>@{{user.email}}</td>
+					<td>@{{user.rol}}</td>
+					<td>@{{user.name}}</td>
 				</tr>
-			
 			</tbody>
 		</table>
-		<ul class="pagination center">
-			<li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-			<li class="active"><a href="#!">1</a></li>
-			<li class="waves-effect"><a href="#!">2</a></li>
-			<li class="waves-effect"><a href="#!">3</a></li>
-			<li class="waves-effect"><a href="#!">4</a></li>
-			<li class="waves-effect"><a href="#!">5</a></li>
-			<li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-		</ul>
+		<div class="col s12 center">
+			<dir-pagination-controls template-url="/templates/dirPagination.tpl.html"></dir-pagination-controls>
+		</div>	
 	</div>
 </div>
+
+<script type="text/javascript">
+	var users = {!! $users !!};
+</script>
 @endsection	
