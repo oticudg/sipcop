@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div ng-controller="usersCtr">
+<div ng-controller="usersCtr" ng-cloak>
 	@include('modals.adduser_modal')
 	@include('modals.reedituser_modal')
 	<div class="card-panel marexp cyan darken-1 z-depth-1 white-text center">Usuarios Registrados <i class="zmdi zmdi-accounts-list"></i></div>
@@ -12,15 +12,21 @@
 			<input id="search2" type="text" class="validate" ng-model="search">
 		</div>
 		<div class="input-field col s4 push-s6" style="padding-left:310px;">
-				<a href="#modal5" class="btn-floating waves-effect waves-light cyan darken-1 tooltipped modal-trigger" data-tooltip="Nuevo/Agregar" data-position="top">
-				<i class="zmdi zmdi-plus"></i>
-				</a>
-				<a href="#modal7" class="btn-floating waves-effect waves-light cyan darken-1 disabled" ng-hide="userSelect">
-				<i class="zmdi zmdi-edit"></i>
-				</a>
-				<a href="#modal7" class="btn-floating waves-effect waves-light cyan darken-1 tooltipped modal-trigger" data-tooltip="Editar Usuario" data-position="top" ng-show="userSelect">
-				<i class="zmdi zmdi-edit"></i>
-				</a>
+
+				@can(['user.register'])
+					<a href="#modal5" class="btn-floating waves-effect waves-light cyan darken-1 tooltipped modal-trigger" data-tooltip="Nuevo/Agregar" data-position="top">
+					<i class="zmdi zmdi-plus"></i>
+					</a>
+				@endcan
+
+				@can(['user.edit'])
+					<a href="#modal7" class="btn-floating waves-effect waves-light cyan darken-1 disabled" ng-hide="userSelect">
+					<i class="zmdi zmdi-edit"></i>
+					</a>
+					<a href="#modal7" class="btn-floating waves-effect waves-light cyan darken-1 tooltipped modal-trigger" data-tooltip="Editar Usuario" data-position="top" ng-show="userSelect">
+					<i class="zmdi zmdi-edit"></i>
+					</a>
+				@endcan
 		</div>
 	</div>
 	<br>

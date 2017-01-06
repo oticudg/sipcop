@@ -22,11 +22,13 @@
 									</a>
 								<ul class="full-width">
 									<li class="NavLateralDivider"></li>
-									<li>
-										<a href="/users" class="waves-effect waves-light tooltipped" data-tooltip="Administrar Usuarios" data-position="right">
-											<i class="zmdi zmdi-accounts-alt zmdi-hc-fw"></i> Usuarios
-										</a>
-									</li>
+									@can(['user.register'])
+										<li>
+											<a href="/users" class="waves-effect waves-light tooltipped" data-tooltip="Administrar Usuarios" data-position="right">
+												<i class="zmdi zmdi-accounts-alt zmdi-hc-fw"></i> Usuarios
+											</a>
+										</li>
+									@endcan
 									<li class="NavLateralDivider"></li>
 									<li>
 										<a href="#" class="waves-effect waves-light tooltipped" data-tooltip="Visualizar Auditoria" data-position="right">

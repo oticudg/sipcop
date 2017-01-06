@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\User;
+use Shinobi;
 
 class UsersController extends Controller
 {
@@ -15,7 +16,10 @@ class UsersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {	
+    {   
+        if(!Shinobi::can('user.show'))
+            abort('404'); 	
+
     	$users = User::orderBy('id','decs')->get();
     	return view('users.user_log')->with(compact('users'));	
     }
@@ -29,6 +33,9 @@ class UsersController extends Controller
      */
     public function update( Request $request, User $user)
     {   
+        if(!Shinobi::can('user.edit'))
+            abort('404');   
+
         $this->validate($request, [
             'name' => 'max:255',
             'password' => 'min:6|confirmed',
@@ -53,6 +60,9 @@ class UsersController extends Controller
      */
     public function destroy(User $user)
     {
+        if(!Shinobi::can('user.delete'))
+            abort('404');   
+
         $user->delete();  
         return "Usuario borrado.";
     }

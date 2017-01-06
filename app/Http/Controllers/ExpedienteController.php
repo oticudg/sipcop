@@ -21,7 +21,7 @@ class ExpedienteController extends Controller
 {
 	protected $investigacion;
 	protected $expediente;
-
+	
 	public function __construct()
 	{
 		$this->investigacion = new InvestigadoRepository;
