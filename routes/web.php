@@ -21,7 +21,6 @@
 	Route::get('users', function () {
 		return view('users.user_log');
 	});*/
-	
 	route::get('prueba', function(){
-		Auth::user()->syncRoles([2]);
+		Auth::user()->syncRoles([1]);
 	});	

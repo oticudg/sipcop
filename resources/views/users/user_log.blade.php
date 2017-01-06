@@ -1,10 +1,8 @@
 @extends('layouts.app')
 @section('content')
 <div ng-controller="usersCtr">
-
 	@include('modals.adduser_modal')
 	@include('modals.reedituser_modal')
-
 	<div class="card-panel marexp cyan darken-1 z-depth-1 white-text center">Usuarios Registrados <i class="zmdi zmdi-accounts-list"></i></div>
 
 	<div class="row">
@@ -13,7 +11,7 @@
 			<label for="search2"><i class="zmdi zmdi-search zmdi-hc-lg"></i> Buscar Usuario</label>
 			<input id="search2" type="text" class="validate" ng-model="search">
 		</div>
-		<div class="input-field col s4 push-s6" style="margin-left:290px;">
+		<div class="input-field col s4 push-s6" style="padding-left:310px;">
 				<a href="#modal5" class="btn-floating waves-effect waves-light cyan darken-1 tooltipped modal-trigger" data-tooltip="Nuevo/Agregar" data-position="top">
 				<i class="zmdi zmdi-plus"></i>
 				</a>

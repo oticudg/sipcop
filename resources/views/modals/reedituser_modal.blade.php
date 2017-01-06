@@ -12,20 +12,21 @@
 				<h5 class="orange-text">Editar Usuario</h5>   
 			</div>
 			<form action="" method="post">
-
-				<div class="switch">
+			 <div class="row">
+				<div class="switch right">
 					<label>
-						Off
+						Inactivo
 						<input type="checkbox" ng-checked="userSelect.active">
 						<span class="lever"></span>
-						On
+						Activo
 					</label>
 				</div>
-
-				<a class="btn-floating waves-effect waves-light cyan darken-1 tooltipped" data-tooltip="Eliminar Usuario" data-position="top" ng-click="delete()">
-					<i class="zmdi zmdi-delete"></i>
-				</a>
-				
+		    </div>	
+				<div class="row">
+					<a class="btn-floating waves-effect right waves-light cyan darken-1 tooltipped" data-tooltip="Eliminar Usuario" data-position="top" ng-click="delete()" style="margin-right:40px;">
+						<i class="zmdi zmdi-delete"></i>
+					</a>
+				</div>	
 				<div class="row">
 
 					<div class="input-field col s4">
@@ -37,8 +38,6 @@
 						<input id="usern" type="text" class="validate" placeholder="Usuario" ng-model="userSelect.name" required>
 						<label for="usern"><i class="zmdi zmdi-account"></i> Usuario</label>
 					</div>
-
-
 
 					<div class="input-field col s4">
 						<input id="pass1" type="password" class="validate" ng-model="userSelect.password" required>
