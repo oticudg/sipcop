@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;
 use Shinobi;
+use Caffeinated\Shinobi\Models\Role;
 
 class UsersController extends Controller
 {
@@ -21,7 +22,8 @@ class UsersController extends Controller
             abort('404'); 	
 
     	$users = User::orderBy('id','decs')->get();
-    	return view('users.user_log')->with(compact('users'));	
+        $roles = Role::get(); 
+    	return view('users.user_log')->with(compact('users', 'roles'));	
     }
 
     /**

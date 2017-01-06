@@ -46,11 +46,11 @@
 					</div>
 					
 					<div class="input-field col s4">
-						<select ng-model="data.role">
+						<select ng-model="data.role" convert-to-number >
 							<option value="" disabled selected>Seleccione un Rol</option>
-							<option value="1">Rol 1</option>
-							<option value="2">Rol 2</option>
-							<option value="3">Rol 3</option>
+							@foreach($roles as $rol)
+								<option value="{{$rol->id}}">{{$rol->name}}</option>
+							@endforeach
 						</select>
 						<label> <i class="zmdi zmdi-group-work"></i> Roles</label>
 					</div>		

@@ -59,9 +59,9 @@
 					<div class="input-field col s4">
 						<select>
 							<option value="" disabled selected>Seleccione un Rol</option>
-							<option value="1">Rol 1</option>
-							<option value="2">Rol 2</option>
-							<option value="3">Rol 3</option>
+							<option value="1">rol 1</option>
+							<option value="2">rol 2</option>
+							<option value="3">rol 3</option>
 						</select>
 						<label> <i class="zmdi zmdi-group-work"></i> Roles</label>
 					</div>		
