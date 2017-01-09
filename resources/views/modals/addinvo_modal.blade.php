@@ -96,7 +96,7 @@
 							</div>	
 						</div>
 					</div>
-				<button id="btnsac"  ng-click="saveInvestigados()" class="waves-effect waves-teal cyan btn z-depth-1 tooltipped" data-tooltip="Guardar Cambios">Guardar &nbsp; 
+				<button id="btnsac"  ng-show="addInvestigados.length > 0" ng-click="saveInvestigados()" class="waves-effect waves-teal cyan btn z-depth-1 tooltipped" data-tooltip="Guardar Cambios">Guardar &nbsp; 
 					<i class="zmdi zmdi-save"></i>
 				</button>
 			</div>
