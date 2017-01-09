@@ -16,11 +16,9 @@
 	Route::resource('expedientes', 'ExpedienteController');
 	Auth::routes();	
 
+	route::post('changePassword', 'UsersController@changePassword');	
 	Route::resource('users', 'UsersController');
-	/*
-	Route::get('users', function () {
-		return view('users.user_log');
-	});*/
+
 	route::get('prueba', function(){
 		Auth::user()->syncRoles([1]);
 	});	

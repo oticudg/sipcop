@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\User;
+use Hash;
 use Shinobi;
 use Caffeinated\Shinobi\Models\Role;
 
@@ -45,7 +46,7 @@ class UsersController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  App\Models\Expediente\Expediente $Expediente
+     * @param  App\User $users
      * @return \Illuminate\Http\Response
      */
     public function update( Request $request, User $user)
@@ -76,7 +77,7 @@ class UsersController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  App\Models\Expediente\Expediente $expediente
+     * @param  App\User\ $user;
      * @return \Illuminate\Http\Response
      */
     public function destroy(User $user)
@@ -87,5 +88,38 @@ class UsersController extends Controller
         $user->delete();  
         return "Usuario borrado.";
     }
+
+    /**
+     * Change password.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function changePassword(Request $request)
+    {
+        $this->validate($request, [
+            'email' => 'required|email',
+            'actual_password' => 'required',
+            'password' => 'required|min:6|confirmed',
+        ]);
+
+        $user = User::find(4);
+
+        if($user->email !== $request->email)
+            return Response()->json([
+                'email' => 'El email no coincide',
+            ], 422);
+
+        if( !Hash::check($request->actual_password, $user->password) ) 
+            return Response()->json([
+                'password' => 'La contraseña no coincide',
+            ], 422);
+
+        $user->password = bcrypt($request->password);
+        $user->save();
+
+        return "contraseña cambiada exitosamente."; 
+    }
+
 
 }

@@ -1,5 +1,5 @@
 {{-- Modal estructura --}} 
-<div id="modal6" class="modal modal-fixed-footer modalback">
+<div id="modal6" class="modal modal-fixed-footer modalback" ng-controller="changePassCtr">
 	<div class="modal-content">
 		<div class="row padx">
 			<a href="#" class="modal-action modal-close"><i class="zmdi zmdi-close zmdi-hc-2x"></i></a>

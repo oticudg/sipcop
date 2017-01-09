@@ -113,4 +113,39 @@ angular.module('usuarios', [])
 		);	
 	}
 
+}])
+
+.controller('changePassCtr', ['$scope', '$http', function($scope, $http){
+
+	$scope.data = {};
+
+	$scope.save = function(){
+
+		customSweetalertValidate(false, "Confirmar cambio de contraseña", false,{
+				"button":{
+					"success":"Cambiar",
+					"cancel":"Cancelar"
+				}
+			},
+		 	function(isConfirm){   
+
+				if (isConfirm) {     
+
+					$http.post('/changePassword', $scope.data)
+						.success(function(response){
+							sweetAlert(response, "", 'success')
+							location.reload();
+						})	
+						.error(function(response){
+							var message = response.email || response.password;
+							sweetAlert("Ocurrio un error", message, 'error');
+						});				    
+				} 
+				else {    
+					swal.close();  
+			    } 
+			}
+		);	
+	}
+
 }]);
