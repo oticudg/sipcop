@@ -175,8 +175,9 @@ function openNav(x) {
 function closeNav() {
 	document.getElementById("mySidenav").style.width = "0";
 	document.getElementById("main").style.marginLeft = "0";
-	document.body.style.backgroundColor = "white";
-	document.getElementById("main").style.zIndex = "1";
+	document.getElementById("main").style.zIndex = "0";
+	document.body.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
+	
 }
 /*funcion para desplegar un select en materialize*/
 $(document).ready(function() {

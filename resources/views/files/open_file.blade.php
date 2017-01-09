@@ -29,8 +29,8 @@
 		<div class="row">
 			<div class="center">
 				<div class="input-field col s2">
-					<label class="validate" for="search"><i class="zmdi zmdi-search zmdi-hc-lg"></i> Buscar Cedula</label>
-					<input id="search" type="text" name="search" ng-model="search" class="validate">
+					<label class="validate" for="search4"><i class="zmdi zmdi-search zmdi-hc-lg"></i> Buscar Cedula</label>
+					<input id="search4" type="text" name="search" ng-model="search" class="validate">
 				</div>
 			</div>
 			<div class="orange-text center">

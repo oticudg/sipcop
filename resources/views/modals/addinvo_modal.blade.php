@@ -1,17 +1,17 @@
 {{-- Modal estructura --}} 
-<div id="modal4" class="modal modal-fixed-footer modalback">
+<div id="modal4" class="modal">
 	<div class="modal-content">
-		<div class="row padx">
-			<a href="#" class="modal-action modal-close"><i class="zmdi zmdi-close zmdi-hc-2x"></i></a>
+		<div class="row">
+			<a href="#" class="modal-action modal-close right"><i class="zmdi zmdi-close zmdi-hc-2x"></i></a>
 		</div>
-		<div class="container-login center-align">
+		<div class="container-login2 center-align">
 			<div style="">
 				<h1 class="light-blue-text"> 
-					<i class="zmdi zmdi-accouts-add animated animatedicon pulse"></i> 
+					<i class="zmdi zmdi-accounts-add animated animatedicon pulse"></i> 
 				</h1>
 				<h5 class="orange-text">Adicion de Involucrado</h5>   
 			</div>
-			<div style="margin-left:110px;">
+			<div>
 					<div class="row">
 						<form ng-submit="empleadoSearch()">
 							<div class="input-field col s3">
@@ -96,10 +96,10 @@
 							</div>	
 						</div>
 					</div>
+				<button id="btnsac"  ng-click="saveInvestigados()" class="waves-effect waves-teal cyan btn z-depth-1 tooltipped" data-tooltip="Guardar Cambios">Guardar &nbsp; 
+					<i class="zmdi zmdi-save"></i>
+				</button>
 			</div>
-			<button id="btnsac"  ng-click="saveInvestigados()" class="waves-effect waves-teal cyan btn z-depth-1 tooltipped" data-tooltip="Guardar Cambios">Guardar &nbsp; 
-				<i class="zmdi zmdi-save"></i>
-			</button>
 		</div>
 	</div>
 </div>
