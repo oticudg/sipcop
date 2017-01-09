@@ -33,7 +33,6 @@ $(document).ready(function(){
 	$(document).ready(function(){
 		// the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
 		$('.modal-trigger').leanModal();
-
 	});
 });
 /* sweet alert script */
@@ -192,7 +191,6 @@ $(document).ready(function(){
 
 
 });
-
 
 var app = angular.module('sipcop', ['expediente', 'usuarios', 'angularUtils.directives.dirPagination']);
 app.directive('convertToNumber', function() {
