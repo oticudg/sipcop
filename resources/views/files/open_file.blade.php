@@ -20,7 +20,7 @@
 			@endcan
 
 			@can(['expediente.delete'])
-				<a class="btn-floating btn waves-effect waves-light cyan darken-2 edimar tooltipped" data-tooltip="Eliminar Expediente">
+				<a class="btn-floating btn waves-effect waves-light cyan darken-2 edimar tooltipped" data-tooltip="Eliminar Expediente" ng-click="delete()">
 					<i class="zmdi zmdi-delete"></i>
 				</a>
 			@endcan

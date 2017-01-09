@@ -129,6 +129,37 @@ angular.module('expediente')
 		);
 	}
 
+	$scope.delete = function(){
+
+		customSweetalertValidate(false, "Desea eliminar el expediente", false,{
+				"button":{
+					"success":"Eliminar",
+					"cancel":"Cancelar"
+				}
+			},
+		 	function(isConfirm){   
+				if (isConfirm) {     
+					
+					var data = {
+						'_method':'DELETE'
+					};
+
+					$http.post('/expedientes/' + exp.id, data)
+						.success(function(response){
+							sweetAlert("Expediente eliminado", "", 'success')
+							location.href="/expedientes";	
+						})	
+						.error(function(response){
+							sweetAlert("Ocurrio un error", response, 'error');
+						});
+				} 
+				else {    
+					swal.close();  
+			    } 
+			}
+		);
+	}
+
 	$scope.saveInvestigados = function(){
 
 		customSweetalertValidate(false, "Desea guardar el expediente", false,{
