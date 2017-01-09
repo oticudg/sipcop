@@ -51,7 +51,7 @@
 						<label for="@{{user.id}}"></label>
 					</td>
 					<td>@{{user.email}}</td>
-					<td>@{{user.rol}}</td>
+					<td>@{{user.role_name}}</td>
 					<td>@{{user.name}}</td>
 				</tr>
 			</tbody>

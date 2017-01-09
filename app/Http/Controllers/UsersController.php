@@ -21,7 +21,22 @@ class UsersController extends Controller
         if(!Shinobi::can('user.show'))
             abort('404'); 	
 
-    	$users = User::orderBy('id','decs')->get();
+        $columnsSelect = [
+
+            'users.id',
+            'users.email',
+            'users.name',
+            'users.active',
+            'roles.name as role_name',
+            'roles.id as role'
+        ];
+
+    	$users = User::orderBy('users.id','decs')
+                 ->join('role_user', 'role_user.user_id', '=', 'users.id')
+                 ->join('roles', 'roles.id', '=', 'role_user.role_id')
+                 ->select($columnsSelect)
+                 ->get();
+
         $roles = Role::get(); 
     	return view('users.user_log')->with(compact('users', 'roles'));	
     }
@@ -41,6 +56,7 @@ class UsersController extends Controller
         $this->validate($request, [
             'name' => 'max:255',
             'password' => 'min:6|confirmed',
+            'role' => 'exists:roles,id'
         ]);
 
         $user->name = $request->name;
@@ -48,6 +64,9 @@ class UsersController extends Controller
 
         if(isset($request->password) && !empty($request->password))
             $user->password = bcrypt($request->password);
+
+        if(isset($request->role) && !empty($request->role))
+            $user->syncRoles([$request->role]);
 
         $user->save();
 
