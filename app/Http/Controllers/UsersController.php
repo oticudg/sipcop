@@ -12,6 +12,12 @@ use Caffeinated\Shinobi\Models\Role;
 
 class UsersController extends Controller
 {
+
+    public function __construct(){
+        
+        $this->middleware('auth');
+    }
+
     /**
      * Despliega la lista de usuarios.
      *

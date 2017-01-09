@@ -25,6 +25,7 @@ class ExpedienteController extends Controller
 	public function __construct()
 	{
 		$this->investigacion = new InvestigadoRepository;
+		$this->middleware('auth');
 	}
 		
     /**
