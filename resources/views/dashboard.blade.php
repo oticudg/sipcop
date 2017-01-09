@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
 <!-- contenedor global-->
-
 <div class="card-panel cyan darken-1 white-text marexp center z-depth-1">Dashboard <i class="zmdi zmdi-view-dashboard"></i></div>
 <div class="row">	
 			<article class="col s12">
@@ -14,8 +13,7 @@
 							<span class="center-align orange-text">{{$expedientes}}</span>
 							<p class="center-align black-text">Expedientes</p>   
 						</div>
-						<a href="{{route('expedientes.index')}}" class="tile-link waves-effect waves-light cyan darken-1 waves-light">Ver detalles &nbsp; 
-							<i class="zmdi zmdi-eye"></i>
+						<a href="#" disabled class="tile-link point cyan darken-1">&nbsp; 
 						</a>
 					</div>
 					<div class="tile hoverable">	
@@ -26,8 +24,7 @@
 							<span class="center-align orange-text">{{$investigados}}</span>
 							<p class="center-align black-text">Investigados</p>   
 						</div>
-						<a href="#" class="tile-link waves-effect waves-light cyan darken-1">Ver detalles &nbsp; 
-							<i class="zmdi zmdi-eye"></i>
+						<a href="#" disabled class="tile-link point cyan darken-1">&nbsp; 
 						</a>
 					</div>	
 					<div class="tile hoverable">	
@@ -38,8 +35,7 @@
 							<span class="center-align orange-text">{{$usuarios}}</span>
 							<p class="center-align black-text">Usuarios</p>   
 						</div>
-						<a href="#" class="tile-link waves-effect waves-light cyan darken-1">Ver detalles &nbsp; 
-							<i class="zmdi zmdi-eye"></i>
+						<a href="#" disabled class="tile-link point cyan darken-1">&nbsp; 
 						</a>
 					</div>						
 			 	</div>   	
