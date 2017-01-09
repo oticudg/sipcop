@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\User;
+use Hash;
 use Shinobi;
 use Caffeinated\Shinobi\Models\Role;
 
@@ -21,7 +22,22 @@ class UsersController extends Controller
         if(!Shinobi::can('user.show'))
             abort('404'); 	
 
-    	$users = User::orderBy('id','decs')->get();
+        $columnsSelect = [
+
+            'users.id',
+            'users.email',
+            'users.name',
+            'users.active',
+            'roles.name as role_name',
+            'roles.id as role'
+        ];
+
+    	$users = User::orderBy('users.id','decs')
+                 ->join('role_user', 'role_user.user_id', '=', 'users.id')
+                 ->join('roles', 'roles.id', '=', 'role_user.role_id')
+                 ->select($columnsSelect)
+                 ->get();
+
         $roles = Role::get(); 
     	return view('users.user_log')->with(compact('users', 'roles'));	
     }
@@ -30,7 +46,7 @@ class UsersController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  App\Models\Expediente\Expediente $Expediente
+     * @param  App\User $users
      * @return \Illuminate\Http\Response
      */
     public function update( Request $request, User $user)
@@ -41,6 +57,7 @@ class UsersController extends Controller
         $this->validate($request, [
             'name' => 'max:255',
             'password' => 'min:6|confirmed',
+            'role' => 'exists:roles,id'
         ]);
 
         $user->name = $request->name;
@@ -48,6 +65,9 @@ class UsersController extends Controller
 
         if(isset($request->password) && !empty($request->password))
             $user->password = bcrypt($request->password);
+
+        if(isset($request->role) && !empty($request->role))
+            $user->syncRoles([$request->role]);
 
         $user->save();
 
@@ -57,7 +77,7 @@ class UsersController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  App\Models\Expediente\Expediente $expediente
+     * @param  App\User\ $user;
      * @return \Illuminate\Http\Response
      */
     public function destroy(User $user)
@@ -68,5 +88,38 @@ class UsersController extends Controller
         $user->delete();  
         return "Usuario borrado.";
     }
+
+    /**
+     * Change password.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function changePassword(Request $request)
+    {
+        $this->validate($request, [
+            'email' => 'required|email',
+            'actual_password' => 'required',
+            'password' => 'required|min:6|confirmed',
+        ]);
+
+        $user = User::find(4);
+
+        if($user->email !== $request->email)
+            return Response()->json([
+                'email' => 'El email no coincide',
+            ], 422);
+
+        if( !Hash::check($request->actual_password, $user->password) ) 
+            return Response()->json([
+                'password' => 'La contraseña no coincide',
+            ], 422);
+
+        $user->password = bcrypt($request->password);
+        $user->save();
+
+        return "contraseña cambiada exitosamente."; 
+    }
+
 
 }

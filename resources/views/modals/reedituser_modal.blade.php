@@ -57,12 +57,12 @@
 					</div>
 
 					<div class="input-field col s4">
-						<select ng-model="userSelect.role" convert-to-number>
+						<select ng-model="userSelect.role" convert-to-number class="browser-default">
 							@foreach($roles as $rol)
 								<option value="{{$rol->id}}">{{$rol->name}}</option>
 							@endforeach
 						</select>
-						<label> <i class="zmdi zmdi-group-work"></i> Roles</label>
+						<label class="active"> <i class="zmdi zmdi-group-work"></i> Roles</label>
 					</div>		
 				</div>	
 			</form>
