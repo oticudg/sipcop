@@ -96,8 +96,7 @@ class ExpedienteController extends Controller
     {
     	if(!Shinobi::can('expediente.register'))
     		abort('404');
-
-		\Auth::loginUsingId(1);	
+	
 		$expediente = new Expediente;
 		
 		$date = isset($request->fecha) ?
