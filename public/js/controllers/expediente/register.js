@@ -73,7 +73,7 @@ angular.module('expediente', [])
 						})
 						.error(function(response){
 
-							var message = response.tipologia || response.estatus || response.investigados;
+							var message = response[0];
 							sweetAlert("Ocurrio un error", message, 'error')
 					});
 				} 

@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Contracts\Validation\Validator;
 
 class UpdateExpediente extends FormRequest
 {
@@ -78,4 +79,16 @@ class UpdateExpediente extends FormRequest
 
         return $validator;
     }
+
+    /**
+     * Format the errors from the given Validator instance.
+     *
+     * @param  \Illuminate\Contracts\Validation\Validator  $validator
+     * @return array
+     */
+    protected function formatErrors(Validator $validator)
+    {
+        return $validator->messages()->all();
+    }
+
 }

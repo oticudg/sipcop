@@ -118,7 +118,7 @@ angular.module('expediente')
 							$scope.state = false;
 						})	
 						.error(function(response){
-							var message = response.tipologia || response.estatus || response.investigados || response.fecha;
+							var message = response[0];
 							sweetAlert("Ocurrio un error", message, 'error');
 						});
 				} 
@@ -184,7 +184,7 @@ angular.module('expediente')
 						})
 						.error(function(response){
 
-							var message = response.tipologia || response.estatus || response.investigados;
+							var message = response[0];
 							sweetAlert("Ocurrio un error", message, 'error')
 					});
 				} 

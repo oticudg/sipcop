@@ -95,7 +95,8 @@ return [
     |
     */
 
-    'empleado' => 'EL empleado no puede ser encontrado.',
+    'empleado' => 'El empleado no puede ser encontrado.',
+    'empleado_not_expediente' => 'El empleado ya se encuentra en este expediente.',
 
 
     /*
