@@ -5,6 +5,21 @@
 			<a href="#" class="modal-action modal-close"><i class="zmdi zmdi-close zmdi-hc-2x"></i></a>
 		</div>
 		<div class="container-login center-align">
+		<div class="row">
+			<div class="switch left">
+				<label>
+					Inactivo
+					<input type="checkbox" ng-checked="userSelect.active">
+					<span class="lever"></span>
+					Activo
+				</label>
+			</div>
+			<div class="">
+				<a class="btn-floating waves-effect right btne waves-light cyan darken-1 tooltipped" data-tooltip="Eliminar Usuario" data-position="top" ng-click="delete()">
+					<i class="zmdi zmdi-delete"></i>
+				</a>
+			</div>
+		</div>	
 			<div style="">
 				<h1 class="light-blue-text"> 
 					<i class="zmdi zmdi-edit animated animatedicon pulse"></i> 
@@ -12,20 +27,8 @@
 				<h5 class="orange-text">Editar Usuario</h5>   
 			</div>
 			<form action="" method="post">
-			 <div class="row">
-				<div class="switch right">
-					<label>
-						Inactivo
-						<input type="checkbox" ng-checked="userSelect.active">
-						<span class="lever"></span>
-						Activo
-					</label>
-				</div>
-		    </div>	
 				<div class="row">
-					<a class="btn-floating waves-effect right waves-light cyan darken-1 tooltipped" data-tooltip="Eliminar Usuario" data-position="top" ng-click="delete()" style="margin-right:40px;">
-						<i class="zmdi zmdi-delete"></i>
-					</a>
+					
 				</div>	
 				<div class="row">
 
@@ -62,7 +65,7 @@
 								<option value="{{$rol->id}}">{{$rol->name}}</option>
 							@endforeach
 						</select>
-						<label class="active"> <i class="zmdi zmdi-group-work"></i> Roles</label>
+						<label class="active labelmov"> <i class="zmdi zmdi-group-work"></i> Roles</label>
 					</div>		
 				</div>	
 			</form>

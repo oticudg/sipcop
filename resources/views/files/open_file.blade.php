@@ -25,7 +25,7 @@
 				</a>
 			@endcan
 		</div>				
-	<div class="container">
+	<div class="container martp">
 		<div class="row">
 			<div class="center">
 				<div class="input-field col s2">
@@ -158,6 +158,11 @@
 			<div class="col s12 center">
 				<dir-pagination-controls template-url="/templates/dirPagination.tpl.html"></dir-pagination-controls>
 			</div>	
+			<!-- <div class="row">
+				<a href="#modal4" class="btn-fl waves-effect waves-light cyan darken-2 edimar modal-trigger tooltipped" data-tooltip="Agregar Involucrados">
+					<i class="zmdi zmdi-accounts-add"></i>
+				</a>
+			</div>-->
 			<div class="row">
 				<form class="">
 					<div class="">

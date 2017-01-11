@@ -51,7 +51,7 @@
 			</div>
 				<form class="">
 					<div class="row">
-						<div class="input-field push-s1 col s10 center">
+						<div class="input-field push-s2 col s8 center">
 							<i class="material-icons prefix">info_outline</i>
 							<textarea readonly id="icon_prefix2" class="materialize-textarea validate" length="900">{{$expediente->resumen}}</textarea>
 							<label for="icon_prefix2" class="active">Resumen</label>

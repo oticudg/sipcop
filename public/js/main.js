@@ -27,7 +27,16 @@ $(document).ready(function(){
 		today: 'Hoy',
 		clear: 'Limpiar',
 		close: 'Cerrar',
-		format: 'dd-mm-yyyy'
+		format: 'dd-mm-yyyy',
+		onSet: function( arg ){
+		if ( 'select' in arg ){ //prevent closing on selecting month/year
+		this.close();
+	}
+							   }
+	});
+	
+	$('.datepicker').pickadate({
+
 	});
 	
 	$(document).ready(function(){
@@ -175,21 +184,16 @@ function closeNav() {
 	document.getElementById("mySidenav").style.width = "0";
 	document.getElementById("main").style.marginLeft = "0";
 	document.getElementById("main").style.zIndex = "0";
-	document.body.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
-	
+	document.body.style.backgroundColor = "transparent";
+
 }
 /*funcion para desplegar un select en materialize*/
 $(document).ready(function() {
 	$('select').material_select();
 
 });
-
-
-
 $(document).ready(function(){
 	$('.carousel').carousel();
-
-
 });
 
 var app = angular.module('sipcop', ['expediente', 'usuarios', 'angularUtils.directives.dirPagination']);

@@ -28,7 +28,9 @@ body, html{
 	background-color: white;
 	font-size: 13px;
 }
-
+.lean-overlay{
+	display: none !important;
+}
 .point{
 	cursor:default;
 }
@@ -429,6 +431,9 @@ nav ul a:hover{
 .martext{
 	margin-left: 50%;
 }
+.martp{
+	margin-top: 2%;
+}
 .marexp{
 	margin-top: 0px;
 	border-radius: 0px;
@@ -438,6 +443,10 @@ nav ul a:hover{
 	margin-left: 15%;
 	margin-top: -3.6%;
 	margin-bottom: 0%;
+}
+.btne{
+	margin-top:-7px;
+	margin-right: 12px;
 }
 .wis2{
 	width: 23%;
