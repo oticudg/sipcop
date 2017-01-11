@@ -16,6 +16,7 @@ use App\Models\Expediente\Decisorio;
 Use App\Models\Expediente\Complicidade;
 use App\Models\Expediente\Resultado;
 use Shinobi;
+use DB;
 
 class ExpedienteController extends Controller
 {
@@ -33,7 +34,7 @@ class ExpedienteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {	
     	if(!Shinobi::can('expediente.show'))
     		abort('404');
@@ -58,10 +59,38 @@ class ExpedienteController extends Controller
 							'estatus.id', '=', 'expedientes.estatu_id')
 						->select($columns)
 						->withCount('investigados')
-						->orderBy('expedientes.id', 'decs')
-						->paginate(10);
+						->orderBy('expedientes.id', 'decs');
 
-    	return view('files.registered_file')->with(compact('expedientes'));
+
+		if($request->has('tipologia')){
+			$expedientes->where('tipologias.id', $request->tipologia);
+		}
+
+		if($request->has('estatus')){
+			$expedientes->where('estatus.id', $request->estatus);
+		}
+
+		if($request->has('desde') && $request->has('hasta')){
+			$expedientes->whereBetween(DB::raw('DATE_FORMAT(fecha_registro, "%d-%m-%Y")'),[$request->desde, $request->hasta]);
+		}
+
+		if($request->has('resumen')){
+			$expedientes->where('resumen', 'like', '%'.$request->resumen.'%');	
+		}
+
+		if($request->has('cedula')){
+			
+			$expedientes->whereHas('investigados.empleado', function ($query) use($request) {
+    			$query->where('cedula', $request->cedula);
+			});
+		}
+
+		$expedientes = $expedientes->paginate(10);
+
+		$tipologias = Tipologia::get();
+		$estatus = Estatu::get();
+
+    	return view('files.registered_file')->with(compact('expedientes','tipologias','estatus'));
     }
 
     /**

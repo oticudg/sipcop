@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-@include('modals.summary_modal')
 <div ng-controller="editCtr" ng-cloak>
 		<div class="card-panel cyan darken-1 z-depth-1 white-text marexp center">Expediente #{{$expediente->codigo}} <i class="zmdi zmdi-file-text"></i>
 			
@@ -159,23 +158,24 @@
 			<div class="col s12 center">
 				<dir-pagination-controls template-url="/templates/dirPagination.tpl.html"></dir-pagination-controls>
 			</div>	
-			<div class="row">
+			<div class="row" ng-hide="state">
 				<a href="#modal6" class="waves-effect waves-light btn cyan darken-2 edimar modal-trigger tooltipped" data-tooltip="Resumen de Expediente"> Resumen <i class="zmdi zmdi-collection-text"></i></a>
 			</div>
-			<!--<div class="row">
+			<div class="row" ng-show="state">
 				<form class="">
 					<div class="">
 						<div class="input-field push-s2 col s8">
 							<i class="material-icons prefix">info_outline</i>
-							<textarea id="icon_prefix2" class="materialize-textarea" ng-model="data.resumen" ng-disabled="!state"></textarea>
+							<textarea id="icon_prefix2" class="materialize-textarea" ng-model="data.resumen"></textarea>
 							<label class="active" for="icon_prefix2">Resumen</label>
 						</div>
 					</div>
 				</form>
-			</div>-->
+			</div>
 		</div>
 
 		@include('modals.addinvo_modal')
+		@include('modals.summary_modal')
 </div>
 
 <script type="text/javascript">
