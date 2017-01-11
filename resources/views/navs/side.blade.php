@@ -29,12 +29,12 @@
 											</a>
 										</li>
 									@endcan
-									<li class="NavLateralDivider"></li>
-									<li>
+								<!--	<li class="NavLateralDivider"></li>-->
+									<!--<li>
 										<a href="#" class="waves-effect waves-light tooltipped" data-tooltip="Visualizar Auditoria" data-position="right">
 											<i class="zmdi zmdi-search-in-file zmdi-hc-fw"></i> Auditoria
 										</a>
-									</li>
+									</li>-->
 								</ul>
 						</li>
 							<li class="NavLateralDivider"></li>
@@ -60,21 +60,21 @@
 											</a>
 										</li>
 									@endcan
-									<li class="NavLateralDivider"></li>
-									<li>
+								<!--	<li class="NavLateralDivider"></li>-->
+								<!--<li>
 										<a href="#" class="waves-effect waves-light tooltipped" data-tooltip="Involucrados Individualmente" data-position="right">
 											<i class="zmdi zmdi-pin-account zmdi-hc-fw"></i> Historico de Involucrados
 										</a>
-									</li>
+									</li>-->
 								</ul>
-							</li> 
-							<li class="NavLateralDivider"></li>
-							<li>
+								</li>
+								<li class="NavLateralDivider"></li>
+						<!--<li>
 								<a href="#" class="waves-effect waves-light tooltipped" data-tooltip="Imprimir Reportes" data-position="right">
 									<i class="zmdi zmdi-collection-pdf zmdi-hc-fw"></i> Reportes
 								</a>
 							</li>
-							<li class="NavLateralDivider"></li>
+							<li class="NavLateralDivider"></li>-->
 					</ul>
 			</div>  
 		</div>

@@ -48,7 +48,7 @@
 					<div class="input-field col s4">
 						<select ng-model="data.role" convert-to-number >
 							<option value="" disabled selected>Seleccione un Rol</option>
-							@foreach($roles as $rol)
+							@foreach($roles as $rol)						
 								<option value="{{$rol->id}}">{{$rol->name}}</option>
 							@endforeach
 						</select>
