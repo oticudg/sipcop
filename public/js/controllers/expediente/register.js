@@ -54,7 +54,6 @@ angular.module('expediente', [])
 	}
 
 	$scope.guardar = function(){
-
 		customSweetalertValidate(false, "Desea guardar el expediente", false,{
 				"button":{
 					"success":"Guardar",

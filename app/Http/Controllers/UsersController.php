@@ -109,7 +109,7 @@ class UsersController extends Controller
             'password' => 'required|min:6|confirmed',
         ]);
 
-        $user = User::find(4);
+        $user = $request->user();
 
         if($user->email !== $request->email)
             return Response()->json([
