@@ -42,6 +42,7 @@ class UsersController extends Controller
                  ->join('role_user', 'role_user.user_id', '=', 'users.id')
                  ->join('roles', 'roles.id', '=', 'role_user.role_id')
                  ->select($columnsSelect)
+                 ->where('users.id', '!=', 1)
                  ->get();
 
         $roles = Role::get(); 

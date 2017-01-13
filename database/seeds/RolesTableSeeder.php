@@ -39,7 +39,7 @@ class RolesTableSeeder extends Seeder
        $role->description = "Registrador de expedientes en el sistema"; 
        $role->save();
 
-       $role->syncPermissions([1,2,3,4,5,6,7,8]);
+       $role->syncPermissions([1,2,3]);
        $role->save();
 
     }
