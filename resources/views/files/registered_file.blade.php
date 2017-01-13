@@ -6,6 +6,11 @@
  <ul id="myUL" class="collapsible popout" data-collapsible="accordion">
 		<div class="container">
 			@can(['expediente.register'])
+				<div class="btnplus">
+					<a class="btn-floating btn-small waves-effect waves-light cyan darken-1 tooltipped" data-tooltip="Agregar Expediente" data-position="top" href="/expedientes/create">
+						<i class="material-icons">add</i>
+					</a>
+				</div>	
 			@endcan()
 			<div class="row">
 				<form action="/expedientes" method="GET" id="search">
@@ -49,11 +54,6 @@
 						</a>
 					</div>
 				</form>
-				<div class="btnplus">
-					<a class="btn-floating btn-small waves-effect waves-light cyan darken-1 tooltipped" data-tooltip="Agregar Expediente" data-position="top" href="/expedientes/create">
-						<i class="material-icons">add</i>
-					</a>
-				</div>	
 			</div>
 		</div>
 	@foreach($expedientes as $expediente)	
