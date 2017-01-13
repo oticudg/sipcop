@@ -77,7 +77,7 @@
 						</div>
 						<div class="input-field col s3">
 							<label for="phone"><i class="zmdi zmdi-phone zmdi-hc-lg"></i> Telefono</label>
-							<input value="" id="phone" type="text" class="validate">
+							<input value="" id="phone" type="text" class="validate" ng-model="empleado.telefono">
 						</div>
 						<div class="input-field col s3">
 							<select ng-model="empleado.complicidad">

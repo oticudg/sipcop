@@ -40,7 +40,7 @@
 							</div>
 							<div class="input-field col s3">
 								<label for="phone"><i class="zmdi zmdi-phone zmdi-hc-lg"></i> Telefono</label>
-								<input value="" id="phone" type="text" class="validate">
+								<input value="" id="phone" type="text" class="validate" ng-model="empleado.telefono">
 							</div>
 							<div class="input-field col s3">
 								<select ng-model="empleado.complicidad">
@@ -71,7 +71,7 @@
 							</div>
 							<div class="input-field col s3">
 								<label for="fechaem"><i class="zmdi zmdi-calendar-alt zmdi-hc-lg"></i> Fecha de Inclusion</label>
-								<input id ="fechaem" type="date" class="datepicker" ng-model="empleado.fecha">
+								<input id ="fechaem" type="text" class="datepicker" ng-model="empleado.fecha">
 							</div>
 							<div class="input-field col s3 btnag">
 								<a class="waves-effect waves-light cyan darken-1 btn-large" ng-click="agregar()">Agregar</a>

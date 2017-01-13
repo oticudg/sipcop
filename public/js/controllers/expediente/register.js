@@ -69,6 +69,7 @@ angular.module('expediente', [])
 					$http.post('/expedientes', data)
 						.success(function(response){
 							sweetAlert("Expediente guardado con exito.", "", 'success')
+							location.reload();
 						})
 						.error(function(response){
 
@@ -86,6 +87,7 @@ angular.module('expediente', [])
 
 	var cleanSearch = function(){
 		$scope.investigado = {};
+		$scope.empleado = {};
 		$scope.cedula = '';
 		$scope.status = false;
 	}

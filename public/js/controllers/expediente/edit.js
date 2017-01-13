@@ -202,6 +202,7 @@ angular.module('expediente')
 
 	var cleanSearch = function(){
 		$scope.addInvestigado = {};
+		$scope.empleado = {};
 		$scope.cedula = '';
 		$scope.status = false;
 	}

@@ -20,15 +20,15 @@
 					</label>
 				</div>
 				<div class="input-field col s5 push-s1">
-					<input id="password" ng-model="data.actual_password" type="text" class="validate">
+					<input id="password" ng-model="data.actual_password" type="password" class="validate">
 					<label for="password"><i class="zmdi zmdi-lock"></i>&nbsp; Contraseña Actual</label>
 				</div>
 				<div class="input-field col s5 push-s1">
-					<input id="password2" ng-model="data.password" type="text" class="validate">
+					<input id="password2" ng-model="data.password" type="password" class="validate">
 					<label for="password2"><i class="zmdi zmdi-lock"></i>&nbsp; Nueva Contraseña</label>
 				</div>
 				<div class="input-field col s5 push-s1">
-					<input id="password3" ng-model="data.password_confirmation" type="text" class="validate">
+					<input id="password3" ng-model="data.password_confirmation" type="password" class="validate">
 					<label for="password3"><i class="zmdi zmdi-lock"></i>&nbsp; Confirme Contraseña</label>
 				</div>
 			</div>

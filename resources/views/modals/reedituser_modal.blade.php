@@ -6,13 +6,12 @@
 		</div>
 		<div class="container-login center-align">
 		<div class="row">
-			<div class="switch left">
-				<label>
-					Inactivo
-					<input type="checkbox" ng-checked="userSelect.active">
-					<span class="lever"></span>
-					Activo
-				</label>
+			<div class="input-field col s4">
+				<select ng-model="userSelect.active" convert-to-number class="browser-default">
+					<option value="1">Activo</option>
+					<option value="0">Inactivo</option>
+				</select>
+				<label class="active labelmov"> <i class="zmdi zmdi-group-work"></i> Estatus</label>
 			</div>
 			<div class="">
 				<a class="btn-floating waves-effect right btne waves-light cyan darken-1 tooltipped" data-tooltip="Eliminar Usuario" data-position="top" ng-click="delete()">
