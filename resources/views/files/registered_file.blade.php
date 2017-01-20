@@ -4,7 +4,7 @@
 </div>
 <div class="container">
  <ul id="myUL" class="collapsible popout" data-collapsible="accordion">
-		<div class="container">
+		<div class="container" style="margin-top:3%;">
 			@can(['expediente.register'])
 				<div class="btnplus">
 					<a class="btn-floating btn-small waves-effect waves-light cyan darken-1 tooltipped" data-tooltip="Agregar Expediente" data-position="top" href="/expedientes/create">
@@ -14,9 +14,14 @@
 			@endcan()
 			<div class="row">
 				<form action="/expedientes" method="GET" id="search">
+					<div class="input-field btnpos">				
+						<a class="btn btn-small waves-effect waves-light cyan darken-1" href="#" onclick="document.getElementById('search').submit()">
+							<i class="zmdi zmdi-search  zmdi-hc-2x"></i>
+						</a>
+					</div>
 					<div class="input-field col s2 wis2 pull-s2">
-						<label for="search"><i class="zmdi zmdi-search zmdi-hc-lg"></i> Filtrar Cedula</label>				
-						<input type="text" id="search" name="cedula" autocomplete="off" class="validate">
+						<label for="cedula"><i class="zmdi zmdi-search zmdi-hc-lg"></i> Filtrar Cedula</label>				
+						<input type="text" id="cedula" name="cedula" autocomplete="off" class="validate">
 					</div>
 					<div class="input-field col s2 wis2 pull-s2">
 						<label for="search2"><i class="zmdi zmdi-search zmdi-hc-lg"></i> Palabra Clave</label>				
@@ -47,11 +52,6 @@
 					<div class="input-field col s2 wis2 pull-s2">				
 							<label for="fechaex2"><i class="zmdi zmdi-calendar-alt zmdi-hc-lg"></i> Fecha hasta</label>
 							<input id="fechaex2" type="date" name="hasta" class="datepicker">
-					</div>
-					<div class="input-field col s2 pull-s2">				
-						<a class="btn btn-small waves-effect waves-light cyan darken-1" href="#" onclick="document.getElementById('search').submit()">
-							<i class="zmdi zmdi-search  zmdi-hc-2x"></i>
-						</a>
 					</div>
 				</form>
 			</div>
@@ -94,7 +94,7 @@
 					<div class="row">
 						<div class="input-field push-s2 col s8 center">
 							<i class="material-icons prefix">info_outline</i>
-							<textarea readonly id="icon_prefix2" class="materialize-textarea validate" length="900">{{$expediente->resumen}}</textarea>
+							<textarea readonly id="icon_prefix2" class="materialize-textarea validate" maxlength="900" length="900">{{$expediente->resumen}}</textarea>
 							<label for="icon_prefix2" class="active">Resumen</label>
 						</div>
 					</div>

@@ -35,7 +35,7 @@
 						<div class="row">
 							<div class="input-field col s11">
 								<i class="material-icons prefix">edit</i>
-								<textarea id="textarea1" class="materialize-textarea" length="900" ng-model="data.resumen"></textarea>
+								<textarea id="textarea1" class="materialize-textarea" maxlength="900" length="900" ng-model="data.resumen"></textarea>
 								<label for="textarea1">Resumen</label>
 							</div>
 						</div>

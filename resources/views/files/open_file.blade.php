@@ -159,17 +159,15 @@
 				<dir-pagination-controls template-url="/templates/dirPagination.tpl.html"></dir-pagination-controls>
 			</div>	
 			<div class="row" ng-hide="state">
-				<a href="#modal6" class="waves-effect waves-light btn cyan darken-2 edimar modal-trigger tooltipped" data-tooltip="Resumen de Expediente"> Resumen <i class="zmdi zmdi-collection-text"></i></a>
+				<a href="#modal6" class="waves-effect waves-light btn cyan darken-2 edimar4 modal-trigger tooltipped" data-tooltip="Resumen de Expediente"> Resumen <i class="zmdi zmdi-collection-text"></i></a>
 			</div>
 			<div class="row" ng-show="state">
 				<form class="">
-					<div class="">
 						<div class="input-field push-s2 col s8">
 							<i class="material-icons prefix">info_outline</i>
-							<textarea id="icon_prefix2" class="materialize-textarea" ng-model="data.resumen"></textarea>
+							<textarea style="min-height:220px;" id="icon_prefix2" class="materialize-textarea" ng-model="data.resumen" maxlength="900" length="900"></textarea>
 							<label class="active" for="icon_prefix2">Resumen</label>
 						</div>
-					</div>
 				</form>
 			</div>
 		</div>

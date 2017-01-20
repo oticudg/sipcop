@@ -417,6 +417,9 @@ nav ul a:hover{
 	padding: 10px 60px 10px 10px;
 	margin-top: 5%;
 }
+.asdadasd{
+	text-emphasis-position:left;	
+}
 .divchip2{
 	width: 140px;
 	height: 65px;
@@ -432,7 +435,7 @@ nav ul a:hover{
 	margin-left: 50%;
 }
 .martp{
-	margin-top: 2%;
+	margin-top: 1%;
 }
 .marexp{
 	margin-top: 0px;
@@ -449,16 +452,15 @@ nav ul a:hover{
 	margin-right: 12px;
 }
 .wis2{
-	width: 23%;
-	margin-left: -18%;
-	margin-top:  0;
-	margin-bottom: 0%;
+	margin-top:  -38px;
+
 }
 .edimar{
 	position: relative;
 	left: 37%;
 	z-index: 0;
 }
+
 .edimar2{
 	position: relative;
 	left: 112%;
@@ -471,13 +473,22 @@ nav ul a:hover{
 	z-index: 0;
 	margin-top: 2%;
 }
+.edimar4{
+	position: relative;
+	left: 40%;
+	z-index: 0;
+}
 .spanmar2{
 	margin-left: 80%;
 	color:black;
 }
 .btnplus{
 	margin-left:112%;
-	margin-bottom: -52px;
+	margin-bottom: -40px;
+}
+.btnpos{
+	margin-left: 610px;
+	margin-top: 0;
 }
 .mitad1{
 	width: 48%;
