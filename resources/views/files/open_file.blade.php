@@ -146,7 +146,7 @@
 										<label class="active labelmov"><i class="zmdi zmdi-check-all zmdi-hc-lg"></i> Decisorio</label>
 									</div>	
 									<div class="input-field col s6">
-										<label class="labelmov" for="fechape"><i class="zmdi zmdi-calendar-alt zmdi-hc-lg"></i> Fecha de Apertura</label>
+										<label class="labelmov" for="fechape"><i class="zmdi zmdi-calendar-alt zmdi-hc-lg"></i> Fecha de Inclusion</label>
 										<input id="fechape" type="text" class="datepicker" placeholder="Fecha de Apertura" ng-model="investigado.fecha" ng-disabled="!state">
 									</div>
 								</div>

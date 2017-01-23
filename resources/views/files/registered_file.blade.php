@@ -15,7 +15,7 @@
 			<div class="row">
 				<form action="/expedientes" method="GET" id="search">
 					<div class="input-field btnpos">				
-						<a class="btn btn-small waves-effect waves-light cyan darken-1" href="#" onclick="document.getElementById('search').submit()">
+						<a class="btn btn-small waves-effect tooltipped waves-light cyan darken-1" data-tooltip="Filtrar" data-position="right" href="#" onclick="document.getElementById('search').submit()">
 							<i class="zmdi zmdi-search  zmdi-hc-2x"></i>
 						</a>
 					</div>
