@@ -14,7 +14,7 @@
 						<form ng-submit="empleadoSearch()">
 							<div class="input-field col s3">
 								<label for="search"><i class="zmdi zmdi-search zmdi-hc-lg"></i> Buscar Cedula</label>
-								<input id="search" type="text" name="search" autocomplete="off" ng-model="cedula" class="validate">
+								<input id="search" type="text" name="search" autocomplete="off" ng-model="cedula" class="validate" required>
 							</div>
 						</form>
 						<div ng-show="status">

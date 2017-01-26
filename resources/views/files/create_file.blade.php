@@ -8,7 +8,7 @@
 			  <div class="card-content white contentcard z-depth-1">
 					<div class="row">
 						<div class="input-field col s3">
-							<select ng-model="data.tipologia">
+							<select ng-model="data.tipologia" required>
 								<option value="" disabled selected>Seleccione Tipologia</option>
 								@foreach($tipologias as $tipologia)
 									<option value="{{$tipologia->id}}">{{$tipologia->nombre}}</option>
@@ -17,7 +17,7 @@
 							<label><i class="zmdi zmdi-assignment zmdi-hc-lg"></i> Tipologia</label>
 						</div>
 						<div class="input-field col s3">
-							<select ng-model="data.estatus">
+							<select ng-model="data.estatus" required>
 								<option value="" disabled selected>Seleccione Estatus</option>
 								@foreach($estatus as $estatu)
 									<option value="{{$estatu->id}}">{{$estatu->nombre}}</option>
@@ -27,7 +27,7 @@
 						</div>
 						<div class="input-field col s3">
 							<label for="fechaex"><i class="zmdi zmdi-calendar-alt zmdi-hc-lg"></i> Fecha de Apertura</label>
-							<input id="fechaex" type="text" class="datepicker" ng-model="data.fecha">
+							<input id="fechaex" type="text" class="datepicker" ng-model="data.fecha" required>
 						</div>
 					</div>
 				<div class="row">
@@ -51,7 +51,7 @@
 					<form ng-submit="empleadoSearch()">
 						<div class="input-field col s3">
 							<label for="search"><i class="zmdi zmdi-search zmdi-hc-lg"></i> Buscar Cedula</label>
-							<input id="search" type="text" name="search" autocomplete="off" ng-model="cedula" class="validate">
+							<input id="search" type="text" name="search" autocomplete="off" ng-model="cedula" class="validate" required>
 						</div>
 					</form>
 					<div ng-show="status">
@@ -80,7 +80,7 @@
 							<input value="" id="phone" type="text" class="validate" ng-model="empleado.telefono">
 						</div>
 						<div class="input-field col s3">
-							<select ng-model="empleado.complicidad">
+							<select ng-model="empleado.complicidad" required>
 								<option value="" disabled selected>Seleccione Complicidad</option>
 								@foreach($complicidades as $complicidad)
 									<option value="{{$complicidad->id}}">{{$complicidad->nombre}}</option>
@@ -89,7 +89,7 @@
 							<label><i class="zmdi zmdi-library zmdi-hc-lg"></i> Complicidad</label>
 						</div>
 						<div class="input-field col s3">
-							<select ng-model="empleado.resultado">
+							<select ng-model="empleado.resultado" required>
 								<option value="" disabled selected>Seleccione Resultado</option>
 								@foreach($resultados as $resultado)
 									<option value="{{$resultado->id}}">{{$resultado->nombre}}</option>
@@ -98,7 +98,7 @@
 							<label><i class="zmdi zmdi-check zmdi-hc-lg"></i> Resultado</label>
 						</div>
 						<div class="input-field col s3">
-							<select ng-model="empleado.decisorio">
+							<select ng-model="empleado.decisorio" required>
 								<option value="" disabled selected>Seleccione Decisorio</option>
 								@foreach($decisorios as $decisorio)
 									<option value="{{$decisorio->id}}">{{$decisorio->nombre}}</option>
@@ -109,7 +109,7 @@
 						
 						<div class="input-field col s3">
 							<label for="fechaem"><i class="zmdi zmdi-calendar-alt zmdi-hc-lg"></i> Fecha de Inclusion</label>
-							<input id ="fechaem" type="text" class="datepicker" ng-model="empleado.fecha">
+							<input id ="fechaem" type="text" class="datepicker" ng-model="empleado.fecha" required>
 						</div>
 						<div class="input-field col s3 btnag">
 							<a class="waves-effect waves-light cyan darken-1 btn-large" ng-click="agregar()">Agregar</a>
