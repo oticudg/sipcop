@@ -44,9 +44,8 @@ body, html{
 	height: 60%;
 }
 #modal4 {
-	width: 75%;
+	width: 80%;
 	height: 80%;
-	max-height: 100%;
 }
 .bornav{
 	border-left-style: solid;
@@ -59,10 +58,8 @@ body, html{
 	margin-left: 80%;
 	margin-top: 5%;
 }
-
 .wiimg{
-	height: 20%;
-	
+	height: 20%;	
 }
 .full-width{
 	margin: 0;
@@ -92,7 +89,7 @@ body, html{
 	padding-right: 5px;
 	padding-top: 5px;
 	@media only screen and (max-width : 992px) {
-		header, main, footer {
+	header, main, footer {
 			padding-left: 0;
 		}
 	}
@@ -103,8 +100,7 @@ body, html{
 .limarg{
 	margin-top: 0;
 	top: 0;
-	padding-top: 0;
-	
+	padding-top: 0;	
 }
 .imgnavinit{
 	margin-left: -18px;
@@ -211,9 +207,7 @@ body, html{
 	margin-left: -325%;
 	margin-bottom: -10%;
 }
-
 /*====== Navegación lateral*/
-
 .NavLateralDivider{
 	height: 0 !important;
 	width: 100% !important;
@@ -346,9 +340,6 @@ background-image: url(../assets/img/MaterialFontLogin.jpg);
 	height: 100%;
 	border-radius: 4px;
 	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
 	color: #333;
 }
 .container-login label{

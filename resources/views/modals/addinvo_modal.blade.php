@@ -1,13 +1,15 @@
 {{-- Modal estructura --}} 
 <div id="modal4" class="modal">
 	<div class="modal-content">
-		<div class="container-login2 center-align">
-			<div style="">
-				<a href="#" class="modal-action modal-close right"><i class="zmdi zmdi-close zmdi-hc-2x"></i></a>
+		<a href="#" class="modal-action modal-close right"><i class="zmdi zmdi-close zmdi-hc-2x"></i></a>
+		<div class="container center-align">
+			<div style="margin-top:-30px;">
 				<h1 class="light-blue-text"> 
 					<i class="zmdi zmdi-accounts-add animated animatedicon pulse"></i> 
 				</h1>
-				<h5 class="orange-text">Adicion de Involucrado</h5>   
+				<div style="margin-top:-30px;">
+					<h5 class="orange-text">Adicion de Involucrado</h5>
+				</div>   
 			</div>
 			<div>
 					<div class="row">
@@ -71,7 +73,7 @@
 							</div>
 							<div class="input-field col s3">
 								<label for="fechaem"><i class="zmdi zmdi-calendar-alt zmdi-hc-lg"></i> Fecha de Inclusion</label>
-								<input id ="fechaem" type="text" class="datepicker" ng-model="empleado.fecha">
+								<input id ="fechaem" type="text" class="datepicker" placeholder="Ingrese una fecha" ng-model="empleado.fecha">
 							</div>
 							<div class="input-field col s3 btnag">
 								<a class="waves-effect waves-light cyan darken-1 btn-large" ng-click="agregar()">Agregar</a>

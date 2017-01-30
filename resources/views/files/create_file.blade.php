@@ -27,7 +27,7 @@
 						</div>
 						<div class="input-field col s3">
 							<label for="fechaex"><i class="zmdi zmdi-calendar-alt zmdi-hc-lg"></i> Fecha de Apertura</label>
-							<input id="fechaex" type="text" class="datepicker" ng-model="data.fecha" required>
+							<input id="fechaex" type="text" class="datepicker" placeholder="Ingrese una fecha" ng-model="data.fecha" required>
 						</div>
 					</div>
 				<div class="row">
@@ -109,7 +109,7 @@
 						
 						<div class="input-field col s3">
 							<label for="fechaem"><i class="zmdi zmdi-calendar-alt zmdi-hc-lg"></i> Fecha de Inclusion</label>
-							<input id ="fechaem" type="text" class="datepicker" ng-model="empleado.fecha" required>
+							<input id ="fechaem" type="text" placeholder="Ingrese una fecha" class="datepicker" ng-model="empleado.fecha" required>
 						</div>
 						<div class="input-field col s3 btnag">
 							<a class="waves-effect waves-light cyan darken-1 btn-large" ng-click="agregar()">Agregar</a>
