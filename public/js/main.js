@@ -175,8 +175,8 @@ function customSweetalertValidate(title, text, type, config, callback){
 /* funciones de abrir y cerrar sidenav */
 function openNav(x) {
 	x.classList.toggle("change");
-	document.getElementById("mySidenav").style.width = "200px";
-	document.getElementById("main").style.marginLeft = "200px";
+	document.getElementById("mySidenav").style.width = "14%";
+	document.getElementById("main").style.marginLeft = "14%";
 	document.getElementById("main").style.zIndex = "-1";
 	document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 }

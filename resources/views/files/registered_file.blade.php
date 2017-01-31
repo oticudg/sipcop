@@ -20,11 +20,11 @@
 						</a>
 					</div>
 					<div class="input-field col s2 wis2 pull-s2">
-						<label for="cedula"><i class="zmdi zmdi-search zmdi-hc-lg"></i> Filtrar Cedula</label>				
+						<label for="cedula"><i class="zmdi zmdi-search zmdi-hc-lg"></i>Filtrar Cedula</label>				
 						<input type="text" id="cedula" name="cedula" autocomplete="off" class="validate">
 					</div>
 					<div class="input-field col s2 wis2 pull-s2">
-						<label for="search2"><i class="zmdi zmdi-search zmdi-hc-lg"></i> Palabra Clave</label>				
+						<label for="search2"><i class="zmdi zmdi-search zmdi-hc-lg"></i>Filtrar Palabra</label>				
 						<input type="text" id="search2" name="resumen" autocomplete="off" class="validate">
 					</div>
 					<div class="input-field col s2 wis2 pull-s2">
@@ -34,7 +34,7 @@
 									<option value="{{$estatu->id}}">{{$estatu->nombre}}</option>
 								@endforeach
 							</select>
-						<label><i class="zmdi zmdi-search zmdi-hc-lg"></i> Filtrar Estatus</label>				
+						<label><i class="zmdi zmdi-search zmdi-hc-lg"></i>Filtrar Estatus</label>				
 					</div>
 					<div class="input-field col s2 wis2 pull-s2">				
 							<select name="tipologia">
@@ -43,7 +43,7 @@
 									<option value="{{$tipologia->id}}">{{$tipologia->nombre}}</option>
 								@endforeach
 							</select>
-							<label><i class="zmdi zmdi-search zmdi-hc-lg"></i> Filtrar Tipologia</label>
+							<label><i class="zmdi zmdi-search zmdi-hc-lg"></i>Filtrar Tipologia</label>
 					</div>
 					<div class="input-field col s2 wis2 pull-s2">				
 							<label for="fechaex"><i class="zmdi zmdi-calendar-alt zmdi-hc-lg"></i> Fecha desde</label>

@@ -11,7 +11,7 @@
 			<label for="search2"><i class="zmdi zmdi-search zmdi-hc-lg"></i> Buscar Usuario</label>
 			<input id="search2" type="text" class="validate" ng-model="search">
 		</div>
-		<div class="input-field col s4 push-s6" style="padding-left:310px;">
+		<div class="input-field col s4 push-s6" style="padding-left:21%;">
 
 				@can(['user.register'])
 					<a href="#modal5" class="btn-floating waves-effect waves-light cyan darken-1 tooltipped modal-trigger" data-tooltip="Nuevo/Agregar" data-position="top">

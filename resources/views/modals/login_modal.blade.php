@@ -1,5 +1,5 @@
 {{-- Modal estructura --}} 
-<div id="modal1" class="modal modal-fixed-footer modalback">
+<div id="modal1" class="modal modal-fixed-footer">
 	<div class="modal-content">
 		<div class="row padx">
 			<a href="#" class="modal-action modal-close"><i class="zmdi zmdi-close zmdi-hc-2x"></i></a>

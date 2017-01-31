@@ -12,7 +12,7 @@
 									</div>
 							<li class="NavLateralDivider"></li>
 									<li>
-										<a href="/dashboard" class="waves-effect waves-light"><i class="zmdi zmdi-home zmdi-hc-fw"></i> Inicio</a>
+										<a href="/dashboard" class="waves-effect waves-light tooltipped" data-tooltip="Ir a Inicio" data-position="right"><i class="zmdi zmdi-home zmdi-hc-fw"></i> Inicio</a>
 									</li>
 									<li class="NavLateralDivider"></li>
 						<li>
@@ -47,7 +47,7 @@
 									<li class="NavLateralDivider"></li>
 									@can(['expediente.register'])
 										<li>
-											<a href="/expedientes/create" class="waves-effect waves-light tooltipped" data-tooltip="Administrar Expedientes" data-position="right">
+											<a href="/expedientes/create" class="waves-effect waves-light tooltipped" data-tooltip="Añadir Expediente" data-position="right">
 												<i class="zmdi zmdi-plus zmdi-hc-fw"></i> Crear Expediente
 											</a>
 										</li>
@@ -55,7 +55,7 @@
 									<li class="NavLateralDivider"></li>
 									@can(['expediente.show'])
 										<li>
-											<a href="/expedientes" class="waves-effect waves-light tooltipped" data-tooltip="Administrar Expedientes" data-position="right">
+											<a href="/expedientes" class="waves-effect waves-light tooltipped" data-tooltip="Ver Expedientes" data-position="right">
 												<i class="zmdi zmdi-format-list-bulleted zmdi-hc-fw"></i> Listar Expedientes
 											</a>
 										</li>

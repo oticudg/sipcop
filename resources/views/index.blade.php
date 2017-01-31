@@ -18,11 +18,13 @@
 		</div>
 	</div>
 			<div class="carousel">
-				<a class="carousel-item sombrita" href="#one!"><img src="/images/img/1.png"></a>
-				<a class="carousel-item sombrita" href="#two!"><img src="/images/img/2.png"></a>
-				<a class="carousel-item sombrita" href="#three!"><img src="/images/img/3.png"></a>
-				<a class="carousel-item sombrita" href="#four!"><img src="/images/img/4.png"></a>
-				<a class="carousel-item sombrita" href="#five!"><img src="/images/img/5.png"></a>
+				<div class="container">
+					<a class="carousel-item sombrita"><img src="/images/img/1.png"></a>
+					<a class="carousel-item sombrita"><img src="/images/img/2.png"></a>
+					<a class="carousel-item sombrita"><img src="/images/img/3.png"></a>
+					<a class="carousel-item sombrita"><img src="/images/img/4.png"></a>
+					<a class="carousel-item sombrita"><img src="/images/img/5.png"></a>
+				</div>
 			</div>
 	<div class="container">
 		<!--   Icon Section   -->
