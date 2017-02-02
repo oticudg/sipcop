@@ -15,7 +15,7 @@
 				{{ csrf_field() }}
 			<div class="row">
 				<div class="input-field col s6 push-s3 {{ $errors->has('email') ? ' has-error' : '' }}">
-					<input id="email" type="email" class="validate" name="email" value="{{ old('email') }}" required autofocus>
+					<input id="email" type="email" class="validate" autocomplete="off" name="email" value="{{ old('email') }}" required autofocus>
 					<label for="email">
 						<i class="zmdi zmdi-account"></i>&nbsp; Email
 					</label>
