@@ -1,24 +1,24 @@
 @extends('layouts.app')
 @section('content')
-<div class="card-panel cyan darken-2 white-text marexp center z-depth-1">Creacion de Expediente <i class="zmdi zmdi-file-plus"></i></div>
+<div class="card-panel cyan darken-2 white-text marexp center z-depth-1">Creación de expediente <i class="zmdi zmdi-file-plus"></i></div>
 	<div class="white" ng-controller="registerCtr">
 		<div>
 		  <div class="left mitad1">
-				<div class="card-panel z-depth-1 col s6 cyan white-text center">Datos de Expediente <i class="zmdi zmdi-search-in-file"></i></div>
+				<div class="card-panel z-depth-1 col s6 cyan white-text center">Datos de expediente <i class="zmdi zmdi-search-in-file"></i></div>
 			  <div class="card-content white contentcard z-depth-1">
 					<div class="row">
 						<div class="input-field col s3">
 							<select ng-model="data.tipologia" required>
-								<option value="" disabled selected>Seleccione Tipologia</option>
+								<option value="" disabled selected>Seleccione tipología</option>
 								@foreach($tipologias as $tipologia)
 									<option value="{{$tipologia->id}}">{{$tipologia->nombre}}</option>
 								@endforeach
 							</select>
-							<label><i class="zmdi zmdi-assignment zmdi-hc-lg"></i> Tipologia</label>
+							<label><i class="zmdi zmdi-assignment zmdi-hc-lg"></i> Tipología</label>
 						</div>
 						<div class="input-field col s3">
 							<select ng-model="data.estatus" required>
-								<option value="" disabled selected>Seleccione Estatus</option>
+								<option value="" disabled selected>Seleccione estatus</option>
 								@foreach($estatus as $estatu)
 									<option value="{{$estatu->id}}">{{$estatu->nombre}}</option>
 								@endforeach
@@ -26,7 +26,7 @@
 							<label><i class="zmdi zmdi-assignment-check zmdi-hc-lg"></i> Estatus</label>
 						</div>
 						<div class="input-field col s3">
-							<label for="fechaex"><i class="zmdi zmdi-calendar-alt zmdi-hc-lg"></i> Fecha de Apertura</label>
+							<label for="fechaex"><i class="zmdi zmdi-calendar-alt zmdi-hc-lg"></i> Fecha de apertura</label>
 							<input id="fechaex" type="text" class="datepicker" placeholder="Ingrese una fecha" ng-model="data.fecha" required>
 						</div>
 					</div>
@@ -45,12 +45,12 @@
 	   	  </div>	
 
 			<div class="right mitad2" ng-cloak>
-				<div class="card-panel z-depth-1 col s6 cyan white-text center">Inclusion de Involucrados <i class="zmdi zmdi-account-add"></i></div>
+				<div class="card-panel z-depth-1 col s6 cyan white-text center">Inclusión de involucrados <i class="zmdi zmdi-account-add"></i></div>
 				<div class="card-content white contentcard z-depth-1">
 				<div class="row">
 					<form ng-submit="empleadoSearch()">
 						<div class="input-field col s3">
-							<label for="search"><i class="zmdi zmdi-search zmdi-hc-lg"></i> Buscar Cedula</label>
+							<label for="search"><i class="zmdi zmdi-search zmdi-hc-lg"></i> Buscar cédula</label>
 							<input id="search" type="text" name="search" autocomplete="off" ng-model="cedula" class="validate" required>
 						</div>
 					</form>
@@ -69,19 +69,19 @@
 						</div>
 						<div class="input-field col s3">
 							<input readonly id="location" type="text" placeholder="Unicacion" class="validate" ng-model="empleado.ubicacion">
-							<label for="location"><i class="zmdi zmdi-square-right zmdi-hc-lg"></i> Ubicacion</label>
+							<label for="location"><i class="zmdi zmdi-square-right zmdi-hc-lg"></i> Ubicación</label>
 						</div>
 						<div class="input-field col s3">
 							<input readonly id="relationship" type="text" placeholder="Relacion Laboral" class="validate" ng-model="empleado.relacion">
-							<label for="relationship"><i class="zmdi zmdi-folder-outline zmdi-hc-lg"></i> Relacion Laboral</label>
+							<label for="relationship"><i class="zmdi zmdi-folder-outline zmdi-hc-lg"></i> Relación laboral</label>
 						</div>
 						<div class="input-field col s3">
-							<label for="phone"><i class="zmdi zmdi-phone zmdi-hc-lg"></i> Telefono</label>
+							<label for="phone"><i class="zmdi zmdi-phone zmdi-hc-lg"></i> Teléfono</label>
 							<input value="" id="phone" type="text" class="validate" ng-model="empleado.telefono">
 						</div>
 						<div class="input-field col s3">
 							<select ng-model="empleado.complicidad" required>
-								<option value="" disabled selected>Seleccione Complicidad</option>
+								<option value="" disabled selected>Seleccione complicidad</option>
 								@foreach($complicidades as $complicidad)
 									<option value="{{$complicidad->id}}">{{$complicidad->nombre}}</option>
 								@endforeach
@@ -90,7 +90,7 @@
 						</div>
 						<div class="input-field col s3">
 							<select ng-model="empleado.resultado" required>
-								<option value="" disabled selected>Seleccione Resultado</option>
+								<option value="" disabled selected>Seleccione resultado</option>
 								@foreach($resultados as $resultado)
 									<option value="{{$resultado->id}}">{{$resultado->nombre}}</option>
 								@endforeach
@@ -99,7 +99,7 @@
 						</div>
 						<div class="input-field col s3">
 							<select ng-model="empleado.decisorio" required>
-								<option value="" disabled selected>Seleccione Decisorio</option>
+								<option value="" disabled selected>Seleccione decisorio</option>
 								@foreach($decisorios as $decisorio)
 									<option value="{{$decisorio->id}}">{{$decisorio->nombre}}</option>
 								@endforeach
@@ -108,11 +108,11 @@
 						</div>
 						
 						<div class="input-field col s3">
-							<label for="fechaem"><i class="zmdi zmdi-calendar-alt zmdi-hc-lg"></i> Fecha de Inclusion</label>
+							<label for="fechaem"><i class="zmdi zmdi-calendar-alt zmdi-hc-lg"></i> Fecha de inclusión</label>
 							<input id ="fechaem" type="text" placeholder="Ingrese una fecha" class="datepicker" ng-model="empleado.fecha" required>
 						</div>
 						<div class="input-field col s3 btnag">
-							<a class="waves-effect waves-light cyan darken-1 btn-large" ng-click="agregar()">Agregar</a>
+							<a class="waves-effect waves-light cyan darken-1 btn-large tooltipped" data-tooltip="Agregar involucrado" ng-click="agregar()">Agregar &nbsp;<i class="zmdi zmdi-plus"></i></a>
 						</div>
 					</div>
 
@@ -134,7 +134,7 @@
 			</div>
 		</div>	
 		<div class="posag">
-			<a class="waves-effect waves-light cyan darken-1 btn" ng-click="guardar()">Guardar</a>
+			<a class="waves-effect waves-light cyan darken-1 btn tooltipped" data-tooltip="Guardar expediente" ng-click="guardar()">Guardar &nbsp;<i class="zmdi zmdi-save"></i></a>
 		</div>
 	</div>	
 </div>

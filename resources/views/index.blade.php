@@ -5,12 +5,12 @@
 		<div class="container">
 				<h3 class="header center orange-text">Bienvenido a SIPCOP</h3>
 					<div class="row center">
-						<h5 class="header orange-text col s12 light">Sistema de prevencion y control de perdidas.</h5>
+						<h5 class="header orange-text col s12 light">Sistema de prevención y control de perdidas.</h5>
 					</div>
 					<br>
 					<div class="row center">
-						<a href="#modal1" type="submit" class="btn-large waves-effect waves-light cyan darken-1 modal-trigger 		tooltipped" data-activates="slide-out" data-tooltip="Introduzca sus Datos">
-							<span>Iniciar Sesion</span> 
+						<a href="#modal1" type="submit" class="btn-large waves-effect waves-light cyan darken-1 modal-trigger 		tooltipped" data-activates="slide-out" data-tooltip="Introduzca sus datos">
+							<span>Iniciar Sesión</span> 
 							<span class="zmdi zmdi-assignment-account"></span>
 						</a>
 					</div>
@@ -60,7 +60,7 @@
 					<h2 class="center light-blue-text">
 						<i class="zmdi zmdi-view-web animated animatedicon pulse"></i>
 					</h2>
-					<h5 class="center">APLICACION</h5>
+					<h5 class="center">APLICACIÓN</h5>
 					<div class="card blue-grey darken-1 z-depth-2">
 						<div class="card-content white-text center-align">
 							<p class="light">SIPCOP te permite gestionar los procesos correspondientes a los incidentes laborales, llevando un control mediante expedientes digitales de los casos e involucrados en diferentes sucesos institucionales.</p>

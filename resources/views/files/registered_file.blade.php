@@ -1,13 +1,13 @@
 @extends('layouts.app')
 @section('content')
-<div class="card-panel marexp cyan darken-1 z-depth-1 white-text center">Expedientes Registrados <i class="zmdi zmdi-format-list-bulleted"></i>
+<div class="card-panel marexp cyan darken-1 z-depth-1 white-text center">Expedientes registrados <i class="zmdi zmdi-format-list-bulleted"></i>
 </div>
 <div class="container">
  <ul id="myUL" class="collapsible popout" data-collapsible="accordion">
 		<div class="container" style="margin-top:3%;">
 			@can(['expediente.register'])
 				<div class="btnplus">
-					<a class="btn-floating btn-small waves-effect waves-light cyan darken-1 tooltipped" data-tooltip="Agregar Expediente" data-position="top" href="/expedientes/create">
+					<a class="btn-floating btn-small waves-effect waves-light cyan darken-1 tooltipped" data-tooltip="Agregar expediente" data-position="top" href="/expedientes/create">
 						<i class="material-icons">add</i>
 					</a>
 				</div>	
@@ -20,11 +20,11 @@
 						</a>
 					</div>
 					<div class="input-field col s2 wis2 pull-s2">
-						<label for="cedula"><i class="zmdi zmdi-search zmdi-hc-lg"></i>Filtrar Cedula</label>				
+						<label for="cedula"><i class="zmdi zmdi-search zmdi-hc-lg"></i>Filtrar cédula</label>				
 						<input type="text" id="cedula" name="cedula" autocomplete="off" class="validate">
 					</div>
 					<div class="input-field col s2 wis2 pull-s2">
-						<label for="search2"><i class="zmdi zmdi-search zmdi-hc-lg"></i>Filtrar Palabra</label>				
+						<label for="search2"><i class="zmdi zmdi-search zmdi-hc-lg"></i>Filtrar palabra</label>				
 						<input type="text" id="search2" name="resumen" autocomplete="off" class="validate">
 					</div>
 					<div class="input-field col s2 wis2 pull-s2">
@@ -34,16 +34,16 @@
 									<option value="{{$estatu->id}}">{{$estatu->nombre}}</option>
 								@endforeach
 							</select>
-						<label><i class="zmdi zmdi-search zmdi-hc-lg"></i>Filtrar Estatus</label>				
+						<label><i class="zmdi zmdi-search zmdi-hc-lg"></i>Filtrar estatus</label>				
 					</div>
 					<div class="input-field col s2 wis2 pull-s2">				
 							<select name="tipologia">
-								<option value="" disabled selected>Tipologia</option>
+								<option value="" disabled selected>Tipología</option>
 								@foreach($tipologias as $tipologia)
 									<option value="{{$tipologia->id}}">{{$tipologia->nombre}}</option>
 								@endforeach
 							</select>
-							<label><i class="zmdi zmdi-search zmdi-hc-lg"></i>Filtrar Tipologia</label>
+						<label><i class="zmdi zmdi-search zmdi-hc-lg"></i>Filtrar tipología</label>
 					</div>
 					<div class="input-field col s2 wis2 pull-s2">				
 							<label for="fechaex"><i class="zmdi zmdi-calendar-alt zmdi-hc-lg"></i> Fecha desde</label>
@@ -65,13 +65,13 @@
 				</div> 
 	  	<div class="collapsible-body center">  
 				<div class="divchip">
-					<h6 class="orange-text">Tipologia</h6>
+					<h6 class="orange-text">Tipología</h6>
 						<div class="white-text center chip cyan">
 							{{$expediente->tipologia}}
 						</div>	
 				</div>
 				<div class="divchip">
-					<h6 class="orange-text">Fecha de Creacion</h6>
+					<h6 class="orange-text">Fecha de creación</h6>
 						<div class="white-text center chip cyan">
 							{{$expediente->fecha_registro}}
 						</div>

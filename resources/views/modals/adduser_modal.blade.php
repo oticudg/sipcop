@@ -9,7 +9,7 @@
 				<h1 class="light-blue-text"> 
 					<i class="zmdi zmdi-plus animated animatedicon pulse"></i> 
 				</h1>
-				<h5 class="orange-text">Registrar Usuario</h5>   
+				<h5 class="orange-text">Registrar usuario</h5>   
 			</div>
 			<form ng-submit="save()">
 				<div class="row">
@@ -17,7 +17,7 @@
 					<div class="input-field col s4">
 						<input id="email1" type="email" class="validate" ng-model="data.email" required autofocus>
 						<label for="email1">
-							<i class="zmdi zmdi-email"></i>&nbsp; Email
+							<i class="zmdi zmdi-email"></i>&nbsp; Correo
 						</label>
 					</div>
 					
@@ -41,13 +41,13 @@
 					<div class="input-field col s4">
 						<input id="pass2" type="password" class="validate" ng-model="data.password_confirmation" name="password_confirmation" required>
 						<label for="pass2">
-							<i class="zmdi zmdi-key"></i> Repetir Contraseña
+							<i class="zmdi zmdi-key"></i> Repetir contraseña
 						</label>
 					</div>
 					
 					<div class="input-field col s4">
 						<select ng-model="data.role" convert-to-number required>
-							<option value="" disabled selected>Seleccione un Rol</option>
+							<option value="" disabled selected>Seleccione un rol</option>
 							@foreach($roles as $rol)						
 								<option value="{{$rol->id}}">{{$rol->name}}</option>
 							@endforeach
@@ -56,7 +56,7 @@
 					</div>		
 				</div>	
 				<div class="row">
-					<button id="btnsac" class="waves-effect waves-teal cyan btn z-depth-1 tooltipped" data-tooltip="Guardar Cambios">Guardar &nbsp; 
+					<button id="btnsac" class="waves-effect waves-teal cyan btn z-depth-1 tooltipped" data-tooltip="Guardar cambios">Guardar &nbsp; 
 					<i class="zmdi zmdi-mail-send"></i>
 					</button>
 				</div>

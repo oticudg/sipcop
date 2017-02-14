@@ -14,7 +14,7 @@
 				<label class="active labelmov"> <i class="zmdi zmdi-group-work"></i> Estatus</label>
 			</div>
 			<div class="">
-				<a class="btn-floating waves-effect right btne waves-light cyan darken-1 tooltipped" data-tooltip="Eliminar Usuario" data-position="top" ng-click="delete()">
+				<a class="btn-floating waves-effect right btne waves-light cyan darken-1 tooltipped" data-tooltip="Eliminar usuario" data-position="top" ng-click="delete()">
 					<i class="zmdi zmdi-delete"></i>
 				</a>
 			</div>
@@ -23,7 +23,7 @@
 				<h1 class="light-blue-text"> 
 					<i class="zmdi zmdi-edit animated animatedicon pulse"></i> 
 				</h1>
-				<h5 class="orange-text">Editar Usuario</h5>   
+				<h5 class="orange-text">Editar usuario</h5>   
 			</div>
 			<form action="" method="post">
 				<div class="row">
@@ -33,7 +33,7 @@
 
 					<div class="input-field col s4">
 						<input id="email1" type="email" class="validate" placeholder="Email" ng-model="userSelect.email">
-						<label for="email1"><i class="zmdi zmdi-email"></i>&nbsp; Email</label>
+						<label for="email1"><i class="zmdi zmdi-email"></i>&nbsp; Correo</label>
 					</div>
 
 					<div class="input-field col s4">
@@ -68,8 +68,8 @@
 					</div>		
 				</div>	
 			</form>
-			<button id="btnsac" class="waves-effect waves-teal cyan btn z-depth-1 tooltipped" data-tooltip="Guardar Cambios" ng-click="edit()">Guardar &nbsp; 
-				<i class="zmdi zmdi-mail-send"></i>
+			<button id="btnsac" class="waves-effect waves-teal cyan btn z-depth-1 tooltipped" data-tooltip="Guardar cambios" ng-click="edit()">Guardar &nbsp; 
+				<i class="zmdi zmdi-save"></i>
 			</button>
 		</div>
 	</div>

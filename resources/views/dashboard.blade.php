@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <!-- contenedor global-->
-<div class="card-panel cyan darken-1 white-text marexp center z-depth-1">Dashboard <i class="zmdi zmdi-view-dashboard"></i></div>
+<div class="card-panel cyan darken-1 white-text marexp center z-depth-1">Tablero <i class="zmdi zmdi-view-dashboard"></i></div>
 <div class="row">	
 			<article class="col s12">
 				<div class="full-width center-align">

@@ -3,7 +3,7 @@
 <div ng-controller="usersCtr" ng-cloak>
 	@include('modals.adduser_modal')
 	@include('modals.reedituser_modal')
-	<div class="card-panel marexp cyan darken-1 z-depth-1 white-text center">Usuarios Registrados <i class="zmdi zmdi-accounts-list"></i></div>
+	<div class="card-panel marexp cyan darken-1 z-depth-1 white-text center">Usuarios registrados <i class="zmdi zmdi-accounts-list"></i></div>
 
 	<div class="row">
 		
@@ -36,7 +36,7 @@
 				<tr class="white-text">
 					<th data-field="id">
 						<div class="">
-							Seleccion
+							Selección 
 						</div>
 					</th>
 					<th data-field="id">Usuario</th>

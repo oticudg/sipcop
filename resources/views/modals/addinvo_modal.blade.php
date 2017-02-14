@@ -15,7 +15,7 @@
 					<div class="row">
 						<form ng-submit="empleadoSearch()">
 							<div class="input-field col s3">
-								<label for="search"><i class="zmdi zmdi-search zmdi-hc-lg"></i> Buscar Cedula</label>
+								<label for="search"><i class="zmdi zmdi-search zmdi-hc-lg"></i> Buscar cédula</label>
 								<input id="search" type="text" name="search" autocomplete="off" ng-model="cedula" class="validate" required>
 							</div>
 						</form>
@@ -34,19 +34,19 @@
 							</div>
 							<div class="input-field col s3">
 								<input readonly id="location" type="text" placeholder="Unicacion" class="validate" ng-model="empleado.ubicacion">
-								<label for="location"><i class="zmdi zmdi-square-right zmdi-hc-lg"></i> Ubicacion</label>
+								<label for="location"><i class="zmdi zmdi-square-right zmdi-hc-lg"></i> Ubicación</label>
 							</div>
 							<div class="input-field col s3">
 								<input readonly id="relationship" type="text" placeholder="Relacion Laboral" class="validate" ng-model="empleado.relacion">
-								<label for="relationship"><i class="zmdi zmdi-folder-outline zmdi-hc-lg"></i> Relacion Laboral</label>
+								<label for="relationship"><i class="zmdi zmdi-folder-outline zmdi-hc-lg"></i> Relación Laboral</label>
 							</div>
 							<div class="input-field col s3">
-								<label for="phone"><i class="zmdi zmdi-phone zmdi-hc-lg"></i> Telefono</label>
+								<label for="phone"><i class="zmdi zmdi-phone zmdi-hc-lg"></i> Teléfono</label>
 								<input value="" id="phone" type="text" class="validate" ng-model="empleado.telefono">
 							</div>
 							<div class="input-field col s3">
 								<select ng-model="empleado.complicidad">
-									<option value="" disabled selected>Seleccione Complicidad</option>
+									<option value="" disabled selected>Seleccione complicidad</option>
 									@foreach($complicidades as $complicidad)
 									<option value="{{$complicidad->id}}">{{$complicidad->nombre}}</option>
 									@endforeach
@@ -55,7 +55,7 @@
 							</div>
 							<div class="input-field col s3">
 								<select ng-model="empleado.resultado">
-									<option value="" disabled selected>Seleccione Resultado</option>
+									<option value="" disabled selected>Seleccione resultado</option>
 									@foreach($resultados as $resultado)
 									<option value="{{$resultado->id}}">{{$resultado->nombre}}</option>
 									@endforeach
@@ -64,7 +64,7 @@
 							</div>
 							<div class="input-field col s3">
 								<select ng-model="empleado.decisorio">
-									<option value="" disabled selected>Seleccione Decisorio</option>
+									<option value="" disabled selected>Seleccione decisorio</option>
 									@foreach($decisorios as $decisorio)
 									<option value="{{$decisorio->id}}">{{$decisorio->nombre}}</option>
 									@endforeach
@@ -72,11 +72,11 @@
 								<label><i class="zmdi zmdi-check-all zmdi-hc-lg"></i> Decisorio</label>
 							</div>
 							<div class="input-field col s3">
-								<label for="fechaem"><i class="zmdi zmdi-calendar-alt zmdi-hc-lg"></i> Fecha de Inclusion</label>
+								<label for="fechaem"><i class="zmdi zmdi-calendar-alt zmdi-hc-lg"></i> Fecha de inclusión</label>
 								<input id ="fechaem" type="text" class="datepicker" placeholder="Ingrese una fecha" ng-model="empleado.fecha">
 							</div>
 							<div class="input-field col s3 btnag">
-								<a class="waves-effect waves-light cyan darken-1 btn-large" ng-click="agregar()">Agregar</a>
+								<a class="waves-effect waves-light cyan darken-1 btn-large tooltipped" data-tooltip="Agregar involucrado" ng-click="agregar()">Agregar &nbsp;<i class="zmdi zmdi-plus"></i></a>
 							</div>
 						</div>
 						<div class="row col s12 center">	
@@ -94,8 +94,7 @@
 							</div>	
 						</div>
 					</div>
-				<button id="btnsac"  ng-show="addInvestigados.length > 0" ng-click="saveInvestigados()" class="waves-effect waves-teal cyan btn z-depth-1 tooltipped" data-tooltip="Guardar Cambios">Guardar &nbsp; 
-					<i class="zmdi zmdi-save"></i>
+				<button id="btnsac"  ng-show="addInvestigados.length > 0" ng-click="saveInvestigados()" class="waves-effect waves-teal cyan btn z-depth-1 tooltipped" data-tooltip="Guardar cambios">Guardar &nbsp; <i class="zmdi zmdi-save"></i>
 				</button>
 			</div>
 		</div>
